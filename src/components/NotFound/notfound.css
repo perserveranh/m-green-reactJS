@@ -1,0 +1,43 @@
+
+@import "https://fonts.googleapis.com/css?family=Alfa+Slab+One";
+
+.page-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: #121212;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-container.bg {
+  background-size: cover;
+  mix-blend-mode: overlay;
+  background-image: url("http://i.giphy.com/l117HrgEinjIA.gif");
+}
+.page-container .title {
+  font-family: "Alfa Slab One", cursive;
+  font-size: 144px;
+  height: 100vh;
+  color: white;
+  width: 100%;
+  display: flex;
+  background-position: center;
+  align-items: center;
+  background-size: cover;
+  justify-content: center;
+}
+p.text-error {
+  position: absolute;
+  font-size: 44px;
+  bottom: 26%;
+}
+@media (max-width:425px){
+  p.text-error {
+    font-size: 25px;
+    bottom: 24%;
+}
+}
