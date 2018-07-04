@@ -4,6 +4,7 @@ import Project from './containers/project';
 import Partner from './containers/partner';
 import New from './containers/new';
 import NotFound from './components/NotFound/index';
+
 const routes =[
     {
         path: '/',
@@ -13,7 +14,7 @@ const routes =[
     {
         path: '/project',
         exact : false,
-        main :  () => <Project />
+        main :  () => <Project   />
     },
     {
         path: '/partner',

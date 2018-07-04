@@ -1,0 +1,102 @@
+#header{
+    background: #FFF;
+    height: 80px;
+    border-bottom: 1px solid #F1F1F1;
+    z-index: 99;
+    transition: height 0.3s ease;
+    -moz-transition: height 0.3s ease;
+    -webkit-transition: height 0.3s ease;
+    border-bottom-color: #024f00;
+    border-top: none;
+}
+.mgreen-logo{
+    width:10%;
+    float:left;
+    padding: 10px 0;
+    background:transparent;
+    position: relative;
+}
+nav .mgreen-menu{
+    width: 90%;
+    position: relative;
+    background: #fff;
+    float: right;
+    margin: 0 auto;
+    padding-right: 25px;
+    padding-top: 23px;
+}
+nav .mgreen-menu ul{
+    list-style: none;
+    text-align: end;
+    
+}
+nav .mgreen-menu ul li{
+    display:inline-block;
+}
+nav .mgreen-menu ul li a{
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    color:#444444;
+    font: "open-sans Regular"  400 ;
+    text-transform: uppercase;
+    margin:0 5px;
+    padding-bottom: 10px;
+}
+nav .mgreen-menu ul li a,nav .mgreen-menu ul li a:after,nav .mgreen-menu ul li a:before{
+    transition: all .5s;
+}
+nav .mgreen-menu ul li a:hover{
+    color:#039b46;
+}
+nav .mgreen-menu ul li a{
+    position: relative;
+    cursor: pointer;
+}
+nav .mgreen-menu ul li a:after{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width:0%;
+    content:'.';
+    color:transparent;
+    background: #aaa;
+    height:1px;
+}
+nav .mgreen-menu ul li a:hover:after{
+    width:100%;
+}
+nav .mgreen-menu ul li a.download{
+    border:1px solid #039b46; 
+    padding-top:11px;
+    border-radius: 25px;
+}
+nav .mgreen-menu ul li a.download:hover{
+    border:none;
+}
+nav .mgreen-menu ul li ul.sub-menu{
+    display:none;
+ 
+ 
+}
+nav .mgreen-menu ul li ul.sub-menu li a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} 
+nav .mgreen-menu ul li:hover .sub-menu{
+display: block;
+transition: ease all .3s;
+position: absolute;
+top: 60%;
+background: #FFF;
+min-width: 200px;
+z-index: 999;
+padding: 8px;
+margin-top: 27px;
+border-top: 2px solid #FFC107;
+box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+}

@@ -32,8 +32,8 @@
 }
 p.text-error {
   position: absolute;
-  font-size: 44px;
-  bottom: 26%;
+  font-size: 42px;
+  bottom: 15%;
 }
 @media (max-width:425px){
   p.text-error {
