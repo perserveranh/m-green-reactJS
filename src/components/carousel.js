@@ -12,7 +12,33 @@ class Slide extends Component {
       autoplaySpeed: 2000,
       centerMode: false,
       swipeToSlide: true,
-     
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 7,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 5,
+
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 325,
+          settings: {
+            slidesToShow: 2,
+          }
+        }
+      ]
     };
     return (
         <Slider {...settings}>

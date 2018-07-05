@@ -3,3 +3,28 @@
     font:300 26px/31px  "open-sans Regular" ;
     color: #01c358;
 }
+
+.p-text{
+  
+    color :#444444;
+    font-size: 18px;
+
+ }
+ .p-content{
+     font-size: 20px;
+     color: #444444;
+ }
+ @media (max-width: 768px) and (min-width:426px){
+     .img-introduce{
+         width:500px;
+         margin: 0 95px;
+     }
+ }
+ @media (max-width: 425px){
+    .img-introduce{
+        width:400px;
+    }
+    .img-introduce2{
+        height: 230px !important;
+    }
+}

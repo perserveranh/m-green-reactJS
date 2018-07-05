@@ -1,0 +1,79 @@
+.footer{
+    background: #f8f8f8;
+}
+.facebook-message{
+    height:46px;
+    padding:4px;
+    width:auto;
+    color:#fff;
+    font: 400 22px/38px 'arial, helvetica, sans-serif' ;
+    /* z-index: 999999999 !important; */
+}
+.button-message{
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 45px;
+    position: fixed;
+    width: 238px;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    padding: 0px 18px;
+    box-sizing: border-box;
+    bottom: 20px;
+    right: 2.0000%;
+    left: auto;
+    z-index: 99999999 !important;
+}
+.button-message a{
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+    
+}
+.button-message a:hover{
+    text-decoration: none;
+    color:#fff;
+}
+.button-message:hover{
+    filter:brightness(1.5);
+    transition: all .5s;
+}
+
+.button-message .chat-mgreen{
+    margin:0 5px;
+}
+.text-theme-green{
+    color: #28a745;
+    font : "open-sans Regular"  300 ;
+}
+.text-theme-green p{
+    font : "open-sans Regular"  400 17px/21px;
+}
+.icon-message{
+    display:none;
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    text-align: center;
+    font-size: 25px;
+    height:50px;
+    width: 50px;
+    margin-top: 10px;
+    padding:10px 0;
+    text-indent: unset;
+    background-color: #28a745;
+    border-radius: 50%;
+
+}
+.icon-message:hover{
+    filter:brightness(1.5);
+    transition: all .5s;
+}
+@media (max-width:425px){
+    .icon-message{
+        display: block;
+    }
+    .button-message{
+        display: none;
+    }
+}

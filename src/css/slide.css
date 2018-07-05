@@ -1,6 +1,25 @@
 .slide{
-    border-top:1px silid #000;
+    border-bottom:1px solid #000;
     padding: 0px;
     border-width: 0px;
-  
+    z-index: -3;
+ position: relative;
+}
+.text-title {
+    font: 400 16px/26px "open-sans Regular";
+   color: yellow;
+   position: absolute;
+   z-index: 9;
+right:10%;
+}
+.text-content{
+    font: 400 16px/26px "open-sans Regular";
+    color: yellow;
+    position: absolute;
+    z-index: 9;
+}
+@media (max-width:425px){
+    .slide img{
+        height: 250px !important;
+    }
 }

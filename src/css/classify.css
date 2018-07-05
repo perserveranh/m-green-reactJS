@@ -1,0 +1,17 @@
+.p-text{
+    font:  400 16px/26px "open-sans Regular" ;
+    color :#444444;
+    
+ }
+
+ @media (max-width:425px){
+    .img-classify{
+        height : 400px !important;
+    
+     }
+ }
+ @media (max-width:768px) and (min-width:426px){
+     .img-classify{
+        height: 400px !important;
+     }
+ }

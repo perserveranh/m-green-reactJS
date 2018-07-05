@@ -2,9 +2,17 @@ import React, { Component,Fragment } from 'react';
 import './App.css';
 import routes from './routes';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BackTop } from 'antd';
+import 'antd/dist/antd.css';
 
 class App extends Component {
 
+  componentDidMount(){
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
   showContentMenus = (routes) => {
     var result = null;
     if(routes.length >0) {
@@ -24,6 +32,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      <BackTop>
+      <div className="ant-back-top-inner"><i class="fas fa-angle-double-up"></i></div>
+    </BackTop>
       <Router>
       <Fragment>
       {this.showContentMenus(routes)}
