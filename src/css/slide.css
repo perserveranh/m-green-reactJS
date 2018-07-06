@@ -3,20 +3,56 @@
     padding: 0px;
     border-width: 0px;
     z-index: -3;
- position: relative;
+ /* position: relative; */
 }
 .text-title {
-    font: 400 16px/26px "open-sans Regular";
-   color: yellow;
+    font: 600 34px/51px "Open Sans";
+   color: #ffffff;
+   /* color:yellow; */
    position: absolute;
    z-index: 9;
-right:10%;
+   margin:10px 0;
+    text-transform: uppercase;
+ padding: 0 480px;
+ overflow: visible;
+}
+.text-title p{
+    margin:0;
 }
 .text-content{
-    font: 400 16px/26px "open-sans Regular";
-    color: yellow;
+    font: 400 20px/20px "Open Sans";
+    color: #ffffff;
     position: absolute;
-    z-index: 9;
+    z-index:99999;
+     text-transform: uppercase;
+  padding: 200px 450px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.text-content .btn-mgreen{
+    width:300px ;
+    height:50px;
+    text-transform: uppercase;
+    font: 400 14px/21px "open-sans Regular";
+    margin:40px 0 20px 0;;
+}
+.text-title-2{
+    position: absolute;
+    z-index: 9999;
+    color:#ffffff;
+    text-align: left;
+    width:500px;
+    margin: 80px 160px;
+    padding: 60px 0;
+}
+.text-title-2 .p-title-slide{
+    font:400 45px/68px "Open Sans";
+    text-transform: uppercase;
+}
+.text-title-2 .p-content-slide{
+    font: 400 18px/27px "Open Sans";
+    text-transform: none;
+    padding: 10px 0;
 }
 @media (max-width:425px){
     .slide img{

@@ -4,6 +4,7 @@ import routes from './routes';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { BackTop } from 'antd';
 import 'antd/dist/antd.css';
+import { resetIdCounter } from 'react-tabs';
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
     return <Switch>{result}</Switch>
   }
   render() {
+    resetIdCounter();
     return (
       <div className="App">
       <BackTop>
