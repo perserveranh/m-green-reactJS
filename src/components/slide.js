@@ -18,7 +18,7 @@ class Slide extends Component {
     
       <Slider {...settings}>
         <div>
-        <div className="text-title text-center">
+        <div className="text-title-1 text-center">
         <p>tòa nhà thông minh</p>
        
         <p>cư dân thông thái</p>

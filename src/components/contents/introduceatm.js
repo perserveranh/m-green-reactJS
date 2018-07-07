@@ -14,7 +14,7 @@ class IntroduceAtm extends Component {
       <h2 className="text-theme-green">Hướng dẫn cài thẻ mGeen</h2>
       </div>
       <div className="vc_empty_space  hidden-xs" style={{height: '40px'}}><span className="vc_empty_space_inner"></span></div>
-       <ComponentTab />
+        <ComponentTab />
       </Container>
       <div className="vc_empty_space  hidden-xs" style={{height: '70px'}}><span className="vc_empty_space_inner"></span></div>
       </div>

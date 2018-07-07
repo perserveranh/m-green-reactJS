@@ -5,7 +5,7 @@
     z-index: -3;
  /* position: relative; */
 }
-.text-title {
+.text-title-1 {
     font: 600 34px/51px "Open Sans";
    color: #ffffff;
    /* color:yellow; */
@@ -16,7 +16,7 @@
  padding: 0 480px;
  overflow: visible;
 }
-.text-title p{
+.text-title-1 p{
     margin:0;
 }
 .text-content{
@@ -57,5 +57,41 @@
 @media (max-width:425px){
     .slide img{
         height: 250px !important;
+    }
+    .text-title-1 {
+        font: 400 14px/21px "Open Sans";
+        padding: 0 150px;
+    }
+    .text-content{
+        font: 400 12px/21px "Open Sans";
+        padding: 100px 80px;
+  
+      }
+      .text-content .btn-mgreen{
+        width:230px ;
+        height:30px;
+        font: 200 8px/16px "open-sans Regular";
+        margin:0 0 20px 0;;
+    }
+    .text-title-2 .p-title-slide{
+        font:400 22px/30px "Open Sans";
+        text-transform: uppercase;
+    }
+    .text-title-2{
+        width:300px;
+        margin: 80px 80px;
+        padding: 30px 0;
+    }
+   
+}
+@media (max-width:768px) and (min-width:426px){
+    .text-content{
+
+      padding: 200px 150px;
+
+    }
+    .text-title-1 {
+     padding: 0 200px;
+
     }
 }

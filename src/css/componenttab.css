@@ -3,6 +3,7 @@
     height:420px;
     filter: brightness(1.5);
     cursor: pointer;
+    margin: 0 12px;
    
 }
 
@@ -72,12 +73,242 @@ ul.tablist li p{
     color : #444444;
     margin: 5px 0;
 }
-ul.tablist li:focus:hover span   {
+ul li:focus span   {
     background:#00d363;
     color : #000;
     transition: ease all .10s;
 }
-.div-iphone{
-    border: 1px solid #000;
-    margin: 0 200px;
+ul li:focus:hover p{
+    color : #01c358;
+}
+
+.iphone-5{
+    width: 21em;
+    height: 39em;
+    position: relative;
+    font-size: 0.7em;
+    /* background: #eaebe3; */
+    /* border-radius: 1px solid #000; */
+ }
+ .iphone-5.m-glare:before{
+   /* background: #eaebe3; */
+   border-radius: 0 0.125em 0.125em 0;
+ }
+ .iphone-5:after{
+  content:"";
+  display: block;
+  width: 3.3125em;
+  height: 0.1875em;
+  position: absolute;
+  right: 3.625em;
+  top: -0.1875em;
+  border-radius: 0 0.125em 0.125em 0;
+  z-index: 1;
+ }
+ .iphone-5:before{
+    content: "";
+    display: block;
+    width: 50%;
+    height: 83%;
+    position: absolute;
+    top: 0.625em;
+    right: 0.625em;
+    border-radius: 0 3.125em 0 0;
+    /* z-index: 9999; */
+ }
+ .iphone-5 .m-home-button{
+    display: block;
+    width: 3.625em;
+    height: 3.625em;
+    margin: 0px auto;
+    position: relative;
+    border-radius: 100%;
+    border: none;
+    cursor: default;
+    font-size: 100%;
+    color: antiquewhite;
+    bottom: -18px;
+    padding: 0 2em;
+ }
+ .iphone-5 .m-home-button:after{
+    content: "";
+    display: block;
+    width: 1.125em;
+    height: 1.125em;
+    margin: 0 auto;
+    position: relative;
+    border-style: solid;
+    border-width: 0.125em;
+    border-radius: 0.25em;
+    left:-0.45em;
+ }
+ .iphone-5 .m-body{
+     width: 100%;
+     height: 102%;
+     border-radius: 1.75em;
+     border-style: solid;
+     border-width: 0.375em;
+     position: relative;
+     background: #eaebe3;
+     border-color: lightgoldenrodyellow;
+ }
+ .iphone-5 .m-front-camera{
+    width: 0.575em;
+    height: 0.575em;
+    margin: 0 auto;
+    /* margin-left: 5em; */
+    position: relative;
+    border-radius: 100%;
+    top: 0.5em;
+ }
+ .iphone-5 .m-front-camera:after{
+    content: "";
+    display: block;
+    width: 0.575em;
+    height: 0.575em;
+    position: relative;
+
+    background-color: #8c8091;
+    border-radius: 100%;
+ }
+ .iphone-5 .m-top-speaker{
+    width: 4.75em;
+    height: 0.5em;
+    margin: 0 auto;
+    position: relative;
+    top: 0.8em;
+    border-radius: 3.125em;
+ }
+ .iphone-5 .m-top-speaker:after{
+    content: "";
+    display: block;
+    width: 4.25em;
+    height: 0.375em;
+    margin: 0 auto;
+    position: relative;
+    background-color: #4b414a;
+    border-radius: 3.125em;
+ }
+ .iphone-5 .m-screen{
+    width: 18em;
+    height: 32.5em;
+    top: 9em;
+    padding: 14px 0;
+ }
+ .iphone-5 .m-button{
+    width: 0.1875em;
+    height: 1.875em;
+    position: absolute;
+    left: -0.5em;
+    top: 5.9375em;
+    border-radius: 0.125em 0 0 0.125em;
+ }
+ .iphone-5 .m-button:after ,  .iphone-5 .m-button:before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0.1875em;
+    height: 1.5625em;
+    border-radius: 0.125em 0 0 0.125em;
+ }
+ .iphone-5 .m-button:after{
+    top: 3.125em;
+ }
+ .iphone-5 .m-button:before{
+    top: 6.25em;
+ }
+@media (max-width:768px)  and (min-width:426px)
+{
+    ul.tablist li p{
+        display: none;
+      position: absolute;
+      top:150%;
+      width: 100vw;
+    }
+    ul.tablist li .p-text-1{
+        margin: 0 130px;
+        /* display: block; */
+    }
+    ul.tablist li .p-text-2{
+        margin: 0 100px;
+    }
+    ul.tablist li .p-text-3{
+        margin: 0 -50px;
+    }
+    ul.tablist li .p-text-4{
+        margin: 0 -220px;
+    }
+    ul.tablist li:focus p{
+        display: block;
+    }  
+    ul.tablist {
+        display: flex;
+        margin: 30px 0;
+    }
+    ul.tablist li p{
+        color:#01c358;
+        font: 400 16px/26px "open-sans Regular";
+    }
+}
+@media (max-width:425px) and (min-width:376px){
+    ul.tablist li {
+        margin: 16px -20px;
+    }
+    ul.tablist {
+        display: flex;
+        margin: 30px -35px;
+    }
+    ul.tablist li p{
+        display: none;
+      position: absolute;
+      top:150%;
+      width: 100vw;
+    }
+    ul.tablist li .p-text-1{
+        margin: 0 70px;
+        /* display: block; */
+    }
+    ul.tablist li .p-text-2{
+        margin: 0 70px;
+    }
+    ul.tablist li .p-text-3{
+        margin: 0 -50px;
+    }
+    ul.tablist li .p-text-4{
+        margin: 0 -190px;
+    }
+    ul.tablist li:focus p{
+        display: block;
+    }  
+}
+@media (max-width:375px){
+    ul.tablist li {
+        margin: 16px -30px;
+    }
+    ul.tablist {
+        display: flex;
+        margin: 30px -45px;
+    }
+    ul.tablist li p{
+        display: none;
+      position: absolute;
+      top:150%;
+      width: 100vw;
+    }
+    ul.tablist li .p-text-1{
+        margin: 0 70px;
+        /* display: block; */
+    }
+    ul.tablist li .p-text-2{
+        margin: 0 70px;
+    }
+    ul.tablist li .p-text-3{
+        margin: 0 -50px;
+    }
+    ul.tablist li .p-text-4{
+        margin: 0 -190px;
+    }
+    ul.tablist li:focus p{
+        display: block;
+    }  
 }

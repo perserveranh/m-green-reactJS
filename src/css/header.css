@@ -246,3 +246,13 @@ box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
       box-shadow: 0 10px 0 0 #FFF, 0 -10px 0 0 #FFF;
     }
 }
+@media (max-width:1024px){
+    nav .mgreen-menu ul {
+        padding-left: 0px;
+    }
+    nav .mgreen-menu ul li {
+
+        margin: 0 -8px;
+
+    }
+}

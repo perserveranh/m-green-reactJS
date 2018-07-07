@@ -14,6 +14,7 @@
      font-size: 20px;
      color: #444444;
  }
+
  @media (max-width: 768px) and (min-width:426px){
      .img-introduce{
          width:500px;
@@ -22,9 +23,15 @@
  }
  @media (max-width: 425px){
     .img-introduce{
-        width:400px;
+       align-items: center;
+        width:300px;
     }
     .img-introduce2{
         height: 230px !important;
+    }
+}
+@media (max-width:1024px) and (min-width:769px){
+    .img-introduce{
+        width: 500px;
     }
 }
