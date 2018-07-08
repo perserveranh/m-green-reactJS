@@ -4,7 +4,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import './../../css/componenttab.css';
 import {Row,Col} from 'reactstrap';
-
+import {connect}  from 'react-redux';
+import strings from './../LocalizedStrings';
 class ComponentTab extends React.Component {
     render() {
       return (
@@ -45,19 +46,19 @@ class ComponentTab extends React.Component {
           <TabList className="tablist">
           <Tab>
           <span>1</span>
-          <p className="p-text-1">DownLoad App mGreen từ AppStore/CH Play</p>
+          <p className="p-text-1">{strings.componenttab_1}</p>
           </Tab>
           <Tab>
           <span>2</span>
-          <p className="p-text-2">Gọi thu gom</p>
+          <p className="p-text-2">{strings.componenttab_2}</p>
           </Tab>
           <Tab>
           <span>3</span>
-          <p className="p-text-3">Xác nhận thu gom</p>
+          <p className="p-text-3">{strings.componenttab_3}</p>
           </Tab>
           <Tab>
           <span>4</span>
-          <p className="p-text-4">Tích điểm, đổi quà, nhận ưu đãi</p>
+          <p className="p-text-4">{strings.componenttab_4}</p>
           </Tab>
           </TabList>
           </Col>
@@ -66,5 +67,9 @@ class ComponentTab extends React.Component {
       );
     }
   }
-
-  export default ComponentTab;
+const mapStateToProps = state => {
+  return {
+    LangState: state.LangReducers
+  }
+}
+  export default connect(mapStateToProps)(ComponentTab);

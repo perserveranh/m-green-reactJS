@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Container , Row, Col} from 'reactstrap';
 import './../../css/introduce.css';
+import { connect } from 'react-redux';
+import strings from './../LocalizedStrings';
 class Introduce extends Component {
   render() {
     return (
@@ -8,7 +10,7 @@ class Introduce extends Component {
       <Container>
       <div className="vc_empty_space  hidden-xs" style={{height: '70px'}}><span className="vc_empty_space_inner"></span></div>
       <div className="text-center">
-      <h2 className="text-theme-green">giới thiệu</h2>
+      <h2 className="text-theme-green">{strings.introduce}</h2>
       </div>
       <Row>
           <Col xs="12" md="12" sm="12" lg="6">
@@ -29,11 +31,11 @@ class Introduce extends Component {
           </Row>
           <div className="vc_empty_space  hidden-xs" style={{height: '20px'}}><span className="vc_empty_space_inner"></span></div>
           <div className="div-text">
-          <p className="p-text">MGreen là dự án xã hội, phi lợi nhuận, nhằm xây dựng thói quen văn minh trong phân loại rác tại gia đình và bảo vệ môi trường</p>
-          <p className="p-text">Dự án được sự chỉ đạo của UBND TP Hà Nội và là một trong ba dự án khởi nghiệp xuất sắc được Sở Thông tin truyền thông Hà Nội trao bằng khen</p>
-          <p className="p-text">Cư dân tại các tòa nhà triển khai dự án được cung cấp MIỄN PHÍ 1 sọt đựng rác tái chế và  1 Thẻ tích điểm cùng ứng dụng gọi người thu gom. Các hộ gia đình thực hiện việc phân loại rác, sử dụng ứng dụng để gọi người thu gom và được tích điểm thưởng. Điểm thưởng có thể đổi được nhiều phần quà có giá trị..</p>
+          <p className="p-text">{strings.introduce_1}</p>
+          <p className="p-text">{strings.introduce_2}</p>
+          <p className="p-text">{strings.introduce_3}</p>
           </div>
-          <p className="p-content">HÃY CHUNG TAY VÌ THÀNH PHỐ HÀ NỘI THÔNG MINH XANH, SẠCH, ĐẸP</p>
+          <p className="p-content">{strings.introduce_4}</p>
           </Col>
       </Row>
       </Container>
@@ -45,5 +47,9 @@ class Introduce extends Component {
     );
   }
 }
-
-export default Introduce;
+const mapStateToProps = state => {
+  return {
+    LangState: state.LangReducers
+  }
+}
+export default connect(mapStateToProps)(Introduce);

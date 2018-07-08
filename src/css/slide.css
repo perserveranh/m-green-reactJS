@@ -5,6 +5,10 @@
     z-index: -3;
  /* position: relative; */
 }
+.slick-slider{
+    position: inherit;
+    display: block;
+}
 .text-title-1 {
     font: 600 34px/51px "Open Sans";
    color: #ffffff;

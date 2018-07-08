@@ -5,6 +5,7 @@ class Slide extends Component {
   render() {
     const settings = {
         className: "carousel",
+      rel:"parnert",
       speed: 300,
       slidesToShow: 10,
       autoplay: true,

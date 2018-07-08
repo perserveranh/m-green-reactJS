@@ -1,9 +1,10 @@
 import React from 'react';
 import Home from './containers/home';
 import Project from './containers/project';
-import Partner from './containers/partner';
+import Donors from './containers/donors';
 import New from './containers/new';
 import NotFound from './components/NotFound/index';
+import Mgreen from './containers/mgreen';
 
 const routes =[
     {
@@ -12,19 +13,24 @@ const routes =[
         main : () => <Home />
     },
     {
-        path: '/project',
+        path: '/category/du-an/',
         exact : false,
         main :  () => <Project   />
     },
     {
-        path: '/partner',
+        path: '/category/nha-tai-tro/',
         exact: false,
-        main: () => <Partner />
+        main: () => <Donors />
     },
     {
-        path: '/new',
+        path: '/category/tin-tuc',
         exact: false,
         main : () => <New />
+    },
+    {
+        path:'/mgreen',
+        exact:false,
+        main: () => <Mgreen />
     },
     {
         path: '',

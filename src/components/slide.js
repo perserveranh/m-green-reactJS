@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import './../css/slide.css';
 import {Button} from 'reactstrap';
+import strings from './LocalizedStrings';
+import { connect } from 'react-redux';
 
 class Slide extends Component {
   render() {
@@ -19,30 +21,30 @@ class Slide extends Component {
       <Slider {...settings}>
         <div>
         <div className="text-title-1 text-center">
-        <p>tòa nhà thông minh</p>
+        <p>{strings.slide_1}</p>
        
-        <p>cư dân thông thái</p>
+        <p>{strings.slide_2}</p>
         </div>
         <div className="text-content text-center">
-        <p>phân loại rác tái chế và tích điểm</p>
+        <p>{strings.slide_3}</p>
     
-        <p>để nhận hàng ngàn ưu đãi và quà tặng</p>
-        <Button color="success" className="btn-mgreen">đăng kí miễn phí thẻ mgreen</Button>{' '}
-        <p>nhận ngay thẻ ưu đãi mgreen trị giá hàng triệu đồng</p>
+        <p>{strings.slide_4}</p>
+        <Button color="success" className="btn-mgreen">{strings.slide_5}</Button>{' '}
+        <p>{strings.slide_6}</p>
         </div>
         <img src="http://mgreen.vn/wp-content/uploads/2017/11/Background-image.png" alt="slide1" style={{filter:'brightness(1.5)', cursor: 'pointer', height: '439px', width: '100vw'}}/>
         </div>
         <div>
         <div className="text-title-2">
-        <p className="p-title-slide">thu gom rác như uber</p>
-        <p className="p-content-slide">Phân loại,thu gom rác tái chế và quà tặng đổi điểm cho cư dân qua app Mpoint</p>
+        <p className="p-title-slide">{strings.slide_7}</p>
+        <p className="p-content-slide">{strings.slide_8}</p>
         </div>
         <img src="http://mgreen.vn/wp-content/uploads/2017/11/background_slide1.png" alt="slide2" style={{filter:'brightness(1.5)', cursor: 'pointer', height: '439px', width: '100vw'}}/>
         </div>
         <div>
         <div className="text-title-2">
-        <p className="p-title-slide">công nghệ smart city</p>
-        <p className="p-content-slide">Dự án ứng dụng công nghệ Smart city phục vụ việc phân loại các loại rác.</p>
+        <p className="p-title-slide">{strings.slide_9}</p>
+        <p className="p-content-slide">{strings.slide_10}</p>
         </div>
         <img src="http://mgreen.vn/wp-content/uploads/2017/11/background_slide2.png" alt="slide3"  style={{filter:'brightness(1.5)', cursor: 'pointer', height: '439px', width: '100vw'}}/>
         </div> 
@@ -53,5 +55,9 @@ class Slide extends Component {
     );
   }
 }
-
-export default Slide;
+const mapStateToProps = state => {
+  return {
+    LangState: state.LangReducers
+  }
+}
+export default connect(mapStateToProps)(Slide);
