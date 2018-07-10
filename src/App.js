@@ -5,9 +5,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { BackTop } from 'antd';
 import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
+import strings from './components/LocalizedStrings';
+import UI from './components/UI';
 
 class App extends Component {
-
+constructor(props){
+  super(props);
+  this.setLang();
+}
+setLang(){
+  let Lang = localStorage.getItem('language');
+  strings.setLanguage(Lang ? Lang : 'vi');
+}
   componentDidMount(){
     window.scrollTo({
       top: 0,
@@ -34,8 +43,9 @@ class App extends Component {
     resetIdCounter();
     return (
       <div className="App">
+      <UI />
       <BackTop>
-      <div className="ant-back-top-inner"><i class="fas fa-angle-double-up"></i></div>
+      <div className="ant-back-top-inner"><i className="fas fa-angle-double-up"></i></div>
     </BackTop>
       <Router>
       <Fragment>

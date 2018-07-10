@@ -8,7 +8,7 @@ class Introduce extends Component {
     return (
       <div className="introduce">
       <Container>
-      <div className="vc_empty_space  hidden-xs" style={{height: '70px'}}><span className="vc_empty_space_inner"></span></div>
+      <div className="vc_empty_space  hidden-xs" style={{height: '40px'}}><span className="vc_empty_space_inner"></span></div>
       <div className="text-center">
       <h2 className="text-theme-green">{strings.introduce}</h2>
       </div>
@@ -40,9 +40,12 @@ class Introduce extends Component {
       </Row>
       </Container>
       <div className="vc_empty_space  hidden-xs" style={{height: '30px'}}><span className="vc_empty_space_inner"></span></div>
-      <div>
-          <img className="img-introduce2" src="http://mgreen.vn/wp-content/uploads/2017/12/243381545551858B1B617K.jpg" alt="mgreen-content" style={{filter:'brightness(1.5)', cursor: 'pointer', height: '445px', width: '100vw'}}/>
-          </div>
+      <div className="img-introduce2">
+            <div className="img-text-content">
+             <p>{strings.introduce_5}</p>
+            </div >
+           <img  src="/cauthehuc.jpg" alt="mgreen-content" />
+      </div>
       </div>
     );
   }

@@ -1,20 +1,57 @@
 import React, { Component } from 'react';
-import {Container,Modal,ModalHeader,ModalBody} from 'reactstrap';
+import {
+  Container,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  FormGroup,
+  Label,
+  Form,
+  Input} from 'reactstrap';
 import './../css/header.css';
 import {Link} from 'react-router-dom';
 import strings from './LocalizedStrings';
 import {connect} from 'react-redux';
-
+import GoogleLogin from "react-google-login";
+import FacebookLogin from "react-facebook-login";
+import dataService from '../server/dataService';
 
 class Header extends Component {
  constructor(props){
    super(props);
    this.state={
-     isOpen:true,
+     isOpen:false,
      modal:false,
-     language : 'vi'
+     modalSignup: false,
+      modalLogin: false,
    }
  }
+ handleCancel() {
+    this.setState({
+      modalSignup: false,
+      modalLogin:false
+    });
+  }
+ toggleSignup() {
+    this.setState({
+      modalLogin: false,
+      modalSignup: true
+    });
+  }
+  toggleLogin() {
+    this.setState({
+      modalSignup: false,
+      modalLogin: true
+    });
+  }
+  handleLogin() {
+    this.setState({
+      modalSignup: false,
+      modalLogin: false
+    });
+    this.props.dispatch({ type: "SHOW_MESSAGE", message: "Thành Công !" });
+  }
  handleClick(){
    this.setState({
      isOpen: !this.state.isOpen
@@ -39,7 +76,18 @@ this.props.dispatch({type:"SET_LANGUAGE" , language: 'vi'});
   handleChangeEn = () => {
     this.props.dispatch({type:'SET_LANGUAGE',language: 'en'});
   }
+async handleGoogle (res)  {
+    let data = dataService.login('gg',res.accessToken);
+    // console.log(res) ;
+    
+  }
   render() {
+    const responseGoogle = response => {
+      console.log(response);
+    };
+    const responseFacebook = response => {
+      console.log(response);
+    };
     const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle.bind(this)}>&times;</button>;
     return (
       <div className="header" id="header">
@@ -55,6 +103,203 @@ this.props.dispatch({type:"SET_LANGUAGE" , language: 'vi'});
           </ModalBody>
  
         </Modal>
+        <div className="modal-signup">
+            <Modal
+              isOpen={this.state.modalSignup}
+              toggle={this.toggleSignup.bind(this)}
+              className={this.props.className}
+
+            >
+              <ModalHeader>
+                <span className="text-center">SIGN UP</span>
+              </ModalHeader>
+              <ModalBody>
+                <a
+                  className="btn-facebook"
+                  
+                >
+                  <span className="icon-container">
+                    <i className="fab fa-facebook-f" />
+                  </span>
+
+                  <FacebookLogin
+                    className="text-container-facebook"
+                    appId="702693780061912"
+                    autoLoad={true}
+                    textButton="Sign up with Facebook"
+                    fields="name,email,picture"
+                    onClick={this.componentClicked}
+                    callback={responseFacebook}
+                  />
+                </a>
+                <a className="btn-google">
+                  <span className="icon-container-google">
+                    <i className="fab fa-google-plus-g" />
+                  </span>
+
+                  <GoogleLogin
+                    className="text-container-google"
+                    clientId="544010331601-69oe16u855fqosv9tpbmbcn3285rnrk2.apps.googleusercontent.com"
+                    buttonText="Sign up with Google"
+                    onSuccess={responseGoogle}
+                    onFailure={responseGoogle}
+                  />
+                </a>
+                <div className="signup-or-separator">
+                  <span className="h6 signup-or-separator--text">or</span>
+                  <hr />
+                </div>
+                <div className="text-center" style={{ color: "#fff" }}>
+                  <a className="btn-email">
+                    <i className="fas fa-envelope" />
+                    Sign up with Email
+                  </a>
+                </div>
+                <div id="tos_outside" className="row-space-top-3">
+                  <small>
+                    By signing up, I agree to Luxstay's{" "}
+                    <a data-popup="true" target="_blank">
+                      Terms of service
+                    </a>,{" "}
+                    <a data-popup="true" target="_blank">
+                      Privacy policy
+                    </a>,{" "}
+                    <a data-popup="true" target="_blank">
+                      Cancellation policy
+                    </a>, and
+                    <a data-popup="true" target="_blank">
+                      Copyright policy
+                    </a>.
+                  </small>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <div className="signup-footer">
+                  <span>Already an homestay member?</span>
+                  <a
+                    className="modal-link link-to-login-in-signup"
+                    data-modal-href="/login_modal"
+                    data-modal-type="login"
+                    onClick={this.toggleLogin.bind(this)}
+                  >
+                    Log In
+                  </a>
+                  <a
+                    className="modal-link link-to-login-in-signup"
+                    onClick={this.handleCancel.bind(this)}
+                  >
+                    Cancel
+                  </a>
+                </div>
+              </ModalFooter>
+            </Modal>
+          </div>
+          <div className="modal-login">
+            <Modal
+              isOpen={this.state.modalLogin}
+              toggle={this.toggleLogin.bind(this)}
+              className={this.props.className}
+              external={externalCloseBtn}   
+            >
+              <ModalHeader>
+                <span className="text-center">LOGIN</span>
+              </ModalHeader>
+              <ModalBody>
+                <a className="btn-facebook">
+                  <span className="icon-container">
+                    <i className="fab fa-facebook-f" />
+                  </span>
+                  <FacebookLogin
+                    className="text-container-facebook"
+                    appId="702693780061912"
+                    autoLoad={true}
+                    textButton="Login with Facebook"
+                    fields="name,email,picture"
+                    callback={responseFacebook}
+                  />
+                </a>
+                <a className="btn-google">
+                  <span className="icon-container-google">
+                    <i className="fab fa-google-plus-g" />
+                  </span>
+                  <GoogleLogin
+                    className="text-container-google"
+                    clientId="544010331601-69oe16u855fqosv9tpbmbcn3285rnrk2.apps.googleusercontent.com"
+                    buttonText="Login with Google"
+                    onSuccess={this.handleGoogle}
+                    onFailure={responseGoogle}
+                  />
+                </a>
+                <div className="signup-or-separator">
+                  <span className="h6 signup-or-separator--text">or</span>
+                  <hr />
+                </div>
+                <Form>
+                  <FormGroup>
+                    <Label for="exampleEmail" hidden>
+                      Email
+                    </Label>
+                    <Input
+                      type="email"
+                      name="email"
+                      id="exampleEmail"
+                      placeholder="Email"
+                    />
+                  </FormGroup>{" "}
+                  <FormGroup>
+                    <Label for="examplePassword" hidden>
+                      Password
+                    </Label>
+                    <Input
+                      type="password"
+                      name="password"
+                      id="examplePassword"
+                      placeholder="Password"
+                    />
+                  </FormGroup>{" "}
+                </Form>
+
+                <div className="text-center" style={{ color: "#fff" }}>
+                  <a
+                    className="btn-email"
+                    onClick={this.handleLogin.bind(this)}
+                  >
+                    LOGIN{" "}
+                  </a>
+                </div>
+                <div id="tos_outside" className="row-space-top-3">
+                  <small>
+                    By signing up, I agree to Luxstay's{" "}
+                    <a data-popup="true" target="_blank">
+                      Terms of service
+                    </a>,{" "}
+                    <a data-popup="true" target="_blank">
+                      Privacy policy
+                    </a>,{" "}
+                    <a data-popup="true" target="_blank">
+                      Cancellation policy
+                    </a>, and
+                    <a data-popup="true" target="_blank">
+                      Copyright policy
+                    </a>.
+                  </small>
+                </div>
+              </ModalBody>
+              <ModalFooter>
+                <div className="signup-footer">
+                  <span>Don’t have an account?</span>
+                  <a
+                    className="modal-link link-to-login-in-signup"
+                    data-modal-href="/signup_modal"
+                    data-modal-type="signup"
+                    onClick={this.handleCancel.bind(this)}
+                  >
+                    Cancel
+                  </a>
+                </div>
+              </ModalFooter>
+            </Modal>
+          </div>
       <Container>
         <div className="mgreen-banding">
         <Link to="/" className="mgreen-logo" rel="home" itemProp="url">
@@ -71,7 +316,12 @@ this.props.dispatch({type:"SET_LANGUAGE" , language: 'vi'});
           <ul>
             <li><Link to="/mgreen">{strings.nav_1}</Link></li>
             <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
-            <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>{strings.nav_3}</Link></li>
+            <li><Link to="#" >{strings.nav_3}</Link>
+            <ul className="sub-menu">
+            <li><Link to="#" onClick={this.toggleLogin.bind(this)} >{strings.nav_10}</Link></li>
+            <li><Link to="#"  onClick={this.toggleSignup.bind(this)}>{strings.nav_11}</Link></li>
+            </ul>
+            </li>
             <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
             <ul className="sub-menu">
               <li><a href="">a</a></li>
@@ -135,7 +385,8 @@ this.props.dispatch({type:"SET_LANGUAGE" , language: 'vi'});
 
 const mapStateToProps =(state) => {
   return {
-    LangState: state.LangReducers
+    LangState: state.LangReducers,
+    uiReducers : state.uiReducers,
   }
 }
 

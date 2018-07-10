@@ -19,7 +19,11 @@ body{
     right: -70px;
     bottom: 16px;
   }
- 
+ .ui{
+  width: 100%;
+  background: red;
+  position: absolute;
+ }
   @media (max-width:425px){
     .ant-back-top-inner{
       right: 0px;

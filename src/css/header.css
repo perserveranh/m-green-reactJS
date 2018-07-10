@@ -9,15 +9,16 @@
     border-bottom-color: #024f00;
     border-top: none;
 }
+
 .mgreen-logo{
-    width:10%;
+    width:6%;
     float:left;
     padding: 10px 0;
     background:transparent;
     position: relative;
 }
 nav .mgreen-menu{
-    width: 90%;
+    width: 94%;
     position: relative;
     background: #fff;
     float: right;
@@ -27,7 +28,7 @@ nav .mgreen-menu{
 }
 nav .mgreen-menu ul{
     list-style: none;
-    text-align: end;
+    text-align:end;
     
 }
 nav .mgreen-menu ul li{
@@ -35,7 +36,7 @@ nav .mgreen-menu ul li{
 }
 nav .mgreen-menu ul li a{
     display: block;
-    padding: 0 10px;
+    padding: 0 8px;
     text-decoration: none;
     color:#444444;
     font: "open-sans Regular"  400 ;
@@ -102,7 +103,7 @@ background: #FFF;
 min-width: 200px;
 z-index: 999;
 padding: 8px;
-margin-top: 27px;
+margin-top: 16px;
 border-top: 2px solid #FFC107;
 box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
 }
@@ -198,7 +199,7 @@ box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
        margin:0 43px;
 }
 .modal-dialog {
-    padding: 357px 0;
+    padding: 120px 0;
     border-radius: 50px;
 }
 .modal-title {
@@ -209,6 +210,208 @@ box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
     font: 700 24px/32px "Poppins";
     color: #039b46;
 }
+
+.login-signUp {
+    margin-right: -28px;
+  }
+  .signUp {
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  .login {
+    cursor: pointer;
+    margin-left: -4px;
+    border-top: 1px solid #fff;
+    padding: 5px;
+  }
+  a.btn-facebook:hover,
+  a.btn-facebook:focus {
+    border-color: #4568b2;
+    border-bottom-color: #2d4575;
+    background-color: #4568b2;
+    color: #fff;
+  }
+  a.btn-facebook {
+    width: 100%;
+    display: block;
+    background: #2d4575;
+    padding: 20px 0;
+    text-transform: capitalize;
+    color: #fff;
+    position: relative;
+    border: 1px solid #4568b2;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  span.text-container-facebook {
+    padding-left: 30%;
+    color: #fff;
+  }
+  span.icon-container {
+    color: #fff;
+    padding-left: 4%;
+    position: absolute;
+    font-size: 30px;
+    top: 9px;
+  }
+  a.btn-google {
+    width: 100%;
+    display: block;
+    background: transparent;
+    padding: 20px 0;
+    margin-top: 9px;
+    text-transform: capitalize;
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #b7b7b7;
+    text-decoration: none;
+  }
+  span.icon-container-google {
+    color: #dd4b39;
+    padding-left: 4%;
+    font-size: 30px;
+    top: 9px;
+    position: absolute;
+  }
+  span.text-container-google {
+    color: #666666;
+    padding-left: 33%;
+  }
+  span.text-container-google:hover {
+    color: #000;
+  }
+  .signup-or-separator {
+    background: 0;
+    height: 23px;
+    position: relative;
+    text-align: center;
+    top: 1%;
+    padding-top: 9px;
+    margin-bottom: 36px;
+  }
+  span.signup-or-separator--text {
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px;
+    position: absolute;
+    top: 5px;
+    margin-left: -20px;
+  }
+  .text-center.cz-color-2696481 {
+    position: relative;
+    margin-top: 21px;
+    width: 100%;
+    background-color: #f4511e;
+    border-color: #f4511e;
+    padding: 19px;
+    border-radius: 3px;
+  }
+  a.btn-email {
+    position: relative;
+  
+    padding-top: 50p;
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+    background-color: #f4511e;
+    padding: 15px;
+    border-color: #f4511e;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  a.btn-email:hover {
+    background: #000;
+  }
+  i.fas.fa-envelope {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    left: 22px;
+  }
+  .signup-footer {
+    display: table;
+    content: "";
+    width: 100%;
+  }
+  .signup-footer span {
+    float: left;
+    padding: 8px 0px;
+    color: #777;
+  }
+  a.modal-link.link-to-login-in-signup {
+    float: right;
+    padding: 8px 10px;
+    border: 1px solid #f2594b;
+    border-radius: 3px;
+    color: #f2594b;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a.modal-link.link-to-login-in-signup:hover {
+    background-color: #aaa;
+    border-color: #181d23;
+    color: #fff;
+  }
+  span.text-center {
+    width: 100%;
+    display: block;
+  
+    text-transform: uppercase;
+  
+    font: 700 24px/22px "Poppins";
+  }
+
+  span.signUp-mb {
+    padding: 10px;
+    margin-right: -1px;
+    color: #040;
+    text-transform: uppercase;
+    font: 700 18px/22px "Poppins";
+    margin-left: 57px;
+  }
+  span.login-mb {
+    padding: 10px;
+    color: #040;
+    text-transform: uppercase;
+    font: 700 18px/22px "Poppins";
+  }
+  .signUp-mb {
+    border-bottom: 1px solid #000;
+  }
+  .signUp-mb:hover {
+    color: #7f4b4b;
+  }
+  .login-mb:hover {
+    color: #7f4b4b;
+  }
+  .login-mb {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+  .login-signUp-mobile {
+    display: none;
+  }
+  button.kep-login-facebook.metro {
+    padding: 0;
+    background: transparent;
+    border: none;
+    text-transform: capitalize;
+    padding-left: 31%;
+  }
+  button.text-container-google {
+    background: transparent;
+    border: none;
+    padding-left: 33%;
+    color: #777;
+    cursor: pointer;
+  }
+  button.text-container-google:hover {
+    color: #000;
+  }
+
 @media (max-width:768px)
 {
     .menu-mobile{
@@ -223,27 +426,24 @@ box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
     .toggle-bar{
         display: block;
         position: absolute;
-        top: 22px;
-        right: 20px;
-        height: 50px;
-        width: 50px;
+        top: 4px;
+        right: 3px;
+        height: 30px;
+        width: 26px;
         background: #FFC107;
         cursor: pointer;
         background: #024f00;
-        border-radius:15px;
     }
     .toggle-bar span{
   
       position: absolute;
-      top: 47%;
-      margin-top: -2px;
-
-      height: 6px;
-      left: 12px;
-      right: 5px;
       background: #FFF;
-      -webkit-box-shadow: 0 10px 0 0 #FFF, 0 -10px 0 0 #FFF;
-      box-shadow: 0 10px 0 0 #FFF, 0 -10px 0 0 #FFF;
+      margin-top: -2px;
+      top: 40%;
+      height: 6px;
+      left: 3px;
+      right: 3px;
+      box-shadow: 0 8px 0 0 #FFF, 0 -8px 0 0 #FFF;
     }
 }
 @media (max-width:1024px){

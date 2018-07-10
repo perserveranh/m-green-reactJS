@@ -33,7 +33,16 @@ class Classify extends Component {
       <div className="vc_empty_space  hidden-xs" style={{height: '60px'}}><span className="vc_empty_space_inner"></span></div>
       </Container>
       <div>
-      <img className="img-classify" src="http://mgreen.vn/wp-content/uploads/2017/11/leaf_backgroun.png" alt="mgreen-content" style={{ height: '756px', width: '100vw'}}/>
+      <div className="text-img-content text-center text-img-content-1">
+      <p >{strings.classify_7}</p>
+      </div>
+<div className="text-img-content text-right text-img-content-2">
+<p>{strings.classify_8}</p>
+</div>
+<div className="text-img-content text-left text-img-content-3">
+<p>{strings.classify_9}</p>
+</div>
+      <img className="img-classify" src="/photo-mgreen.jpg" alt="mgreen-content" style={{ height: '756px', width: '100vw'}}/>
       </div>
      </div>
     );

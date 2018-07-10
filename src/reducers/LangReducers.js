@@ -9,6 +9,7 @@ const LanReducers = (state = initialState,action) => {
         case 'SET_LANGUAGE' :
         localStorage.setItem('language',action.language);
         strings.setLanguage(action.language);
+        window.location.reload();
         return [...state];
       
 

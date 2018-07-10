@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import strings from './../LocalizedStrings';
 
 class IntroduceAtm extends Component {
-
+constructor(props){
+  super(props);
+  this.state={}
+}
   render() {
     return (
       <div className="introduceatm">

@@ -1,0 +1,19 @@
+.sponsor-content {
+    height: 380px;
+    width: auto;
+    display: -ms-flexbox;
+    display: flex;
+    background: darkkhaki;
+    border: 1px solid chocolate;
+    margin: 10px 69px;
+    padding: 10px 20px;
+}
+.sponsor{
+    overflow-y: scroll;
+    height:1000px;
+}
+
+.sponsor-content img {
+    width: 375px;
+    height: 220px;
+}

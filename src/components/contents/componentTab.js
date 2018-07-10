@@ -7,6 +7,10 @@ import {Row,Col} from 'reactstrap';
 import {connect}  from 'react-redux';
 import strings from './../LocalizedStrings';
 class ComponentTab extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state={}
+  }
     render() {
       return (
           <Tabs className="tabs">

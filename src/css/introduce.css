@@ -3,7 +3,10 @@
     font:300 26px/31px  "open-sans Regular" ;
     color: #01c358;
 }
-
+.img-introduce2 img{
+    width:100vw;
+    height:500px;
+}
 .p-text{
   
     color :#444444;
@@ -14,24 +17,99 @@
      font-size: 20px;
      color: #444444;
  }
+.img-text-content{
+    position: absolute;
+    width: 1125px;
+    z-index: 9999;
+    left: 9%;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 140px 0;
+    height: 270px;
+    border: 6px solid #ffffff;
+    border-radius: 10px;
 
+}
+.img-text-content img{
+    filter: brightness(1.5);
+}
+.img-text-content p{
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    color:#01C2F5;
+    font:500 52px/60px 'Gaegu', cursive;
+    /* font-family: 'Gaegu', cursive; */
+    flex:auto;
+    opacity: 1;
+}
  @media (max-width: 768px) and (min-width:426px){
      .img-introduce{
          width:500px;
          margin: 0 95px;
      }
+     .img-text-content{
+        width: 636px; 
+    }
  }
- @media (max-width: 425px){
+ @media (max-width: 425px) and (min-width:321px){
     .img-introduce{
        align-items: center;
         width:300px;
     }
-    .img-introduce2{
-        height: 230px !important;
+   .img-introduce2 img {
+    height: 256px;
+}
+    .img-text-content {
+        width: 350px;
+        margin: 31px 0;
+        height: 169px; 
     }
+    .img-text-content p {
+        font: 500 24px/21px 'Gaegu', cursive;
+    }   
+}
+@media (max-width:320px){
+    .img-text-content {
+        width: 265px;
+    }
+    .img-text-content p {
+        font: 500 19px/14px 'Gaegu', cursive;
+    }
+    .img-text-content {
+        margin: 60px 0;
+        height: 117px;
+    }
+    .img-introduce{
+        width:270px;
+        /* margin: 0 95px; */
+    }
+    .img-introduce2 img {
+        -webkit-filter: brightness(1.5);
+        filter: brightness(1.5);
+        cursor: pointer;
+        height: 240px;
+        width: 100vw;
+    }
+
 }
 @media (max-width:1024px) and (min-width:769px){
     .img-introduce{
         width: 500px;
     }
+    .img-text-content{
+        width: 850px; 
+    }
+    .img-introduce2 img{
+        height:435px;
+    }
+    .img-text-content{
+
+        margin:100px 0;
+    }
+
 }
