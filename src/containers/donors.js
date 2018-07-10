@@ -31,6 +31,7 @@ constructor(props){
                         <Col
                             key={sponsor.id}
                             xs={12} md={12}>
+                            <div className="vc_empty_space  hidden-xs" style={{height: '30px'}}><span className="vc_empty_space_inner"></span></div>
                           <div className="sponsor-content">
                           <img src={sponsor.image} alt="img-Sponsor"/>
 

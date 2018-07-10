@@ -351,27 +351,27 @@ async handleGoogle (res)  {
         <div className="toggle-bar " onClick={this.handleClick.bind(this)}>
         <span></span>
         </div>
-        <div className={`ht-menu ${this.state.isOpen? 'isShow': '' }`}  >
+        <div className={`ht-menu ${!this.state.isOpen? 'isShow': '' }`}  >
         <ul>
-        <li><Link to="/mgreen">VỀ MGREEN</Link></li>
-        <li><Link to="/category/nha-tai-tro/">NHÀ TÀI TRỢ</Link></li>
+        <li><Link to="/mgreen">{strings.nav_1}</Link></li>
+        <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
         <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>ĐỐI TÁC</Link></li>
-        <li ><Link to="/category/du-an/" >DỰ ÁN &nbsp; <i className="fas fa-angle-down"></i></Link>
+        <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
      
         </li>
-        <li><Link to="/category/tin-tuc">TIN TỨC</Link></li>
-            <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>LIÊN HỆ</Link></li>
-        <li><a href="" className="download">DOWNLOAD APP</a></li>
+        <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
+            <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
+        <li><a href="" className="download">{strings.nav_7}</a></li>
         <li>
-        <a href="http://mgreen.vn/">
+        <a onClick={this.handleChangeVi.bind(this)}>
         <img title="tiếng việt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" alt="tiếng việt"/>
-        <span style={{marginLeft:'0.3em'}}>TIẾNG VIỆT</span>
+        <span style={{marginLeft:'0.3em'}}>{strings.nav_8}</span>
         </a>
         </li>
         <li>
-        <a href="http://mgreen.vn/">
+        <a onClick={this.handleChangeEn.bind(this)}>
         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHzSURBVHjaYkxOP8IAB//+Mfz7w8Dwi4HhP5CcJb/n/7evb16/APL/gRFQDiAAw3JuAgAIBEDQ/iswEERjGzBQLEru97ll0g0+3HvqMn1SpqlqGsZMsZsIe0SICA5gt5a/AGIEarCPtFh+6N/ffwxA9OvP/7//QYwff/6fZahmePeB4dNHhi+fGb59Y4zyvHHmCEAAAW3YDzQYaJJ93a+vX79aVf58//69fvEPlpIfnz59+vDhw7t37968efP3b/SXL59OnjwIEEAsDP+YgY53b2b89++/awvLn98MDi2cVxl+/vl6mituCtBghi9f/v/48e/XL86krj9XzwEEEENy8g6gu22rfn78+NGs5Ofr16+ZC58+fvyYwX8rxOxXr169fPny+fPn1//93bJlBUAAsQADZMEBxj9/GBxb2P/9+S/R8u3vzxuyaX8ZHv3j8/YGms3w8ycQARmi2eE37t4ACCDGR4/uSkrKAS35B3TT////wADOgLOBIaXIyjBlwxKAAGKRXjCB0SOEaeu+/y9fMnz4AHQxCP348R/o+l+//sMZQBNLEvif3AcIIMZbty7Ly6t9ZmXl+fXj/38GoHH/UcGfP79//BBiYHjy9+8/oUkNAAHEwt1V/vI/KBY/QSISFqM/GBg+MzB8A6PfYC5EFiDAABqgW776MP0rAAAAAElFTkSuQmCC" alt="English" title="English"/>
-        <span style={{marginLeft:'0.3em'}}>ENGLISH</span>
+        <span style={{marginLeft:'0.3em'}}>{strings.nav_9}</span>
         </a>
         </li>
       </ul>

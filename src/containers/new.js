@@ -34,6 +34,7 @@ if(news.code != 0) return console.log(news.msg);
                         <Col
                             key={news.id}
                             xs={12} md={12}>
+                            <div className="vc_empty_space  hidden-xs" style={{height: '30px'}}><span className="vc_empty_space_inner"></span></div>
                           <div className="news-content">
                           <img src={news.image} alt="img-news"/>
 

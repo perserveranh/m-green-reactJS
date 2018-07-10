@@ -7,6 +7,7 @@ import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
 import strings from './components/LocalizedStrings';
 import UI from './components/UI';
+import {connect} from 'react-redux';
 
 class App extends Component {
 constructor(props){
@@ -18,10 +19,19 @@ setLang(){
   strings.setLanguage(Lang ? Lang : 'vi');
 }
   componentDidMount(){
+    setTimeout(
+      function() {
+        this.props.dispatch({ type: "HIDE_LOADING", showLoading: false });
+      }.bind(this),
+      700
+    );
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+  }
+  componentWillMount() {
+    this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
   }
   showContentMenus = (routes) => {
     var result = null;
@@ -57,4 +67,9 @@ setLang(){
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    uiReducers: state.uiReducers 
+  }
+} 
+export default connect(mapStateToProps)(App);
