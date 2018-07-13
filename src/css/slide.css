@@ -34,7 +34,6 @@
     color: #ffffff;
     position: absolute;
     z-index:99999;
-     text-transform: uppercase;
   padding: 200px 450px;
   text-align: center;
   text-transform: capitalize;
@@ -64,21 +63,21 @@
     text-transform: none;
     padding: 10px 0;
 }
-@media (max-width:425px){
+@media (max-width:425px) {
     .slide img{
         height: 250px !important;
     }
     .text-title-1 {
-        font: 400 14px/21px "Open Sans";
-        padding: 0 150px;
+        font: 600 14px/21px "Open Sans";
+        padding: 75px 116px;
     }
     .text-content{
-        font: 400 12px/21px "Open Sans";
-        padding: 100px 80px;
-  
+        font: 400 12px/2px "Open Sans";
+        padding: 160px 4px;
+        text-align: left;
       }
       .text-content .btn-mgreen{
-        width:230px ;
+        widows: 286px; ;
         height:30px;
         font: 200 8px/16px "open-sans Regular";
         margin:0 0 20px 0;;
@@ -88,20 +87,34 @@
         text-transform: uppercase;
     }
     .text-title-2{
-        width:300px;
-        margin: 80px 80px;
-        padding: 30px 0;
+        width: 270px;
+        margin: 80px 10px;
+        padding: 22px 0;
     }
    
 }
 @media (max-width:768px) and (min-width:426px){
     .text-content{
 
-      padding: 200px 150px;
+        padding: 276px 15px;
+        text-align: left;
 
     }
     .text-title-1 {
-     padding: 0 200px;
+        padding: 100px 278px;
 
+
+    }
+}
+@media (max-width:1024px ) and ( min-width:769px) {
+    .text-content {
+        font: 500 20px/8px "Open Sans";
+    padding: 301px 290px;
+    text-align: center;
+    text-transform: capitalize;
+    }
+    .text-title-1 {
+        padding: 100px 325px;
+ 
     }
 }

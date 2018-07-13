@@ -21,3 +21,17 @@
     cursor: pointer;
     margin-right: 15px;
 }
+
+@media (max-width:425px){
+    .sponsor-content{
+        height:270px;
+        margin: 10px 20px;
+    }
+    .sponsor-text-content h1{
+        font-size: 12px;
+    }
+    .sponsor-text-content p{
+        height:100px;
+        overflow-y: scroll;
+    }
+}

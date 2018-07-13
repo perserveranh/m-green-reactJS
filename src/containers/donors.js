@@ -35,7 +35,7 @@ constructor(props){
                           <div className="sponsor-content">
                           <img src={sponsor.image} alt="img-Sponsor"/>
 
-                          <div className="Sponsor-text-content">
+                          <div className="sponsor-text-content">
                           <h1>{sponsor.title}</h1>
                           <p>{sponsor.preview}</p>
                           <span>{sponsor.createdAt}</span>

@@ -17,6 +17,7 @@ constructor(props){
 setLang(){
   let Lang = localStorage.getItem('language');
   strings.setLanguage(Lang ? Lang : 'vi');
+
 }
   componentDidMount(){
     setTimeout(

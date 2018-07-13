@@ -11,9 +11,9 @@ class Slide extends Component {
       className: "slide",
       speed: 300,
       slidesToShow: 1,
-      autoplay:true,
+      autoplay:false,
       arrows:false,
-      autoplaySpeed: 5000,
+      autoplaySpeed: 10000,
     };
     return (
       <div className="slider">
@@ -25,7 +25,7 @@ class Slide extends Component {
        
         <p>{strings.slide_2}</p>
         </div>
-        <div className="text-content text-center">
+        <div className="text-content ">
         <p>{strings.slide_3}</p>
     
         <p>{strings.slide_4}</p>

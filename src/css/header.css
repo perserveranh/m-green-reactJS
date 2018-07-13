@@ -435,15 +435,15 @@ box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
         background: #024f00;
     }
     .toggle-bar span{
-  
       position: absolute;
       background: #FFF;
       margin-top: -2px;
-      top: 40%;
+      top: 45%;
       height: 6px;
       left: 3px;
       right: 3px;
-      box-shadow: 0 8px 0 0 #FFF, 0 -8px 0 0 #FFF;
+      -webkit-box-shadow: 0 8px 0 0 #FF8, 0 -8px 0 0 #FFF;
+      box-shadow: 0 11px 0 0 #FFF, 0 -8px -1 13 #FFF;
     }
 }
 @media (max-width:1024px){
