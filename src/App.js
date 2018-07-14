@@ -1,4 +1,4 @@
-import React, { Component,Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import './App.css';
 import routes from './routes';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -7,21 +7,22 @@ import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
 import strings from './components/LocalizedStrings';
 import UI from './components/UI';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+
 
 class App extends Component {
-constructor(props){
-  super(props);
-  this.setLang();
-}
-setLang(){
-  let Lang = localStorage.getItem('language');
-  strings.setLanguage(Lang ? Lang : 'vi');
+  constructor(props) {
+    super(props);
+    this.setLang();
+  }
+  setLang() {
+    let Lang = localStorage.getItem('language');
+    strings.setLanguage(Lang ? Lang : 'vi');
 
-}
-  componentDidMount(){
+  }
+  componentDidMount() {
     setTimeout(
-      function() {
+      function () {
         this.props.dispatch({ type: "HIDE_LOADING", showLoading: false });
       }.bind(this),
       700
@@ -36,14 +37,14 @@ setLang(){
   }
   showContentMenus = (routes) => {
     var result = null;
-    if(routes.length >0) {
-      result=routes.map((route,index) => {
+    if (routes.length > 0) {
+      result = routes.map((route, index) => {
         return (
           <Route
-           key={index}
-          path={route.path}
-          exact={route.exact}
-          component ={route.main}
+            key={index}
+            path={route.path}
+            exact={route.exact}
+            component={route.main}
           />
         )
       })
@@ -54,15 +55,15 @@ setLang(){
     resetIdCounter();
     return (
       <div className="App">
-      <UI />
-      <BackTop>
-      <div className="ant-back-top-inner"><i className="fas fa-angle-double-up"></i></div>
-    </BackTop>
-      <Router>
-      <Fragment>
-      {this.showContentMenus(routes)}
-      </Fragment>
-      </Router>
+        <UI />
+        <BackTop>
+          <div className="ant-back-top-inner"><i className="fas fa-angle-double-up"></i></div>
+        </BackTop>
+        <Router>
+          <Fragment>
+            {this.showContentMenus(routes)}
+          </Fragment>
+        </Router>
       </div>
     );
   }
@@ -70,7 +71,7 @@ setLang(){
 
 const mapStateToProps = state => {
   return {
-    uiReducers: state.uiReducers 
+    uiReducers: state.uiReducers
   }
-} 
+}
 export default connect(mapStateToProps)(App);

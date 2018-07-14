@@ -9,6 +9,7 @@ import thunkMiddleware from 'redux-thunk';
 import {createStore,applyMiddleware} from 'redux';
 import Reducers from './reducers/index';
 import {Provider} from 'react-redux';
+import 'normalize.css';
 
 const store= createStore(
     Reducers,
