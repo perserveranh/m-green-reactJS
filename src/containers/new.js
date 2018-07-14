@@ -10,7 +10,7 @@ class New extends Component {
     super(props);
     this.state = {
       dataNews: [],
-      isLoading: true
+      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
     }
   }
   componentDidMount() {
@@ -18,7 +18,7 @@ class New extends Component {
   }
 
   async getNews() {
-    isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
+    // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
     const news = await dataServices.getNews('0', '10');
     if (news.code != 0) return console.log(news.msg);
     this.setState({

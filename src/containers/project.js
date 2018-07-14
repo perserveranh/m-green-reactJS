@@ -10,7 +10,7 @@ class Project extends Component {
     super(props);
     this.state = {
       dataProject: [],
-      isLoading: true
+      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
     }
   }
   componentDidMount() {
@@ -20,7 +20,7 @@ class Project extends Component {
 
     // if (this.state.isLoading) return
 
-    isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
+    // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
 
     const projects = await dataServices.getNews('0', '10');
     if (projects.code != 0) return console.log(projects.msg);
