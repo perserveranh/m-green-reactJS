@@ -56,12 +56,12 @@ class ComponentTab extends React.Component {
 
           <Col xs="12" md="12" sm="12" lg="6">
 
-            <TabList className="tablist">
-              <ScrollAnimation animateIn='bounceInRight'
-                initiallyVisible={false}
-                delay={1800}
-                animateOnce={true}
-              >
+            <ScrollAnimation animateIn='bounceInRight'
+              initiallyVisible={false}
+              delay={1800}
+              animateOnce={true}
+            >
+              <TabList className="tablist">
                 <Tab>
                   <span>1</span>
                   <p className="p-text-1">{strings.componenttab_1}</p>
@@ -78,8 +78,8 @@ class ComponentTab extends React.Component {
                   <span>4</span>
                   <p className="p-text-4">{strings.componenttab_4}</p>
                 </Tab>
-              </ScrollAnimation>
-            </TabList>
+              </TabList>
+            </ScrollAnimation>
           </Col>
         </Row>
       </Tabs>

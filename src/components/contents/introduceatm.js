@@ -17,7 +17,7 @@ class IntroduceAtm extends Component {
         <Container>
           <div className="vc_empty_space  hidden-xs" style={{ height: '70px' }}><span className="vc_empty_space_inner"></span></div>
           <div className="text-center">
-            <ScrollAnimation delay={700}
+            <ScrollAnimation delay={500}
               animateIn='tada'
               initiallyVisible={false}>
 
