@@ -19,7 +19,7 @@ class Partner extends Component {
   async getListSponsor() {
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
     const sponsor = await dataService.getNews('0', '10');
-    if (sponsor.code != 0) return console.log(sponsor.msg);
+    if (sponsor.code !== 0) return console.log(sponsor.msg);
     this.setState({
       dataSponsor: sponsor.data,
       isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })

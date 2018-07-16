@@ -20,7 +20,7 @@ class New extends Component {
   async getNews() {
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
     const news = await dataServices.getNews('0', '10');
-    if (news.code != 0) return console.log(news.msg);
+    if (news.code !== 0) return console.log(news.msg);
     this.setState({
       dataNews: news.data,
       isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })

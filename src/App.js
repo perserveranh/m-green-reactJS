@@ -32,9 +32,9 @@ class App extends Component {
       behavior: "smooth"
     });
   }
-  componentWillMount() {
-    this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
-  }
+  // componentWillMount() {
+  //   this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
+  // }
   showContentMenus = (routes) => {
     var result = null;
     if (routes.length > 0) {

@@ -1,6 +1,6 @@
 #header {
   background: #FFF;
-  height: 80px;
+  height: 90px;
   border-bottom: 1px solid #F1F1F1;
   z-index: 99;
   transition: height 0.3s ease;
@@ -8,10 +8,11 @@
   -webkit-transition: height 0.3s ease;
   border-bottom-color: #024f00;
   border-top: none;
+  padding: 0 120px;
 }
 
 .mgreen-logo {
-  width: 6%;
+  width: 10%;
   float: left;
   padding: 10px 0;
   background: transparent;
@@ -24,7 +25,7 @@ img.mgreen-logo-link:hover {
 
 nav .mgreen-menu {
   /* width: 94%; */
-  width: 92%;
+  width: 90%;
   position: relative;
   background: #fff;
   float: right;
@@ -51,7 +52,7 @@ nav .mgreen-menu ul li a {
   font: "open-sans Regular" 400;
   text-transform: uppercase;
   margin: 0 3px;
-  padding-bottom: 10px;
+  padding-bottom: 13px;
 }
 
 nav .mgreen-menu ul li a,
@@ -501,5 +502,8 @@ button.text-container-google:hover {
   }
   nav .mgreen-menu ul li {
     margin: 0 -8px;
+  }
+  #header {
+    padding: 0 30px;
   }
 }

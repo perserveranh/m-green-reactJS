@@ -1,120 +1,145 @@
-.slide{
-    border-bottom:1px solid #000;
+.slide {
+    border-bottom: 1px solid #000;
     padding: 0px;
     border-width: 0px;
     z-index: -3;
- /* position: relative; */
+    /* position: relative; */
 }
-.slide img{
+
+.slide-content {
+    padding: 0 80px;
+}
+
+.slide img {
     filter: brightness(1.5);
     cursor: pointer;
     height: 480px;
     width: 100vw;
 }
-.slick-slider{
+
+.slick-slider {
     position: inherit;
     display: block;
 }
+
 .text-title-1 {
     font: 600 34px/51px "Open Sans";
-   color: #ffffff;
-   /* color:yellow; */
-   position: absolute;
-   z-index: 9;
-   margin:10px 0;
+    color: #ffffff;
+    /* color:yellow; */
+    position: absolute;
+    z-index: 9;
+    margin: 10px 0;
     text-transform: uppercase;
- padding: 0 480px;
- overflow: visible;
+    padding: 0 480px;
+    overflow: visible;
 }
-.text-title-1 p{
-    margin:0;
+
+.text-title-1 p {
+    margin: 0;
 }
-.text-content{
+
+.text-content {
     font: 400 20px/20px "Open Sans";
     color: #ffffff;
     position: absolute;
-    z-index:99999;
-  padding: 200px 450px;
-  text-align: center;
-  text-transform: capitalize;
+    z-index: 99999;
+    padding: 200px 450px;
+    text-align: center;
+    text-transform: capitalize;
 }
-.text-content .btn-mgreen{
-    width:300px ;
-    height:50px;
+
+.text-content .btn-mgreen {
+    width: 300px;
+    height: 50px;
     text-transform: uppercase;
     font: 400 14px/21px "open-sans Regular";
-    margin:40px 0 20px 0;;
+    margin: 40px 0 20px 0;
+    ;
 }
-.text-title-2{
+
+.text-title-2 {
     position: absolute;
     z-index: 9999;
-    color:#ffffff;
+    color: #ffffff;
     text-align: left;
-    width:500px;
+    width: 500px;
     margin: 80px 160px;
     padding: 60px 0;
 }
-.text-title-2 .p-title-slide{
-    font:400 45px/68px "Open Sans";
+
+.text-title-2 .p-title-slide {
+    font: 400 45px/68px "Open Sans";
     text-transform: uppercase;
 }
-.text-title-2 .p-content-slide{
+
+.text-title-2 .p-content-slide {
     font: 400 18px/27px "Open Sans";
     text-transform: none;
     padding: 10px 0;
 }
+
 @media (max-width:425px) {
-    .slide img{
+    .slide img {
         height: 250px !important;
     }
     .text-title-1 {
         font: 600 14px/21px "Open Sans";
-        padding: 75px 116px;
+        padding: 60px 3px;
     }
-    .text-content{
+    .slide-content {
+        padding: 0 7px;
+    }
+    .text-content {
         font: 400 12px/2px "Open Sans";
-        padding: 160px 4px;
+        padding: 160px 0;
         text-align: left;
-      }
-      .text-content .btn-mgreen{
-        widows: 286px; ;
-        height:30px;
-        font: 200 8px/16px "open-sans Regular";
-        margin:0 0 20px 0;;
     }
-    .text-title-2 .p-title-slide{
-        font:400 22px/30px "Open Sans";
+    button.btn-mgreen.btn.btn-success {
+        width: 222px;
+    }
+    .text-content .btn-mgreen {
+        widows: 286px;
+        ;
+        height: 30px;
+        font: 200 8px/16px "open-sans Regular";
+        margin: 0 0 20px 0;
+        ;
+    }
+    .text-title-2 .p-title-slide {
+        font: 400 22px/30px "Open Sans";
         text-transform: uppercase;
     }
-    .text-title-2{
+    .text-title-2 {
         width: 270px;
         margin: 80px 10px;
         padding: 22px 0;
     }
-   
+    .text-title-2 .p-content-slide {
+        padding: 0 0;
+    }
 }
-@media (max-width:768px) and (min-width:426px){
-    .text-content{
 
+@media (max-width:768px) and (min-width:426px) {
+    .text-content {
         padding: 276px 15px;
         text-align: left;
-
     }
     .text-title-1 {
-        padding: 100px 278px;
-
-
+        padding: 100px 140px;
     }
 }
-@media (max-width:1024px ) and ( min-width:769px) {
+
+@media (max-width:1024px) and ( min-width:769px) {
     .text-content {
         font: 500 20px/8px "Open Sans";
-    padding: 301px 290px;
-    text-align: center;
-    text-transform: capitalize;
+        padding: 301px 290px;
+        text-align: center;
+        text-transform: capitalize;
     }
     .text-title-1 {
         padding: 100px 325px;
- 
+    }
+    .slide-content {
+        padding: 0 8px;
     }
 }

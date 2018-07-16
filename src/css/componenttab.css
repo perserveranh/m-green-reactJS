@@ -1,9 +1,11 @@
 .m-screen .img-tabpanel {
-    width: 240px;
-    height: 420px;
+    width: 269px;
+    height: 466px;
     /* filter: brightness(-0.1); */
     cursor: pointer;
     margin: 0 12px;
+    -webkit-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
     transition: opacity 1s ease-in-out;
 }
 
@@ -242,6 +244,13 @@ ul li:focus:hover p {
     top: 6.25em;
 }
 
+@media ( max-width:1024px) and (min-width:769px) {
+    .m-screen .img-tabpanel {
+        width: 242px;
+        height: 420px;
+    }
+}
+
 @media (max-width:768px) and (min-width:426px) {
     ul.tablist li p {
         display: none;
@@ -272,6 +281,10 @@ ul li:focus:hover p {
     ul.tablist li p {
         color: #01c358;
         font: 400 16px/26px "open-sans Regular";
+    }
+    .m-screen .img-tabpanel {
+        width: 240px;
+        height: 418px;
     }
 }
 
@@ -304,6 +317,10 @@ ul li:focus:hover p {
     }
     ul.tablist li:focus p {
         display: block;
+    }
+    .m-screen .img-tabpanel {
+        width: 239px;
+        height: 422px;
     }
 }
 
@@ -353,5 +370,9 @@ ul li:focus:hover p {
     li#react-tabs-0 span {
         width: 30px;
         margin: 0 30px;
+    }
+    .m-screen .img-tabpanel {
+        width: 238px;
+        height: 422px;
     }
 }

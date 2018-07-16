@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Modal, Button ,ModalHeader,ModalBody , ModalFooter} from 'reactstrap'
+import { Modal, Button, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
 import { connect } from 'react-redux';
 class MessageBox extends Component {
     render() {
-        
+
         return (
-            
+
             <div className="static-modal">
                 <Modal show={this.props.show} >
                     <ModalHeader>
@@ -15,7 +15,7 @@ class MessageBox extends Component {
                     <ModalBody>{this.props.message}</ModalBody>
 
                     <ModalFooter>
-                        <Button onClick={() => { this.props.dispatch.uiState.hideMessage }} >Close</Button>
+                        <Button onClick={() => { this.props.dispatch({type:'HIDE_MESSAGE',showMessage : false}) }} >Close</Button>
                     </ModalFooter>
                 </Modal>
             </div>

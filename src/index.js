@@ -10,6 +10,7 @@ import {createStore,applyMiddleware} from 'redux';
 import Reducers from './reducers/index';
 import {Provider} from 'react-redux';
 import 'normalize.css';
+import "animate.css/animate.min.css";
 
 const store= createStore(
     Reducers,
