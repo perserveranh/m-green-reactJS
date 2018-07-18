@@ -32,6 +32,8 @@
     /* transition: all .10s ease-in-out; */
     /* transition-delay: 250ms; */
     transition-property: all;
+    /* filter: contrast(200%); */
+    filter: grayscale(80%);
 }
 
 @media (max-width:425px) and (min-width:321px) {

@@ -19,7 +19,9 @@ class IntroduceAtm extends Component {
           <div className="text-center">
             <ScrollAnimation delay={500}
               animateIn='tada'
-              initiallyVisible={false}>
+              initiallyVisible={false}
+              animateOnce={true}
+            >
 
               <h2 className="text-theme-green">{strings.introduceatm}</h2>
             </ScrollAnimation>

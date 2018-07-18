@@ -14,6 +14,7 @@ class Introduce extends Component {
           <ScrollAnimation
             animateIn='jello'
             animateOut='bounceOut'
+            animateOnce={true}
           >
 
             <div className="text-center">
@@ -70,11 +71,9 @@ class Introduce extends Component {
         </Container>
         <div className="vc_empty_space  hidden-xs" style={{ height: '30px' }}><span className="vc_empty_space_inner"></span></div>
         <div className="img-introduce2">
-          <ScrollAnimation animateIn='flip'
+          <ScrollAnimation animateIn='jello'
             initiallyVisible={true}
-
           >
-
             <div className="img-text-content">
               <p>{strings.introduce_5}</p>
             </div >

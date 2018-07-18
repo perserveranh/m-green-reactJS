@@ -6,13 +6,6 @@ import strings from './LocalizedStrings';
 import { connect } from 'react-redux';
 
 class Slide extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
-    }
-  }
   render() {
     const settings = {
       className: "slide",
@@ -60,6 +53,7 @@ class Slide extends Component {
             <img src="http://mgreen.vn/wp-content/uploads/2017/11/background_slide2.png" alt="slide3" />
           </div>
         </Slider>
+
 
       </div>
 

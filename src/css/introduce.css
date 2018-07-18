@@ -14,6 +14,7 @@
     transition-duration: 2s;
     transition-property: all;
     transform: scale(1) rotate(360deg);
+    filter: contrast(200%);
     /* transition: all 1s ease-in-out; */
 }
 
@@ -51,8 +52,9 @@
     border-radius: 10px;
 }
 
-.img-text-content img {
-    filter: brightness(1.5);
+.img-text-content img:hover {
+    /* filter: brightness(1.5); */
+    filter: contrast(200%);
 }
 
 .img-text-content p {
@@ -66,6 +68,12 @@
     /* font-family: 'Gaegu', cursive; */
     flex: auto;
     opacity: 1;
+}
+
+.img-text-content p:hover {
+    filter: contrast(200%);
+    color: #01c358;
+    transition: all .5s ease;
 }
 
 @media (max-width: 768px) and (min-width:426px) {
