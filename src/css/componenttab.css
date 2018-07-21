@@ -1,6 +1,6 @@
 .m-screen .img-tabpanel {
-    width: 240px;
-    height: 418px;
+    width: 206px;
+    height: 362px;
     /* filter: brightness(-0.1); */
     cursor: pointer;
     margin: 0 12px;
@@ -142,7 +142,7 @@ ul li:focus:hover p {
     cursor: default;
     font-size: 100%;
     color: antiquewhite;
-    bottom: -18px;
+    bottom: -17px;
     padding: 0 2em;
 }
 

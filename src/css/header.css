@@ -41,7 +41,7 @@ nav .mgreen-menu ul {
 
 nav .mgreen-menu ul li {
   display: inline-block;
-  padding: 0 8px;
+  padding: 0 6px;
 }
 
 nav .mgreen-menu ul li a {
@@ -216,12 +216,12 @@ nav .mgreen-menu ul li:hover .sub-menu {
 .img-modal {
   cursor: pointer;
   height: '70px';
-  width: 150px;
-  margin: 0 43px;
+  width: 233px;
+  padding: 0 25px;
 }
 
 .modal-dialog {
-  padding: 120px 0;
+  padding: 60px 0;
   border-radius: 50px;
 }
 
