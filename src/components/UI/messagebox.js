@@ -9,13 +9,13 @@ class MessageBox extends Component {
             <div className="static-modal">
                 <Modal show={this.props.show} >
                     <ModalHeader>
-                        <Modal.Title>{this.props.title ? this.props.title : 'thong bao'}</Modal.Title>
+                        <Modal.Title>{this.props.title ? this.props.title : 'Thông báo'}</Modal.Title>
                     </ModalHeader>
 
                     <ModalBody>{this.props.message}</ModalBody>
 
                     <ModalFooter>
-                        <Button onClick={() => { this.props.dispatch({type:'HIDE_MESSAGE',showMessage : false}) }} >Close</Button>
+                        <Button onClick={() => { this.props.dispatch({ type: 'HIDE_MESSAGE', showMessage: false }) }} >Close</Button>
                     </ModalFooter>
                 </Modal>
             </div>

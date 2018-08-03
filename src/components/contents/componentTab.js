@@ -5,7 +5,7 @@ import "react-tabs/style/react-tabs.css";
 import './../../css/componenttab.css';
 import { Row, Col } from 'reactstrap';
 import { connect } from 'react-redux';
-import strings from './../LocalizedStrings';
+import { strings } from '../../components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class ComponentTab extends React.Component {
@@ -23,7 +23,7 @@ class ComponentTab extends React.Component {
           <Col xs="12" md="12" sm="12" lg="6" >
             <ScrollAnimation animateIn='bounceInLeft'
               initiallyVisible={false}
-              delay={1300}
+              delay={800}
               animateOnce={true}
             >
 
@@ -58,7 +58,7 @@ class ComponentTab extends React.Component {
 
             <ScrollAnimation animateIn='bounceInRight'
               initiallyVisible={false}
-              delay={1800}
+              delay={1000}
               animateOnce={true}
             >
               <TabList className="tablist">

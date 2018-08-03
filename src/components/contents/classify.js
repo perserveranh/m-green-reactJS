@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Col, Row } from 'reactstrap';
 import './../../css/classify.css';
 import { connect } from 'react-redux';
-import strings from './../LocalizedStrings';
+import { strings } from '../../components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class Classify extends Component {
@@ -39,7 +39,7 @@ class Classify extends Component {
           <div className="vc_empty_space  hidden-xs" style={{ height: '60px' }}><span className="vc_empty_space_inner"></span></div>
         </Container>
         <div>
-          <ScrollAnimation delay={700}
+          <ScrollAnimation delay={500}
             animateIn='tada'
             initiallyVisible={false}
             animateOnce={true}
@@ -50,7 +50,7 @@ class Classify extends Component {
               <p >{strings.classify_7}</p>
             </div>
           </ScrollAnimation>
-          <ScrollAnimation delay={1000}
+          <ScrollAnimation delay={800}
             animateIn='tada'
             initiallyVisible={false}
             animateOnce={true}
@@ -61,7 +61,7 @@ class Classify extends Component {
               <p>{strings.classify_8}</p>
             </div>
           </ScrollAnimation>
-          <ScrollAnimation delay={1200}
+          <ScrollAnimation delay={1000}
             animateIn='tada'
             initiallyVisible={false}
             animateOnce={true}
@@ -72,7 +72,7 @@ class Classify extends Component {
               <p>{strings.classify_9}</p>
             </div>
           </ScrollAnimation>
-          <img className="img-classify" src="/photo-mgreen.jpg" alt="mgreen-content" style={{ height: '756px', width: '100vw' }} />
+          <img className="img-classify" src="/photo-mgreen.jpg" alt="mgreen-content" style={{ height: '620px', width: '100vw' }} />
         </div>
       </div>
     );

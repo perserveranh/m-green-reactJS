@@ -3,7 +3,7 @@ import { Container } from 'reactstrap';
 import ComponentTab from './componentTab';
 import './../../css/introduceatm.css';
 import { connect } from 'react-redux';
-import strings from './../LocalizedStrings';
+import { strings } from '../../components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class IntroduceAtm extends Component {
@@ -17,7 +17,7 @@ class IntroduceAtm extends Component {
         <Container>
           <div className="vc_empty_space  hidden-xs" style={{ height: '70px' }}><span className="vc_empty_space_inner"></span></div>
           <div className="text-center">
-            <ScrollAnimation delay={500}
+            <ScrollAnimation delay={300}
               animateIn='tada'
               initiallyVisible={false}
               animateOnce={true}

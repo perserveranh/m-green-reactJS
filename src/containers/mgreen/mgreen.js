@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Header from './../components/header';
-import Footer from './../components/footer';
 import { Container } from 'reactstrap';
-import './../css/mgreen.css';
+import '../../css/mgreen.css';
 import { connect } from 'react-redux';
-import strings from './../components/LocalizedStrings';
+import { strings, Header, Footer } from '../../components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class Mgreen extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
-import './../css/carousel.css';
-class Slide extends Component {
+import '../../css/carousel.css';
+class Carousel extends Component {
   render() {
     const settings = {
         className: "carousel",
@@ -101,4 +101,4 @@ class Slide extends Component {
   }
 }
 
-export default Slide;
+export default Carousel;

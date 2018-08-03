@@ -1,40 +1,51 @@
 import React from 'react';
-import Home from './containers/home';
-import Project from './containers/project';
-import Donors from './containers/donors';
-import New from './containers/new';
 import NotFound from './components/NotFound/index';
-import Mgreen from './containers/mgreen';
+import { Mgreen, Project, Partner, New, Home, Volunteer,CollectorMgreen,Sponsor } from './containers';
 
-const routes =[
+const routes = [
     {
         path: '/',
-        exact:true,
-        main : () => <Home />
+        exact: true,
+        main: () => <Home />
     },
     {
         path: '/category/du-an/',
-        exact : false,
-        main :  () => <Project   />
+        exact: false,
+        main: () => <Project />
     },
     {
         path: '/category/nha-tai-tro/',
         exact: false,
-        main: () => <Donors />
+        main: () => <Partner />
     },
     {
         path: '/category/tin-tuc',
         exact: false,
-        main : () => <New />
+        main: () => <New />
     },
     {
-        path:'/mgreen',
-        exact:false,
+        path: '/mgreen',
+        exact: false,
         main: () => <Mgreen />
     },
     {
+        path: '/volunteer',
+        exact: false,
+        main: () => <Volunteer />
+    },
+    {
+        path: '/collectormgreen',
+        exact: false,
+        main: () => <CollectorMgreen />       
+    },
+    {
+        path: '/sponsor',
+        exact: false,
+        main: () => <Sponsor />    
+    },
+    {
         path: '',
-        exact:false,
+        exact: false,
         main: () => <NotFound />
     }
 ];

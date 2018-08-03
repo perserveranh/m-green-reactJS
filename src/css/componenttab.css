@@ -246,8 +246,8 @@ ul li:focus:hover p {
 
 @media ( max-width:1024px) and (min-width:769px) {
     .m-screen .img-tabpanel {
-        width: 242px;
-        height: 420px;
+        width: 202px;
+        height: 362px;
     }
 }
 
@@ -283,8 +283,8 @@ ul li:focus:hover p {
         font: 400 16px/26px "open-sans Regular";
     }
     .m-screen .img-tabpanel {
-        width: 240px;
-        height: 418px;
+        width: 204px;
+        height: 363px;
     }
 }
 
@@ -319,8 +319,8 @@ ul li:focus:hover p {
         display: block;
     }
     .m-screen .img-tabpanel {
-        width: 239px;
-        height: 422px;
+        width: 204px;
+        height: 363px;
     }
 }
 
@@ -372,7 +372,7 @@ ul li:focus:hover p {
         margin: 0 30px;
     }
     .m-screen .img-tabpanel {
-        width: 238px;
-        height: 422px;
+        width: 204px;
+        height: 363px;
     }
 }

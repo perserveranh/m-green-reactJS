@@ -1,15 +1,17 @@
-.footer{
+.footer {
     background: #f8f8f8;
 }
-.facebook-message{
-    height:46px;
-    padding:4px;
-    width:auto;
-    color:#fff;
-    font: 400 22px/38px 'arial, helvetica, sans-serif' ;
+
+.facebook-message {
+    height: 46px;
+    padding: 4px;
+    width: auto;
+    color: #fff;
+    font: 400 22px/38px 'arial, helvetica, sans-serif';
     /* z-index: 999999999 !important; */
 }
-.button-message{
+
+.button-message {
     display: -ms-flexbox;
     display: flex;
     border-radius: 45px;
@@ -24,56 +26,156 @@
     left: auto;
     z-index: 99999999 !important;
 }
-.button-message a{
+
+.button-message a {
     text-decoration: none;
     list-style: none;
     color: #fff;
-    
 }
-.button-message a:hover{
+
+.button-message a:hover {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
-.button-message:hover{
-    filter:brightness(1.5);
+
+.button-message:hover {
+    filter: brightness(1.5);
     transition: all .5s;
 }
 
-.button-message .chat-mgreen{
-    margin:0 5px;
+.button-message .chat-mgreen {
+    margin: 0 5px;
 }
-.text-theme-green{
+
+.text-theme-green {
     color: #28a745;
-    font : "open-sans Regular"  300 ;
+    font: "open-sans Regular" 300;
 }
-.text-theme-green p{
-    font : "open-sans Regular"  400 17px/21px;
+
+.text-theme-green p {
+    font: "open-sans Regular" 400 17px/21px;
 }
-.icon-message{
-    display:none;
+
+.icon-message {
+    display: none;
     position: fixed;
-    bottom:20px;
-    right:20px;
+    bottom: 20px;
+    right: 20px;
     text-align: center;
     font-size: 25px;
-    height:50px;
+    height: 50px;
     width: 50px;
     margin-top: 10px;
-    padding:10px 0;
+    padding: 10px 0;
     text-indent: unset;
     background-color: #28a745;
     border-radius: 50%;
-
 }
-.icon-message:hover{
-    filter:brightness(1.5);
+
+.icon-message:hover {
+    filter: brightness(1.5);
     transition: all .5s;
 }
-@media (max-width:425px){
-    .icon-message{
+
+footer {
+    margin: 0px !important;
+    padding: 20px 0;
+    background-color: #363A45;
+}
+
+.policylist {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.policylist li:first-child {
+    padding-left: 0px;
+}
+
+.policylist li {
+    float: left;
+    padding: 0px 15px;
+    position: relative;
+}
+
+.playstore li {
+    float: left;
+    width: 33%;
+    padding-right: 1%;
+}
+
+.playstore {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+footer::after {
+    clear: both;
+}
+
+.policylist li:first-child:after {
+    content: "\2022";
+    font-size: 1.2em;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.policylist li a {
+    font-family: 'Sanomat Grab Web Regular', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 1.143em;
+    color: #fff;
+    line-height: 1.5;
+    outline: none;
+}
+
+img.img-responsive {
+    /* width: 300px; */
+    height: 40px;
+    /* margin: 0 100px; */
+    /* padding: 0 95px */
+}
+
+@media (min-width: 414px) {
+    footer .hidden-xs .playstore {
+        text-align: right;
+    }
+    footer .hidden-xs .playstore li {
+        display: inline-block;
+        float: none;
+    }
+    ul.policylist li,
+    p.copyright {
+        margin: 8px 0;
+    }
+    .playstore li {
+        padding-right: 10px;
+    }
+}
+
+.copyright {
+    font-family: 'Sanomat Grab Web Regular', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 1.143em;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    outline: none;
+    text-align: center;
+}
+
+@media (max-width:425px) {
+    .icon-message {
         display: block;
     }
-    .button-message{
+    .button-message {
         display: none;
     }
 }

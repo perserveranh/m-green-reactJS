@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import './../../css/introduce.css';
 import { connect } from 'react-redux';
-import strings from './../LocalizedStrings';
+import { strings } from '../../components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 class Introduce extends Component {
@@ -72,7 +72,9 @@ class Introduce extends Component {
         <div className="vc_empty_space  hidden-xs" style={{ height: '30px' }}><span className="vc_empty_space_inner"></span></div>
         <div className="img-introduce2">
           <ScrollAnimation animateIn='jello'
-            initiallyVisible={true}
+            initiallyVisible={false}
+            animateOnce={true}
+            offset={400}
           >
             <div className="img-text-content">
               <p>{strings.introduce_5}</p>

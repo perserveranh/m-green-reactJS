@@ -3,15 +3,15 @@
     padding: 0px;
     border-width: 0px;
     z-index: -3;
-    /* position: relative; */
 }
 
 .slide-content {
     padding: 0 80px;
+    position: relative;
 }
 
 .slide img {
-    filter: brightness(1.5);
+    /* filter: brightness(1.5); */
     cursor: pointer;
     height: 480px;
     width: 100vw;
@@ -25,27 +25,30 @@
 .text-title-1 {
     font: 600 34px/51px "Open Sans";
     color: #ffffff;
-    /* color:yellow; */
     position: absolute;
     z-index: 9;
-    margin: 10px 0;
     text-transform: uppercase;
-    padding: 0 480px;
-    overflow: visible;
-}
-
-.text-title-1 p {
-    margin: 0;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 20px 0;
 }
 
 .text-content {
     font: 400 20px/20px "Open Sans";
     color: #ffffff;
     position: absolute;
-    z-index: 99999;
-    padding: 200px 450px;
-    text-align: center;
     text-transform: capitalize;
+    z-index: 9;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 220px 0;
 }
 
 .text-content .btn-mgreen {
@@ -78,24 +81,68 @@
     padding: 10px 0;
 }
 
+button.btn-download.btn.btn-secondary {
+    padding-top: 11px;
+    border-radius: 10px;
+    background: transparent;
+    padding: 15px 30px;
+    animation: color-me-download 2s 5ms infinite;
+    filter: brightness(1.5);
+    border: none;
+}
+
+@keyframes color-me-download {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: #3986bd;
+    }
+    100% {
+        background: #2388d1;
+    }
+}
+
+button.btn-outmore.btn.btn-secondary {
+    padding-top: 11px;
+    border-radius: 10px;
+    background: transparent;
+    padding: 15px 35px;
+    animation: color-me-outmore 2s 5ms infinite;
+    filter: brightness(1.5);
+    border: none;
+}
+
+@keyframes color-me-outmore {
+    0% {
+        background: transparent;
+    }
+    50% {
+        background: #2a2c48;
+    }
+    100% {
+        background: #383a59;
+    }
+}
+
 @media (max-width:425px) {
     .slide img {
         height: 250px !important;
     }
     .text-title-1 {
         font: 600 14px/21px "Open Sans";
-        padding: 60px 3px;
+        padding: 30px 0;
     }
     .slide-content {
-        padding: 0 7px;
+        padding: 0 0;
     }
     .text-content {
         font: 400 12px/2px "Open Sans";
-        padding: 160px 0;
+        padding: 145px 0;
         text-align: left;
     }
     button.btn-mgreen.btn.btn-success {
-        width: 222px;
+        width: 190px;
     }
     .text-content .btn-mgreen {
         widows: 286px;
@@ -111,33 +158,26 @@
     }
     .text-title-2 {
         width: 270px;
-        margin: 80px 10px;
+        margin: 10px 10px;
         padding: 22px 0;
     }
     .text-title-2 .p-content-slide {
         padding: 0 0;
     }
-}
-
-@media (max-width:768px) and (min-width:426px) {
-    .text-content {
-        padding: 276px 15px;
-        text-align: left;
+    button.btn-download.btn.btn-secondary {
+        padding: 7px 30px;
     }
-    .text-title-1 {
-        padding: 100px 140px;
+    button.btn-outmore.btn.btn-secondary {
+        padding: 8px 20px;
     }
 }
 
 @media (max-width:1024px) and ( min-width:769px) {
     .text-content {
         font: 500 20px/8px "Open Sans";
-        padding: 301px 290px;
+        padding: 250px 0;
         text-align: center;
         text-transform: capitalize;
-    }
-    .text-title-1 {
-        padding: 100px 325px;
     }
     .slide-content {
         padding: 0 8px;

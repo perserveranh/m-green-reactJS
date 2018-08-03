@@ -5,25 +5,29 @@
 
 .text-img-content {
     position: absolute;
-    width: 400px;
+    width: 30%;
 }
 
 .text-img-content-1 {
-    left: 37%;
+    margin: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
     padding: 30px 0;
 }
 
 .text-img-content-2 {
-    margin: 330px 25px;
+    margin: 330px 50px;
 }
 
 .text-img-content-3 {
-    margin: 330px 25px;
+    margin: 330px 50px;
     right: 0;
 }
 
 .text-img-content p {
-    font: 600 52px/60px "open-sans Regular";
+    font: 600 46px/50px "open-sans Regular";
     color: #444444;
 }
 
@@ -36,25 +40,25 @@
     filter: grayscale(80%);
 }
 
-@media (max-width:425px) and (min-width:321px) {
+@media (max-width:425px) {
     .img-classify {
-        height: 400px !important;
+        height: 300px !important;
     }
     .text-img-content {
         width: 105px;
     }
     .text-img-content p {
-        font: 600 16px/28px "open-sans Regular";
+        font: 400 14px/22px "open-sans Regular";
     }
     .text-img-content-2 {
-        margin: 188px 25px;
+        margin: 138px 10px;
     }
     .text-img-content-3 {
-        margin: 188px 25px;
+        margin: 138px 10px;
         right: 0;
     }
     .text-img-content-1 {
-        left: 37%;
+        padding: 15px 0;
     }
 }
 
@@ -62,50 +66,19 @@
     .img-classify {
         height: 400px !important;
     }
-    .text-img-content {
-        width: 200px;
-    }
     .text-img-content p {
         font: 400 24px/34px "open-sans Regular";
     }
     .text-img-content-2 {
-        margin: 204px 50px;
+        margin: 184px 25px;
     }
     .text-img-content-3 {
-        margin: 204px 50px;
-    }
-    .text-img-content-1 {
-        left: 38%;
-        padding: 10px 0;
+        margin: 184px 25px;
     }
 }
 
 @media (max-width:1024px) and (min-width:769px) {
     .text-img-content p {
         font: 500 41px/56px "open-sans Regular";
-    }
-    .text-img-content {
-        width: 310px;
-    }
-}
-
-@media(max-width:320px) {
-    .text-img-content p {
-        font: 600 12px/18px "open-sans Regular";
-    }
-    .img-classify {
-        height: 240px !important;
-    }
-    .text-img-content-2 {
-        margin: 120px 15px;
-    }
-    .text-img-content-3 {
-        margin: 120px 15px;
-    }
-    .text-img-content {
-        width: 85px;
-    }
-    .text-img-content-1 {
-        left: 37%;
     }
 }

@@ -1,27 +1,27 @@
 import React, { Component, Fragment } from 'react';
-import Header from './../components/header';
-import Footer from './../components/footer';
-import dataService from './../server/dataService';
+import { Header, Footer } from '../../components';
+import dataServices from '../../server/dataService';
 import { Row, Col, Button } from 'reactstrap';
-import './../css/sponsor.css';
+import '../../css/news.css';
 import { connect } from 'react-redux';
-class Partner extends Component {
+class New extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSponsor: [],
+      dataNews: [],
       isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
     }
   }
   componentDidMount() {
-    this.getListSponsor();
+    this.getNews();
   }
-  async getListSponsor() {
+
+  async getNews() {
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
-    const sponsor = await dataService.getNews('0', '10');
-    if (sponsor.code !== 0) return console.log(sponsor.msg);
+    const news = await dataServices.getNews('0', '10');
+    if (news.code !== 0) return console.log(news.msg);
     this.setState({
-      dataSponsor: sponsor.data,
+      dataNews: news.data,
       isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })
     })
   }
@@ -29,20 +29,21 @@ class Partner extends Component {
     return (
       <Fragment>
         <Header />
-        <Row className="sponsor">
-          {this.state.dataSponsor.map(sponsor => {
+
+        <Row className="new">
+          {this.state.dataNews.map(news => {
             return (
               <Col
-                key={sponsor.id}
+                key={news.id}
                 xs={12} md={12}>
                 <div className="vc_empty_space  hidden-xs" style={{ height: '30px' }}><span className="vc_empty_space_inner"></span></div>
-                <div className="sponsor-content">
-                  <img src={sponsor.image} alt="img-Sponsor" />
+                <div className="news-content">
+                  <img src={news.image} alt="img-news" />
 
-                  <div className="sponsor-text-content">
-                    <h1>{sponsor.title}</h1>
-                    <p>{sponsor.preview}</p>
-                    <span>{sponsor.createdAt}</span>
+                  <div className="news-text-content">
+                    <h1>{news.title}</h1>
+                    <p>{news.preview}</p>
+                    <span>{news.createdAt}</span>
                     <br />
                     <Button color="secondary">Read More</Button>{' '}
                   </div>
@@ -53,15 +54,16 @@ class Partner extends Component {
           })}
 
         </Row>
+
         <Footer />
       </Fragment>
     );
   }
 }
-
 const mapStateToProps = state => {
   return {
+    userReducers: state.userReducer,
     uiReducers: state.uiReducers
   }
 }
-export default connect(mapStateToProps)(Partner);
+export default connect(mapStateToProps)(New);

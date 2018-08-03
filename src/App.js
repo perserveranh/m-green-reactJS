@@ -1,14 +1,13 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import routes from './routes';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { BackTop } from 'antd';
 import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
-import strings from './components/LocalizedStrings';
-import UI from './components/UI';
+import { strings } from './components';
+// import UI from './components/UI';
 import { connect } from 'react-redux';
-
 
 class App extends Component {
   constructor(props) {
@@ -32,9 +31,6 @@ class App extends Component {
       behavior: "smooth"
     });
   }
-  // componentWillMount() {
-  //   this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
-  // }
   showContentMenus = (routes) => {
     var result = null;
     if (routes.length > 0) {
@@ -55,14 +51,12 @@ class App extends Component {
     resetIdCounter();
     return (
       <div className="App">
-        <UI />
+        {/* <UI /> */}
         <BackTop>
           <div className="ant-back-top-inner"><i className="fas fa-angle-double-up"></i></div>
         </BackTop>
         <Router>
-          <Fragment>
-            {this.showContentMenus(routes)}
-          </Fragment>
+          {this.showContentMenus(routes)}
         </Router>
       </div>
     );

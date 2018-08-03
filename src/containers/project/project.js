@@ -1,28 +1,30 @@
 import React, { Component, Fragment } from 'react';
-import Header from './../components/header';
-import Footer from './../components/footer';
-import dataServices from './../server/dataService';
+import { Header, Footer } from '../../components';
+import dataServices from '../../server/dataService';
 import { Row, Col, Button } from 'reactstrap';
-import './../css/news.css';
+import '../../css/project.css';
 import { connect } from 'react-redux';
-class New extends Component {
+class Project extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataNews: [],
+      dataProject: [],
       isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
     }
   }
   componentDidMount() {
-    this.getNews();
+    this.getProject();
   }
+  async getProject() {
 
-  async getNews() {
+    // if (this.state.isLoading) return
+
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
-    const news = await dataServices.getNews('0', '10');
-    if (news.code !== 0) return console.log(news.msg);
+
+    const projects = await dataServices.getNews('0', '10');
+    if (projects.code !== 0) return console.log(projects.msg);
     this.setState({
-      dataNews: news.data,
+      dataProject: projects.data,
       isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })
     })
   }
@@ -30,21 +32,20 @@ class New extends Component {
     return (
       <Fragment>
         <Header />
-
-        <Row className="new">
-          {this.state.dataNews.map(news => {
+        <Row className="project">
+          {this.state.dataProject.map(projects => {
             return (
               <Col
-                key={news.id}
+                key={projects.id}
                 xs={12} md={12}>
                 <div className="vc_empty_space  hidden-xs" style={{ height: '30px' }}><span className="vc_empty_space_inner"></span></div>
-                <div className="news-content">
-                  <img src={news.image} alt="img-news" />
+                <div className="projects-content">
+                  <img src={projects.image} alt="img-projects" />
 
-                  <div className="news-text-content">
-                    <h1>{news.title}</h1>
-                    <p>{news.preview}</p>
-                    <span>{news.createdAt}</span>
+                  <div className="projects-text-content">
+                    <h1>{projects.title}</h1>
+                    <p>{projects.preview}</p>
+                    <span>{projects.createdAt}</span>
                     <br />
                     <Button color="secondary">Read More</Button>{' '}
                   </div>
@@ -53,18 +54,16 @@ class New extends Component {
               </Col>
             )
           })}
-
         </Row>
-
         <Footer />
       </Fragment>
     );
   }
 }
+
 const mapStateToProps = state => {
   return {
-    userReducers: state.userReducer,
     uiReducers: state.uiReducers
   }
 }
-export default connect(mapStateToProps)(New);
+export default connect(mapStateToProps)(Project);

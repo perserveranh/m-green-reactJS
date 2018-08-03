@@ -9,9 +9,9 @@ import {
   Form,
   Input
 } from 'reactstrap';
-import './../css/header.css';
+import '../../css/header.css';
 import { Link } from 'react-router-dom';
-import strings from './LocalizedStrings';
+import { strings } from '../../components';
 import { connect } from 'react-redux';
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
@@ -109,7 +109,7 @@ class Header extends Component {
             isOpen={this.state.modalSignup}
             toggle={this.toggleSignup.bind(this)}
             className={this.props.className}
-
+            external={externalCloseBtn}
           >
             <ModalHeader>
               <span className="text-center">SIGN UP</span>
@@ -309,13 +309,10 @@ class Header extends Component {
             <div className="mgreen-menu">
               <ul>
                 <li><Link to="/mgreen">{strings.nav_1}</Link></li>
-                <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
-                <li><Link to="#" >{strings.nav_3}</Link>
-                  <ul className="sub-menu">
-                    <li><Link to="#" onClick={this.toggleLogin.bind(this)} >{strings.nav_10}</Link></li>
-                    <li><Link to="#" onClick={this.toggleSignup.bind(this)}>{strings.nav_11}</Link></li>
-                  </ul>
-                </li>
+                {/* <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li> */}
+
+                <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
+                <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
                 <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
                   <ul className="sub-menu">
                     <li><a href="">a</a></li>
@@ -323,9 +320,19 @@ class Header extends Component {
                     <li><a href="">c</a></li>
                   </ul>
                 </li>
-                <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
-                <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
-                <li><Link to="#" className="download " onClick={this.toggle.bind(this)} style={{ padding: '10px 10px' }}>{strings.nav_7}</Link></li>
+                <li ><Link to="#" className="download" >{strings.nav_12} &nbsp; <i className="fas fa-angle-down"></i></Link>
+                  <ul className="sub-menu">
+                    <li><Link to="/sponsor">{strings.nav_12}</Link></li>
+                    <li><Link to="/volunteer">{strings.nav_13}</Link></li>
+                    <li><Link to="/collectormgreen">{strings.nav_14}</Link></li>
+                  </ul>
+                </li>
+                <li><Link to="#" >{strings.nav_3}</Link>
+                  <ul className="sub-menu">
+                    <li><Link to="#" onClick={this.toggleLogin.bind(this)} >{strings.nav_10}</Link></li>
+                    <li><Link to="#" onClick={this.toggleSignup.bind(this)}>{strings.nav_11}</Link></li>
+                  </ul>
+                </li>
                 <li>
                   <a onClick={this.handleChangeVi.bind(this)}>
                     <img title="tiếng việt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" alt="tiếng việt" />
@@ -341,6 +348,16 @@ class Header extends Component {
               </ul>
             </div>
           </nav>
+          <nav>
+
+            <div className="mgreen-menu">
+              <ul>
+                <li><Link to="/collectormgreen">{strings.nav_15}</Link></li>
+                <li><Link to="/collectormgreen">{strings.nav_16}</Link></li>
+                <li><Link to="/collectormgreen" >{strings.nav_17}</Link></li>
+              </ul>
+            </div>
+          </nav>
           <div className="menu-mobile">
             <div className="toggle-bar " onClick={this.handleClick.bind(this)}>
               <span></span>
@@ -351,11 +368,11 @@ class Header extends Component {
                 <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
                 <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>ĐỐI TÁC</Link></li>
                 <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
-
+                    
                 </li>
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
-                <li><Link to="#" className="download" onClick={this.toggle.bind(this)}>{strings.nav_7}</Link></li>
+
                 <li>
                   <a onClick={this.handleChangeVi.bind(this)}>
                     <img title="tiếng việt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" alt="tiếng việt" />
@@ -368,6 +385,9 @@ class Header extends Component {
                     <span style={{ marginLeft: '0.3em' }}>{strings.nav_9}</span>
                   </a>
                 </li>
+                <li><Link to="/collectormgreen">{strings.nav_15.toUpperCase()}</Link></li>
+                <li><Link to="/collectormgreen">{strings.nav_16.toUpperCase()}</Link></li>
+                <li><Link to="/collectormgreen" >{strings.nav_17.toUpperCase()}</Link></li>
               </ul>
             </div>
           </div>
