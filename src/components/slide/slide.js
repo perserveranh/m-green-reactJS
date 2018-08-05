@@ -18,6 +18,7 @@ class Slide extends Component {
       modal: false,
       modalSignup: false,
       modalLogin: false,
+      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
     }
   }
   toggle() {
@@ -25,6 +26,11 @@ class Slide extends Component {
       modal: !this.state.modal,
       isOpen: !this.state.isOpen
     });
+  }
+  UNSAFE_componentWillMount() {
+    this.setState({
+      isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })
+    })
   }
   render() {
     const settings = {
@@ -97,7 +103,7 @@ class Slide extends Component {
 const mapStateToProps = state => {
   return {
     LangState: state.LangReducers,
-    uiState: state.uiReducers
+    uiReducer: state.uiReducer
   }
 }
 export default connect(mapStateToProps)(Slide);

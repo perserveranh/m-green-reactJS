@@ -1,6 +1,6 @@
 #header {
   background: #FFF;
-  height: 130px;
+  height: 132px;
   border-bottom: 1px solid #F1F1F1;
   z-index: 99;
   transition: height 0.3s ease;
@@ -56,7 +56,7 @@ nav .mgreen-menu ul li a {
   text-decoration: none;
   color: #444444;
   text-transform: uppercase;
-  margin: 0 8px;
+  margin: 0 2px;
   padding-bottom: 13px;
 }
 

@@ -17,20 +17,20 @@ class Classify extends Component {
             <Row>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/phan_loai_rac_icon.png" alt="phan-loai-rac" style={{ width: '222px', height: '222px' }} />
+                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/phan_loai_rac_icon.png" alt="phan-loai-rac" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5 "><b>{strings.classify_1}</b></h4>
                   <p className="p-text">{strings.classify_2}</p>
                 </div>
               </Col>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/the_mgreen-icon.png" alt="the-mgreen" style={{ width: '222px', height: '222px' }} />
+                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/the_mgreen-icon.png" alt="the-mgreen" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5"><b>{strings.classify_3}</b></h4>
                   <p className="p-text">{strings.classify_4}</p>
                 </div></Col>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/uu_dai_icon.png" alt="uu-dai" style={{ width: '222px', height: '222px' }} />
+                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/uu_dai_icon.png" alt="uu-dai" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5"><b>{strings.classify_5}</b></h4>
                   <p className="p-text">{strings.classify_6}</p>
                 </div></Col>
@@ -57,7 +57,7 @@ class Classify extends Component {
             offset={4000}
           >
 
-            <div className="text-img-content text-right text-img-content-2">
+            <div className="text-img-content text-center text-img-content-2">
               <p>{strings.classify_8}</p>
             </div>
           </ScrollAnimation>
@@ -68,7 +68,7 @@ class Classify extends Component {
             offset={4000}
           >
 
-            <div className="text-img-content text-left text-img-content-3">
+            <div className="text-img-content text-center text-img-content-3">
               <p>{strings.classify_9}</p>
             </div>
           </ScrollAnimation>

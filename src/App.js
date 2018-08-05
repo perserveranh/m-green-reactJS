@@ -6,7 +6,7 @@ import { BackTop } from 'antd';
 import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
 import { strings } from './components';
-// import UI from './components/UI';
+import UI from './components/UI';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -18,6 +18,9 @@ class App extends Component {
     let Lang = localStorage.getItem('language');
     strings.setLanguage(Lang ? Lang : 'vi');
 
+  }
+  UNSAFE_componentWillMount() {
+    this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
   }
   componentDidMount() {
     setTimeout(
@@ -51,7 +54,7 @@ class App extends Component {
     resetIdCounter();
     return (
       <div className="App">
-        {/* <UI /> */}
+        <UI />
         <BackTop>
           <div className="ant-back-top-inner"><i className="fas fa-angle-double-up"></i></div>
         </BackTop>

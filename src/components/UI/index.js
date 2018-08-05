@@ -1,28 +1,25 @@
-import React , {Component} from 'react';
-import Loading from './uiLoading';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MessageBox from './messagebox';  
-import './../../App.css';
-class UI extends Component{
-
-    render(){
-        let {uiState} = this.props;
+import '../../App.css';
+import Loading from './loading';
+class UI extends Component {
+    render() {
+        let uiStatus = this.props.uiState
         return (
-            uiState ? 
-            (
-                <div className="ui">
-                <MessageBox show={uiState.showMessage} message={uiState.message}  />
-                    <Loading show={uiState.showLoading} />
-                </div>
-            ) 
-            : null
+
+            uiStatus ?
+                (
+                    <div className="Ui">
+                        <Loading show={uiStatus.showLoading} />
+                    </div>
+
+                )
+                : null
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        uiState: state.uiReducers
-    }
+const mapStateToProps = (state) => {
+    return { uiReducer: state.uiReducer }
 }
 export default connect(mapStateToProps)(UI);

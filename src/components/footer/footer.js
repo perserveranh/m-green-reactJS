@@ -20,12 +20,12 @@ class Footer extends Component {
             </Col>
             <Col xs="12" md="4" className="py-3 footer-right" >
               <div>
-                <img src="http://mgreen.vn/wp-content/uploads/2017/11/logo.png" alt="img-mgreen" style={{ width: '248px', height: '82px', background: 'transparent' }} />
+                <img className="footer-img-logo" src="http://mgreen.vn/wp-content/uploads/2017/11/logo.png" alt="img-mgreen" />
               </div>
               <div className="row py-3">
-                <a href="https://www.messenger.com/t/mgreen.thetichdiemphanloairac" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/facebookF@3x.png" className="w-100" style={{ width: '60px', height: '60px' }} alt="img-mgreen" /></a>
-                <a href="" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/twitterF@3x.png" className="w-100" style={{ width: '60px', height: '60px' }} alt="img-mgreen" /></a>
-                <a href="" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/googleplusF@3x.png" className="w-100" style={{ width: '60px', height: '60px' }} alt="img-mgreen" /></a>
+                <a href="https://www.messenger.com/t/mgreen.thetichdiemphanloairac" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/facebookF@3x.png" className=" footer-icon-img" alt="img-mgreen" /></a>
+                <a href="" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/twitterF@3x.png" className="footer-icon-img " alt="img-mgreen" /></a>
+                <a href="" className="col-3"><img src="http://mgreen.vn/wp-content/uploads/2017/11/googleplusF@3x.png" className=" footer-icon-img" alt="img-mgreen" /></a>
               </div>
             </Col>
           </Row>

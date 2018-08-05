@@ -35,14 +35,16 @@ class Header extends Component {
   }
   toggleSignup() {
     this.setState({
-      modalLogin: false,
-      modalSignup: true
+
+      modalSignup: !this.state.modalSignup,
+      isOpen: !this.state.isOpen
     });
   }
   toggleLogin() {
     this.setState({
-      modalSignup: false,
-      modalLogin: true
+
+      modalLogin: !this.state.modalLogin,
+      isOpen: !this.state.isOpen
     });
   }
   handleLogin() {
@@ -89,10 +91,14 @@ class Header extends Component {
     const responseFacebook = response => {
       console.log(response);
     };
-    const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle.bind(this)}>&times;</button>;
+    // const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle.bind(this)}>&times;</button>;
     return (
       <div className="header" id="header">
-        <Modal isOpen={this.state.modal} toggle={this.toggle.bind(this)} className={this.props.className} external={externalCloseBtn}>
+        <Modal
+          isOpen={this.state.modal}
+          toggle={this.toggle.bind(this)}
+          className={this.props.className}
+        >
           <ModalHeader >DOWNLOAD</ModalHeader>
           <ModalBody>
             <a href="https://play.google.com/store/apps/details?id=com.vn.mgreen">
@@ -103,13 +109,13 @@ class Header extends Component {
             </a>
           </ModalBody>
 
-        </Modal>
+        </Modal >
         <div className="modal-signup">
           <Modal
             isOpen={this.state.modalSignup}
             toggle={this.toggleSignup.bind(this)}
             className={this.props.className}
-            external={externalCloseBtn}
+
           >
             <ModalHeader>
               <span className="text-center">SIGN UP</span>
@@ -193,7 +199,7 @@ class Header extends Component {
             isOpen={this.state.modalLogin}
             toggle={this.toggleLogin.bind(this)}
             className={this.props.className}
-            external={externalCloseBtn}
+
           >
             <ModalHeader>
               <span className="text-center">LOGIN</span>
@@ -313,7 +319,7 @@ class Header extends Component {
 
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
-                <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
+                <li ><Link to="#" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
                   <ul className="sub-menu">
                     <li><a href="">a</a></li>
                     <li><a href="">b</a></li>
@@ -368,7 +374,7 @@ class Header extends Component {
                 <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
                 <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>ĐỐI TÁC</Link></li>
                 <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
-                    
+
                 </li>
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
@@ -392,7 +398,7 @@ class Header extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
