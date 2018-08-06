@@ -10,6 +10,19 @@ class RegisterMgreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            dataHomes: [{ id: 1, name: 'abc' }, { id: 2, name: 'efh' }],
+            dataCitys: [],
+            dataDistricts: [],
+            dataWards: [],
+            name: '',
+            floor: '',
+            rooms: '',
+            address: '',
+            male: false,
+            female: false,
+            email: '',
+            phone: '',
+            birth: '2018-04-09T10:10:11.000Z',
 
         };
 
@@ -17,19 +30,12 @@ class RegisterMgreen extends Component {
     }
 
     handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-
+        const { name, value } = event.target;
         this.setState({
             [name]: value
         });
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('first name:', this.firstName.value);
-        this.firstName.value = 'Got ya!';
-    }
+
     async changePhone(response) {
         if (response) {
             let token = response.code
@@ -49,7 +55,7 @@ class RegisterMgreen extends Component {
     }
 
     render() {
-
+        const { dataHomes, dataCitys, dataDistricts, dataWards, name, male, female, phone, email, birth, floor, rooms, address } = this.state;
         return (
             <Fragment>
                 <Header />
@@ -63,7 +69,7 @@ class RegisterMgreen extends Component {
                                 <FormGroup row>
                                     <Label htmlFor="name" sm={2}><i className="fas fa-user" style={{ fontSize: 26, color: 'green' }}></i></Label>
                                     <Col sm={10}>
-                                        <Input type="text" name="" id="" placeholder="Họ và tên" />
+                                        <Input type="text" name="name" value={name} onChange={this.handleInputChange} placeholder="Họ và tên" />
                                     </Col>
                                 </FormGroup>
                                 <hr />
@@ -71,13 +77,12 @@ class RegisterMgreen extends Component {
                                 <FormGroup row>
                                     <Label for="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Chọn tòa nhà:</b></Label>
                                     <Col sm={8}>
-                                        <CustomInput type="select" id="exampleCustomSelect" name="customSelect">
-                                            <option value="">Chọn tòa nhà</option>
-                                            <option>Value 1</option>
-                                            <option>Value 2</option>
-                                            <option>Value 3</option>
-                                            <option>Value 4</option>
-                                            <option>Value 5</option>
+                                        <CustomInput type="select" id="exampleCustomSelect" name="customHome" required>
+                                            <option value="" >Chọn tòa nhà</option>
+                                            {dataHomes.map(data => {
+                                                return (
+                                                    <option key={data.id} value={data.name}>{data.name}</option>);
+                                            })}
                                         </CustomInput>
                                     </Col>
                                 </FormGroup>
@@ -85,14 +90,14 @@ class RegisterMgreen extends Component {
                                 <FormGroup row>
                                     <Label htmlFor="floor" sm={2}><i class="fas fa-align-center" style={{ fontSize: 26, color: 'green' }}></i></Label>
                                     <Col sm={10}>
-                                        <Input type="text" name="" id="" placeholder="Tầng (ví dụ: 5)" />
+                                        <Input type="text" name="floor" value={floor} onChange={this.handleInputChange} placeholder="Tầng (ví dụ: 5)" required />
                                     </Col>
                                 </FormGroup>
                                 <hr />
                                 <FormGroup row>
                                     <Label htmlFor="room" sm={2}><i class="fas fa-home" style={{ fontSize: 26, color: 'green' }}></i></Label>
                                     <Col sm={10}>
-                                        <Input type="text" name="" id="" placeholder="Số phòng (ví dụ: 101)" />
+                                        <Input type="text" name="rooms" value={rooms} onChange={this.handleInputChange} placeholder="Số phòng (ví dụ: 101)" required />
                                     </Col>
                                 </FormGroup>
                                 <hr />
@@ -100,7 +105,7 @@ class RegisterMgreen extends Component {
                                     <Label htmlFor="phone" sm={2}><i class="fas fa-phone" style={{ fontSize: 26, color: 'green' }}></i></Label>
 
                                     <Col sm={10}>
-                                        <Input type="text" name="" id="" placeholder="" />
+                                        <Input type="text" name="phone" value={phone} placeholder="" />
                                         <AccountKit
                                             appId={"1895352837204118"} // Update this!
                                             version="v1.0"
@@ -121,7 +126,7 @@ class RegisterMgreen extends Component {
                                 <FormGroup row>
                                     <Label htmlFor="address" sm={2}><i className="fas fa-address-card" style={{ fontSize: 26, color: 'green' }}></i></Label>
                                     <Col sm={10}>
-                                        <Input type="text" name="" id="" placeholder="Địa chỉ" />
+                                        <Input type="text" name="address" value={address} onChange={this.handleInputChange} placeholder="Địa chỉ" required />
                                     </Col>
                                 </FormGroup>
                                 <hr />
@@ -139,13 +144,13 @@ class RegisterMgreen extends Component {
                                         <FormGroup check>
 
                                             <Label check>
-                                                <Input type="radio" name="radio2" />{' '}
+                                                <Input type="radio" name="male" />{' '}
                                                 Nam
               </Label>
                                         </FormGroup>
                                         <FormGroup check>
                                             <Label check>
-                                                <Input type="radio" name="radio2" />{' '}
+                                                <Input type="radio" name="female" />{' '}
                                                 Nữ
               </Label>
                                         </FormGroup>
@@ -155,43 +160,46 @@ class RegisterMgreen extends Component {
                                 </FormGroup>
                                 <hr />
                                 <FormGroup row>
-                                    <Label for="exampleEmail" sm={2}><i class="fas fa-envelope" style={{ fontSize: 26, color: 'green' }}></i></Label>
+                                    <Label htmlFor="email" sm={2}><i className="fas fa-envelope" style={{ fontSize: 26, color: 'green' }}></i></Label>
                                     <Col sm={10}>
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="Email" />
+                                        <Input type="email" name="email" value={email} onChange={this.handleInputChange} placeholder="Email" required />
                                     </Col>
                                 </FormGroup>
                                 <hr />
                                 <FormGroup row>
-                                    <Label for="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Tỉnh thành phố:</b></Label>
+                                    <Label htmlFor="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Tỉnh thành phố:</b></Label>
                                     <Col sm={8}>
-                                        <CustomInput type="select" id="exampleCustomSelect" name="customSelect">
+                                        <CustomInput type="select" id="exampleCustomSelect" name="customCity" required>
                                             <option value="">Chọn tỉnh thành phố</option>
-                                            <option>Value 1</option>
-                                            <option>Value 2</option>
+                                            {dataCitys.map(data => {
+                                                return <option key={data.id} value={data.name}>{data.name}</option>;
+                                            })}
 
                                         </CustomInput>
                                     </Col>
                                 </FormGroup>
                                 <hr />
                                 <FormGroup row>
-                                    <Label for="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Quận huyện thị xã:</b></Label>
+                                    <Label htmlFor="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Quận huyện thị xã:</b></Label>
                                     <Col sm={8}>
-                                        <CustomInput type="select" id="exampleCustomSelect" name="customSelect">
+                                        <CustomInput type="select" id="exampleCustomSelect" name="customDistrict" required>
                                             <option value="">Chọn quận huyện</option>
-                                            <option>Value 1</option>
-                                            <option>Value 2</option>
+                                            {dataDistricts.map(data => {
+                                                return <option key={data.id} value={data.name}>{data.name}</option>;
+                                            })}
 
                                         </CustomInput>
                                     </Col>
                                 </FormGroup>
                                 <hr />
                                 <FormGroup row>
-                                    <Label for="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Xã phường:</b></Label>
+                                    <Label htmlFor="exampleSelect" sm={4}><b style={{ fontSize: 16, color: 'green' }}>Xã phường:</b></Label>
                                     <Col sm={8}>
-                                        <CustomInput type="select" id="exampleCustomSelect" name="customSelect">
+                                        <CustomInput type="select" id="exampleCustomSelect" name="customWards" required>
                                             <option value="">Chọn xã phường</option>
-                                            <option>Value 1</option>
-
+                                            {dataWards.map(data => {
+                                                return <option key={data.id} value={data.name}>{data.name}</option>;
+                                            })}
                                         </CustomInput>
                                     </Col>
                                 </FormGroup>
