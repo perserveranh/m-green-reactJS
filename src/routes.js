@@ -1,6 +1,6 @@
 import React from 'react';
 import NotFound from './components/NotFound/index';
-import { Mgreen, Project, Partner, New, Home, Volunteer,CollectorMgreen,Sponsor } from './containers';
+import { Mgreen, Project, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen } from './containers';
 
 const routes = [
     {
@@ -36,12 +36,17 @@ const routes = [
     {
         path: '/collectormgreen',
         exact: false,
-        main: () => <CollectorMgreen />       
+        main: () => <CollectorMgreen />
     },
     {
         path: '/sponsor',
         exact: false,
-        main: () => <Sponsor />    
+        main: () => <Sponsor />
+    },
+    {
+        path: '/register',
+        exact: false,
+        main: () => <RegisterMgreen />
     },
     {
         path: '',

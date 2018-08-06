@@ -1,0 +1,58 @@
+.img-register-mgreen {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.text-register {
+    font: 400 40px/52px "Poppins";
+    color: #0f3a0f;
+}
+
+.btn-right {
+    float: right;
+}
+
+.btn-left {
+    float: left;
+}
+
+button.btn-register {
+    background: forestgreen;
+    border-radius: 7px;
+    text-align: center;
+}
+
+form.form-register {
+    padding: 10px 10px 60px 10px;
+    border: 1px solid lightgreen;
+    border-radius: 12px;
+}
+
+button.button-login.btn-phone-change {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    background: lightgreen;
+    border: none;
+    height: 33px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.button-login.btn-phone-change:hover {
+    filter: brightness(1.5);
+}
+
+input.form-control {
+    border: none;
+}
+
+select#exampleCustomSelect {
+    border: none;
+    cursor: pointer;
+}
+
+input.ant-calendar-picker-input.ant-input {
+    border: none;
+}

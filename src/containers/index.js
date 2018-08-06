@@ -4,7 +4,8 @@ import Mgreen from './mgreen/mgreen';
 import New from './new/new';
 import Project from './project/project';
 import Volunteer from './volunteers/volunteers';
-import CollectorMgreen  from './collectorMgreen/collector';
+import CollectorMgreen from './collectorMgreen/collector';
 import Sponsor from './sponsor/sponsor';
+import RegisterMgreen from './registerMgreen/index';
 
-export { Partner, Home, Mgreen, New, Project, Volunteer,CollectorMgreen ,Sponsor};
+export { Partner, Home, Mgreen, New, Project, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen };

@@ -1,0 +1,1057 @@
+{
+	"id": "a723a6b9-f91b-4150-aea8-4c6b9110fdd1",
+	"name": "mPoint",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"e8cd1b35-73b9-4271-9277-b931378f8ac4",
+		"ab65a922-1219-4d6e-bd87-d6ead876f948",
+		"39189b14-ba5b-4ae5-8ea7-ccfd76152b84",
+		"c543134d-73f3-40fc-a5f4-64dd9b6752fe",
+		"d2b7a160-4eef-4e94-b3aa-392238c24ac5",
+		"c6c2aec4-db69-45bb-af8e-9b7291024540",
+		"bcf1bff3-75cc-454e-a386-defac5643919",
+		"ede08921-361e-46fb-8a04-d9471894e41f",
+		"e8d9a520-48e4-4964-a5ea-2ab27fe22408",
+		"577d2752-4781-4f1e-b4f1-1c659f6fcd7b",
+		"ad4007cd-f2ae-459c-8ab2-8be3ebc80147",
+		"06e7a1a7-1568-45f1-b169-93a2c8a0a2ee",
+		"e424b3ad-1df6-4fb3-b60c-41e87b9d5fcb",
+		"60e80202-07c7-4050-8aac-d49942f05a11",
+		"03192fb2-53cf-458c-9944-e0dcf6d3d417",
+		"02fdba85-4d85-4a1e-ab52-1da037aabe0f"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "02fdba85-4d85-4a1e-ab52-1da037aabe0f",
+			"name": "staging.mpoint.vn/suggestword/getSuggestWords",
+			"url": "staging.mpoint.vn/suggestword/getSuggestWords",
+			"description": "",
+			"data": [
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "10",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "text",
+					"value": "ha",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Content-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "03192fb2-53cf-458c-9944-e0dcf6d3d417",
+			"name": "updatepoint",
+			"url": "http://10.53.21.56:5999/global/vn/salepromotion/accumulatepoint/inquirypoint/1.0",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"Header\" :\r\n\t{\r\n\t\"AppId\":\"MDO\",\r\n\t\"SoaUrl\":\"ssssss\", \r\n\t\"Queue\":\"QueueTest\",\r\n\t\"User\":\"XXXXX\",\r\n\t\"Pass\":\"XYZYSssss\"\r\n\t},\r\n\"Body\" :\r\n\t{\r\n\t\"Cif\":\"938920\"\t\r\n\t}\r\n}\r\n",
+			"headers": "//Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "06e7a1a7-1568-45f1-b169-93a2c8a0a2ee",
+			"name": "getPartnerInfo",
+			"url": "merchant.mpoint.vn/partner/getPartnerInfo?page=34&api=getPartnerInfo",
+			"description": "",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "password",
+					"value": "123",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "code",
+					"value": "1B4U1KF",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "billAmount",
+					"value": "123",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "partner",
+					"value": "32",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getPartnerInfo",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "39189b14-ba5b-4ae5-8ea7-ccfd76152b84",
+			"name": "getBanners",
+			"url": "merchant.mpoint.vn/banner/getBanners?page=34&api=getBanners",
+			"description": "",
+			"data": [],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getBanners",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "577d2752-4781-4f1e-b4f1-1c659f6fcd7b",
+			"name": "createRate",
+			"url": "merchant.mpoint.vn/rate/createRate?page=34&api=createRate",
+			"description": "",
+			"data": [
+				{
+					"key": "promotion",
+					"value": "5187",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				},
+				{
+					"key": "content",
+					"value": "ok",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "rate",
+					"value": "4",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "createRate",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "60e80202-07c7-4050-8aac-d49942f05a11",
+			"name": "inquirypoint",
+			"url": "http://10.53.21.56:5999/global/vn/salepromotion/accumulatepoint/inquirypoint/1.0",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": false
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\"Header\" :\r\n\t{\r\n\t\"AppId\":\"MDO\",\r\n\t\"SoaUrl\":\"ssssss\", \r\n\t\"Queue\":\"QueueTest\",\r\n\t\"User\":\"XXXXX\",\r\n\t\"Pass\":\"XYZYSssss\"\r\n\t},\r\n\"Body\" :\r\n\t{\r\n\t\"Cif\":\"938920\"\t\r\n\t}\r\n}\r\n",
+			"headers": "//Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ab65a922-1219-4d6e-bd87-d6ead876f948",
+			"name": "updateProfile",
+			"url": "merchant.mpoint.vn/user/updateProfile",
+			"description": "",
+			"data": [
+				{
+					"key": "name",
+					"value": "Media One",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ad4007cd-f2ae-459c-8ab2-8be3ebc80147",
+			"name": "getListPartners",
+			"url": "merchant.mpoint.vn/partner/getListPartners?page=34&api=getListPartners",
+			"description": "",
+			"data": [
+				{
+					"key": "promotionType",
+					"value": "percent",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "new",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "search",
+					"value": "229",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "promotion",
+					"value": "5187",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getListPartners",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "bcf1bff3-75cc-454e-a386-defac5643919",
+			"name": "getListPromotions",
+			"url": "merchant.mpoint.vn/promotion/getListPromotions?page=34&api=getListPromotions",
+			"description": "",
+			"data": [
+				{
+					"key": "promotionType",
+					"value": "percent",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "new",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "search",
+					"value": "229",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "promotion",
+					"value": "5187",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getListPromotions",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c543134d-73f3-40fc-a5f4-64dd9b6752fe",
+			"name": "getNews",
+			"url": "merchant.mpoint.vn/news/getNews?page=34&api=getNews",
+			"description": "",
+			"data": [
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getNews",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c6c2aec4-db69-45bb-af8e-9b7291024540",
+			"name": "getListCodes",
+			"url": "merchant.mpoint.vn/code/getListCodes?page=34&api=getListCodes",
+			"description": "",
+			"data": [
+				{
+					"key": "promotion",
+					"value": "5187",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "2",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "promotionTypes",
+					"value": "percent,gift",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getListCodes",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "d2b7a160-4eef-4e94-b3aa-392238c24ac5",
+			"name": "getCode",
+			"url": "merchant.mpoint.vn/promotion/getCode?page=34&api=getCode",
+			"description": "",
+			"data": [
+				{
+					"key": "promotion",
+					"value": "8300",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "pointType",
+					"value": "user",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getCode",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e424b3ad-1df6-4fb3-b60c-41e87b9d5fcb",
+			"name": "getListShopsByGPS",
+			"url": "merchant.mpoint.vn/shop/getListShopsByGPS?page=34&api=getListShopsByGPS",
+			"description": "",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "password",
+					"value": "123",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "code",
+					"value": "1B4U1KF",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "billAmount",
+					"value": "123",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "partner",
+					"value": "32",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getListShopsByGPS",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e8cd1b35-73b9-4271-9277-b931378f8ac4",
+			"name": "profile",
+			"url": "merchant.mpoint.vn/user/getUserProfile",
+			"description": "",
+			"data": [],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "e8d9a520-48e4-4964-a5ea-2ab27fe22408",
+			"name": "toggleLike",
+			"url": "merchant.mpoint.vn/like/toggleLike?page=34&api=toggleLike",
+			"description": "",
+			"data": [
+				{
+					"key": "promotion",
+					"value": "5187",
+					"type": "text",
+					"enabled": true,
+					"description": ""
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "toggleLike",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "ede08921-361e-46fb-8a04-d9471894e41f",
+			"name": "getPromotionInfo",
+			"url": "merchant.mpoint.vn/promotion/getPromotionInfo?page=34&api=getPromotionInfo",
+			"description": "",
+			"data": [
+				{
+					"key": "promotionType",
+					"value": "percent",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "skip",
+					"value": "0",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "limit",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "category",
+					"value": "1",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "sort",
+					"value": "new",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "search",
+					"value": "229",
+					"description": "",
+					"type": "text",
+					"enabled": false
+				},
+				{
+					"key": "promotion",
+					"value": "8300",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer customer",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Accept-Language",
+					"value": "vi",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [
+				{
+					"key": "page",
+					"value": "34",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "api",
+					"value": "getPromotionInfo",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "Authorization: Bearer customer\nAccept-Language: vi\nContent-Type: application/x-www-form-urlencoded\n",
+			"pathVariables": {}
+		}
+	]
+}

@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import '../../css/slide.css';
 import { Button } from 'reactstrap';
-import { strings } from '../../components';
+import { strings, api } from '../../components';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Modal,
   ModalHeader,
@@ -18,7 +19,7 @@ class Slide extends Component {
       modal: false,
       modalSignup: false,
       modalLogin: false,
-      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
+      isLoading: api.api.showLoading()
     }
   }
   toggle() {
@@ -29,15 +30,15 @@ class Slide extends Component {
   }
   UNSAFE_componentWillMount() {
     this.setState({
-      isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })
-    })
+      isLoading: api.api.hideLoading()
+    });
   }
   render() {
     const settings = {
       className: "slide",
       speed: 300,
       slidesToShow: 1,
-      autoplay: true,
+      autoplay: false,
       arrows: false,
       autoplaySpeed: 3000,
     };
@@ -70,7 +71,9 @@ class Slide extends Component {
                 <p>{strings.slide_3}</p>
 
                 <p>{strings.slide_4}</p>
-                <Button color="success" className="btn-mgreen">{strings.slide_5}</Button>{' '}
+                <Link to="/register">
+                  <Button color="success" className="btn-mgreen">{strings.slide_5}</Button>{' '}
+                </Link>
                 <p>{strings.slide_6}</p>
               </div>
             </div>

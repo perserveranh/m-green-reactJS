@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Header, Footer } from '../../components';
-import dataServices from '../../server/dataService';
+import { dataService } from '../../components/api';
 import { Row, Col, Button } from 'reactstrap';
 import '../../css/project.css';
 import { connect } from 'react-redux';
@@ -21,7 +21,7 @@ class Project extends Component {
 
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
 
-    const projects = await dataServices.getNews('0', '10');
+    const projects = await dataService.getNews('0', '10');
     if (projects.code !== 0) return console.log(projects.msg);
     this.setState({
       dataProject: projects.data,

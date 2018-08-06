@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Header, Footer } from '../../components';
-import dataServices from '../../server/dataService';
+import { Header, Footer, api } from '../../components';
 import { Row, Col, Button } from 'reactstrap';
 import '../../css/news.css';
 import { connect } from 'react-redux';
@@ -9,7 +8,7 @@ class New extends Component {
     super(props);
     this.state = {
       dataNews: [],
-      isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true })
+      isLoading: api.api.showLoading()
     }
   }
   componentDidMount() {
@@ -18,11 +17,11 @@ class New extends Component {
 
   async getNews() {
     // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
-    const news = await dataServices.getNews('0', '10');
+    const news = await api.dataService.getNews('0', '10');
     if (news.code !== 0) return console.log(news.msg);
     this.setState({
       dataNews: news.data,
-      isLoading: this.props.dispatch({ type: "HIDE_LOADING", showLoading: false })
+      isLoading: api.api.hideLoading()
     })
   }
   render() {
@@ -62,8 +61,8 @@ class New extends Component {
 }
 const mapStateToProps = state => {
   return {
-    userReducers: state.userReducer,
-    uiReducers: state.uiReducers
+    // userReducers: state.userReducer,
+    uiReducer: state.uiReducer
   }
 }
 export default connect(mapStateToProps)(New);

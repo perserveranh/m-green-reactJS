@@ -11,6 +11,7 @@
     "react": "^16.4.1",
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.4.1",
+    "react-facebook-account-kit": "^0.1.1",
     "react-facebook-login": "^4.0.1",
     "react-google-login": "^3.2.1",
     "react-localization": "^1.0.10",

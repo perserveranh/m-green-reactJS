@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Footer, Header } from '../../components';
-import dataService from '../../server/dataService';
+import { dataService } from '../../components/api';
 import { Row, Col, Button } from 'reactstrap';
 import '../../css/sponsor.css';
 import { connect } from 'react-redux';

@@ -11,8 +11,6 @@ const LangReducers = (state = initialState, action) => {
             strings.setLanguage(action.language);
             window.location.reload();
             return [...state];
-
-
         default:
             return state;
     }

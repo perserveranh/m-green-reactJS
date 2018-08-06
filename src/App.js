@@ -5,14 +5,18 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { BackTop } from 'antd';
 import 'antd/dist/antd.css';
 import { resetIdCounter } from 'react-tabs';
-import { strings } from './components';
+import { strings, api } from './components';
 import UI from './components/UI';
 import { connect } from 'react-redux';
+import configStore from './reducers/store';
+let store = configStore();
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.setLang();
+    api.api.setStore(store);
+    console.log(store);
   }
   setLang() {
     let Lang = localStorage.getItem('language');
