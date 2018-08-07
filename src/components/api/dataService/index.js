@@ -1,4 +1,3 @@
-
 import { request, config, api } from '../../api';
 import location from '../locations.json';
 
@@ -149,6 +148,7 @@ var dataService = {
     getListProvinces: () => {
         return location.provinces
     },
+   
     getListDistricts: (idProvinces) => {
         let district = [];
         location.districts.map(item => {

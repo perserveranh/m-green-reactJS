@@ -358,9 +358,10 @@ class Header extends Component {
 
             <div className="mgreen-menu">
               <ul>
-                <li><Link to="/collectormgreen">{strings.nav_15}</Link></li>
-                <li><Link to="/collectormgreen">{strings.nav_16}</Link></li>
-                <li><Link to="/collectormgreen" >{strings.nav_17}</Link></li>
+                <li><Link to="/collectormgreen">{strings.nav_15} </Link> </li><i className="fas fa-angle-double-right"></i>
+                <li><Link to="/collectormgreen">{strings.nav_16} </Link> </li> <i className="fas fa-angle-double-right"></i>
+                <li><Link to="/collectormgreen" >{strings.nav_17}</Link> </li><i className="fas fa-angle-double-right"></i>
+                <li><Link to="#" className="download">Quy trình thu gom</Link></li>
               </ul>
             </div>
           </nav>
