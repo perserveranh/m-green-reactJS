@@ -7,9 +7,9 @@ const initialState = {
 const LangReducers = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_LANGUAGE':
+        window.location.reload();
             localStorage.setItem('language', action.language);
             strings.setLanguage(action.language);
-            window.location.reload();
             return [...state];
         default:
             return state;

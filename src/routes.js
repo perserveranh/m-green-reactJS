@@ -1,6 +1,6 @@
 import React from 'react';
 import NotFound from './components/NotFound/index';
-import { Mgreen, Project, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen } from './containers';
+import { Mgreen, Project, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
 
 const routes = [
     {
@@ -47,6 +47,11 @@ const routes = [
         path: '/register',
         exact: false,
         main: () => <RegisterMgreen />
+    },
+    {
+        path: '/collection-process',
+        exact: false,
+        main: () => <CollectionProcess />
     },
     {
         path: '',

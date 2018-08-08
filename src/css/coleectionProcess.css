@@ -1,0 +1,43 @@
+.text-wastergroups {
+    font: 700 42px/40px "Poppins";
+}
+
+li.nav-item {
+    display: inline-block;
+    margin: 0 auto;
+    border: 1px solid lightgreen;
+    width: 32%;
+    text-align: center;
+}
+
+.steps-content {
+    margin-top: 26px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 340px;
+    text-align: center;
+}
+
+.steps-action {
+    margin-top: 24px;
+}
+
+span.ant-alert-message {
+    font: 700 30px/40px "Poppins";
+}
+
+.ant-alert-with-description .ant-alert-message {
+    font: 700 30px/40px "Poppins" !important;
+    text-transform: uppercase;
+    color: #000 !important;
+}
+
+.ant-alert-description {
+    font: 700 30px/40px "Poppins" !important;
+}
+
+ul.nav.nav-tabs li.nav-item:hover {
+    background: lightgreen !important;
+    color: yellowgreen;
+}
