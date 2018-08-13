@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Header, Footer, api, strings } from '../../components';
 import { connect } from 'react-redux';
-import { Container, Row, Col, Button, Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
+import { Container, Row, Col, Button, Form, FormGroup, Label, Input, CustomInput } from 'reactstrap';
 import '../../css/registermgreen.css';
 import AccountKit from 'react-facebook-account-kit';
 import { DatePicker } from 'antd';
@@ -42,7 +42,7 @@ class RegisterMgreen extends Component {
         this.getDefaultData();
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         this.getDefaultData(nextProps)
     }
 
@@ -58,7 +58,7 @@ class RegisterMgreen extends Component {
         if (response) {
             let token = response.code
             const phone = await api.dataService.changePhoneNumber(token)
-            if (phone.code = !0) {
+            if (phone.code !== 0) {
                 this.setState({
                     phone: phone.data
                 })
@@ -116,21 +116,21 @@ class RegisterMgreen extends Component {
     }
     async getDefaultData(nextProps) {
 
-        let province = this.state.listProvince.find(p => p.id == (nextProps ? nextProps.userReducer.user.province : this.props.userReducer.user.province))
+        let province = this.state.listProvince.find(p => p.id === (nextProps ? nextProps.userReducer.user.province : this.props.userReducer.user.province))
         if (province) {
             let listDistrict = api.dataService.getListDistricts(province.id)
             this.setState({
                 province,
                 listDistrict,
             })
-            let district = listDistrict.find(d => d.id == (nextProps ? nextProps.userReducer.user.district : this.props.userReducer.user.district))
+            let district = listDistrict.find(d => d.id === (nextProps ? nextProps.userReducer.user.district : this.props.userReducer.user.district))
             if (district) {
                 let listWard = api.dataService.getListWards(district.id)
                 this.setState({
                     district,
                     listWard,
                 })
-                let ward = listWard.find(d => d.id == (nextProps ? nextProps.userReducer.user.ward : this.props.userReducer.user.ward))
+                let ward = listWard.find(d => d.id === (nextProps ? nextProps.userReducer.user.ward : this.props.userReducer.user.ward))
                 if (ward) {
                     this.setState({
                         ward
@@ -143,13 +143,13 @@ class RegisterMgreen extends Component {
 
 
         await this.setState({
-            birth: this.props.userReducer.user.birth == null ? '' : (nextProps ? nextProps.userReducer.user.birth : this.props.userReducer.user.birth),
+            birth: this.props.userReducer.user.birth === null ? '' : (nextProps ? nextProps.userReducer.user.birth : this.props.userReducer.user.birth),
             userName: nextProps ? nextProps.userReducer.user.name : this.props.userReducer.user.name,
             mail: nextProps ? nextProps.userReducer.user.email : this.props.userReducer.user.email,
-            phone: this.props.userReducer.user.phone == null ? '' : (nextProps ? nextProps.userReducer.user.phone : this.props.userReducer.user.phone),
-            address: this.props.userReducer.user.address == null ? '' : (nextProps ? nextProps.userReducer.user.address : this.props.userReducer.user.address),
-            male: (nextProps ? nextProps.userReducer.user.gender == 1 : null) || this.props.userReducer.user.gender == 1 ? true : false,
-            female: (nextProps ? nextProps.userReducer.user.gender == 2 : null) || this.props.userReducer.user.gender == 2 ? true : false,
+            phone: this.props.userReducer.user.phone === null ? '' : (nextProps ? nextProps.userReducer.user.phone : this.props.userReducer.user.phone),
+            address: this.props.userReducer.user.address === null ? '' : (nextProps ? nextProps.userReducer.user.address : this.props.userReducer.user.address),
+            male: (nextProps ? nextProps.userReducer.user.gender === 1 : null) || this.props.userReducer.user.gender === 1 ? true : false,
+            female: (nextProps ? nextProps.userReducer.user.gender === 2 : null) || this.props.userReducer.user.gender === 2 ? true : false,
             avatar: nextProps ? nextProps.userReducer.user.avatar : this.props.userReducer.user.avatar,
         })
     }
@@ -207,7 +207,7 @@ class RegisterMgreen extends Component {
                                     <Col sm={10}>
                                         <Input type="text" name="phone" onChange={this.handleInputChange} value={phone} placeholder={strings.inputPhonenum} />
                                         <AccountKit
-                                            appId={"979105742271154"} // Update this!
+                                            appId={"1895352837204118"} // Update this!
                                             version="v1.0"
                                             language={"vi_VN"}
                                             onResponse={(resp) => this.changePhone(resp)}

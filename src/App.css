@@ -21,8 +21,187 @@ body {
 
 .Ui {
   width: 100%;
-  background: red;
+  background: lightgreen;
   position: absolute;
+  margin: 3% 0;
+  font: 700 42px/32px "Poppins";
+  text-align: center;
+}
+
+.content-list-promotions {
+  margin-top: 20px;
+  min-height: 50vh
+}
+
+.cssload-container {
+  width: 100%;
+  height: 49px;
+  text-align: center;
+}
+
+.cssload-double-torus {
+  width: 49px;
+  height: 49px;
+  margin: 0 auto;
+  border: 4px double;
+  border-radius: 50%;
+  border-color: transparent rgba(255, 94, 0, 0.9) rgba(255, 94, 0, 0.9);
+  animation: cssload-spin 690ms infinite linear;
+  -o-animation: cssload-spin 690ms infinite linear;
+  -ms-animation: cssload-spin 690ms infinite linear;
+  -webkit-animation: cssload-spin 690ms infinite linear;
+  -moz-animation: cssload-spin 690ms infinite linear;
+}
+
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes cssload-spin {
+  100% {
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes cssload-spin {
+  100% {
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes cssload-spin {
+  100% {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.value-in-tag.pointPercent {
+  margin-left: 0px;
+  margin-top: -65px;
+}
+
+.value-in-tag .billPointPercent {
+  font-size: 17px
+}
+
+.value-in-tag-point {
+  color: white;
+  margin-top: -54px;
+  font-size: 11px;
+  /* margin-left: 4px; */
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.content-item-promotion {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 10px
+}
+
+.wraper-promotion-item {
+  min-height: 355px;
+  background: #fff;
+  -webkit-box-shadow: 1px 3px 29px -4px rgba(0, 0, 0, 0.65);
+  -moz-box-shadow: 1px 3px 29px -4px rgba(0, 0, 0, 0.65);
+  box-shadow: 1px 3px 29px -4px rgba(0, 0, 0, 0.65);
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.21s ease;
+  -o-transition: all 0.21s ease;
+  transform: rotate(0deg) scale(1.000) skew(0deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.000) skew(0deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.000) skew(0deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.000) skew(0deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.000) skew(0deg) translate(0px);
+}
+
+.wraper-promotion-item:hover {
+  transform: rotate(0deg) scale(1.017) skew(0deg) translate(0px);
+  -webkit-transform: rotate(0deg) scale(1.017) skew(0deg) translate(0px);
+  -moz-transform: rotate(0deg) scale(1.017) skew(0deg) translate(0px);
+  -o-transform: rotate(0deg) scale(1.017) skew(0deg) translate(0px);
+  -ms-transform: rotate(0deg) scale(1.017) skew(0deg) translate(0px);
+}
+
+.header-promotion-item img {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 10px
+}
+
+.title-promotion1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  font-weight: 500;
+  font-size: 18px;
+  top: 8px;
+  position: relative;
+}
+
+.title-promotion2 {
+  color: gray;
+  font-style: italic;
+  font-size: 12px
+}
+
+.body-promotion-item {
+  border-top: 0.5px solid #999999;
+  border-bottom: 0.5px solid #999999;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.footer-promotion-item {
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.tag-promotion {
+  position: absolute;
+  width: 55px;
+  right: 3px;
+}
+
+.tag-promotion img {
+  width: 49px;
+  height: auto;
+}
+
+.image-promotion {
+  width: 100%;
+  height: 146px;
+}
+
+.promotion-name {
+  display: -webkit-box;
+  max-width: 86%;
+  height: 47px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  font-weight: 500;
 }
 
 @media (max-width:425px) {

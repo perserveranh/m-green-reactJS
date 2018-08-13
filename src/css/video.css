@@ -1,0 +1,25 @@
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    padding: 0 30px;
+    background: transparent;
+}
+
+.player-wrapper {
+    position: relative;
+    /* padding-top: 56.25%Player ratio: 100 / (1280 / 720) */
+    cursor: pointer;
+    background-image: url("/moitruong.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: cover;
+}
+
+@media (max-width: 425px) {
+    .react-player {
+        height: 250px !important;
+    }
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import "./notfound.css";
+
 export const NotFound = () => {
   return (
     <div className="page-container">
@@ -18,3 +19,4 @@ export const NotFound = () => {
 };
 
 export default NotFound;
+

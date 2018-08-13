@@ -43,7 +43,7 @@ const api = {
     getLang() {
         // if (!store.getState()) return 'en'
         // return store.getState().langState.lang
-        return localStorage.getItem('language')
+        return localStorage.getItem('language') ? localStorage.getItem('language') : 'vi'
     },
     getHost() {
         return host

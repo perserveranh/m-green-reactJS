@@ -6,14 +6,14 @@ import Loading from './loading'
 import ConfirmBox from './conFirmbox'
 class UI extends Component {
     render() {
-        let uiStatus = this.props.uiState
+        let {uiReducer} = this.props
         return (
-            uiStatus ?
+            uiReducer ?
                 (
                     <div className="Ui">
-                        <MessageBox show={uiStatus.showMessage} message={uiStatus.message} title={uiStatus.titleMessage} />
-                        <Loading show={uiStatus.showLoading} />
-                        <ConfirmBox show={uiStatus.showConfirmBox} titleConfirm={uiStatus.titleConfirm} bodyConfirm={uiStatus.bodyConfirm} bodyConfirmOK={uiStatus.bodyConfirmOK} bodyConfirmNO={uiStatus.bodyConfirmNO} titleBtnOK={uiStatus.titleBtnOK} titleBtnNO={uiStatus.titleBtnNO} />
+                        <MessageBox show={uiReducer.showMessage} message={uiReducer.message} title={uiReducer.titleMessage} />
+                        <Loading show={uiReducer.showLoading} />
+                        <ConfirmBox show={uiReducer.showConfirmBox} titleConfirm={uiReducer.titleConfirm} bodyConfirm={uiReducer.bodyConfirm} bodyConfirmOK={uiReducer.bodyConfirmOK} bodyConfirmNO={uiReducer.bodyConfirmNO} titleBtnOK={uiReducer.titleBtnOK} titleBtnNO={uiReducer.titleBtnNO} />
                     </div>
 
                 )
@@ -23,6 +23,6 @@ class UI extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { uiState: state.uiReducer }
+    return { uiReducer: state.uiReducer }
 }
 export default connect(mapStateToProps)(UI);

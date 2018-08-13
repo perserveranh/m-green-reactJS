@@ -12,6 +12,14 @@
   position: relative;
 }
 
+button.btn.btn-outline-success {
+  /* border: 3px solid; */
+  background: transparent;
+  /* height: 78px; */
+  margin: 16px 0;
+  font: 700px 25px/32px "Poppins";
+}
+
 .mgreen-logo {
   width: 10%;
   float: left;
@@ -171,7 +179,7 @@ nav .mgreen-menu ul li ul li {
 }
 
 .menu-mobile {
-  width: 256px;
+  width: 70vw;
   display: none;
 }
 
@@ -441,10 +449,16 @@ a.modal-link.link-to-login-in-signup:hover {
 }
 
 span.text-center {
-  width: 100%;
+  /* width: 100%;
   display: block;
-  text-transform: uppercase;
+  text-transform: uppercase; */
   font: 700 24px/22px "Poppins";
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 10px;
 }
 
 span.signUp-mb {
@@ -457,7 +471,11 @@ span.signUp-mb {
 }
 
 span.login-mb {
-  padding: 10px;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  right: 0;
   color: #040;
   text-transform: uppercase;
   font: 700 18px/22px "Poppins";
@@ -489,7 +507,7 @@ button.kep-login-facebook.metro {
   background: transparent;
   border: none;
   text-transform: capitalize;
-  padding-left: 31%;
+  padding-left: 32%;
 }
 
 button.text-container-google {
@@ -504,6 +522,14 @@ button.text-container-google:hover {
   color: #000;
 }
 
+.anticon {
+  position: absolute;
+  right: 0;
+  font-size: 51px;
+  color: green;
+  top: 10px;
+}
+
 @media (max-width:768px) {
   .menu-mobile {
     display: block;
@@ -513,29 +539,6 @@ button.text-container-google:hover {
   }
   .mgreen-menu {
     display: none;
-  }
-  .toggle-bar {
-    /* display: block; */
-    display: block;
-    position: absolute;
-    top: 21px;
-    right: 23px;
-    height: 34px;
-    width: 37px;
-    background: #FFC107;
-    cursor: pointer;
-    background: #024f00;
-  }
-  .toggle-bar span {
-    position: absolute;
-    background: #FFF;
-    margin-top: -2px;
-    top: 45%;
-    height: 6px;
-    left: 3px;
-    right: 3px;
-    -webkit-box-shadow: 0 8px 0 0 #FF8, 0 -8px 0 0 #FFF;
-    box-shadow: 0 11px 0 0 #FFF, 0 -8px -1 13 #FFF;
   }
   .mgreen-logo {
     padding: 10px 0;
@@ -561,4 +564,33 @@ button.text-container-google:hover {
     margin: 0 0px;
     padding: 0 3px;
   }
+}
+
+.mr-6 {
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+span.p-accountkit {
+  background: transparent;
+  color: crimson;
+  font: 700 18px/22px "Poppins";
+  border: none;
+  /* position: absolute; */
+  margin: 0 auto;
+  right: 0;
+  padding: 0 109px;
+  /* left: 0; */
+  /* bottom: 0; */
+  /* height: 29px; */
+  /* top: 0; */
+}
+
+span.p-accountkit:hover {
+  color: slateblue;
+}
+
+a.btn-google.btn-accountkit {
+  /* height: 42px; */
+  padding: 20px 0;
 }

@@ -44,8 +44,9 @@
     margin: auto;
     left: 0;
     right: 0;
-    top: 470px;
-    bottom: 0;
+    /* top: 470px; */
+    /* bottom: 0; */
+    bottom: -395px;
 }
 
 .img-text-content img {
@@ -74,24 +75,33 @@
 
 @media (max-width: 768px) and (min-width:426px) {
     .img-text-content p {
-        font: 400 42px/45px 'Gaegu', cursive;
-        padding: 40px 0;
+        font: 700 30px/45px 'Gaegu', cursive;
+        padding: 20px 0;
     }
     .img-text-content {
-        height: 230px;
+        bottom: -238px;
+        height: 145px;
+    }
+    .img-introduce2 img {
+        height: 330px;
     }
 }
 
 @media (max-width: 425px) {
     .img-text-content {
-        height: 130px;
-        top: 254px;
+        bottom: -150px;
+        height: 98px;
     }
     .img-text-content p {
-        padding: 20px 0;
+        font: 500 17px/25px 'Gaegu', cursive;
+        padding: 12px 0;
+    }
+    .img-introduce2 img {
+        height: 205px;
     }
 }
 
+/* 
 @media (max-width: 425px) and (min-width:376px) {
     .img-introduce2 img {
         height: 256px;
@@ -99,9 +109,9 @@
     .img-text-content p {
         font: 500 24px/19px 'Gaegu', cursive;
     }
-}
+} */
 
-@media (max-width:375px) {
+/* @media (max-width:375px) {
     .img-text-content p {
         font: 500 19px/14px 'Gaegu', cursive;
     }
@@ -112,10 +122,13 @@
         height: 240px;
         width: 100vw;
     }
-}
+} */
 
 @media (max-width:1024px) and (min-width:769px) {
     .img-introduce2 img {
         height: 435px;
+    }
+    .img-text-content {
+        bottom: -365px;
     }
 }

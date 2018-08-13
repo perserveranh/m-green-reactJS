@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import '../../css/slide.css';
 import { Button } from 'reactstrap';
-import { strings, api } from '../../components';
+import { strings, api, Video } from '../../components';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
@@ -19,7 +19,7 @@ class Slide extends Component {
       modal: false,
       modalSignup: false,
       modalLogin: false,
-      isLoading: api.api.showLoading()
+    
     }
   }
   toggle() {
@@ -28,19 +28,17 @@ class Slide extends Component {
       isOpen: !this.state.isOpen
     });
   }
-  UNSAFE_componentWillMount() {
-    this.setState({
-      isLoading: api.api.hideLoading()
-    });
-  }
+
   render() {
     const settings = {
       className: "slide",
       speed: 300,
       slidesToShow: 1,
-      autoplay: false,
+      autoplay: true,
       arrows: false,
-      autoplaySpeed: 3000,
+      autoplaySpeed: 5000,
+      dots: true,
+      infinite: true,
     };
     const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle.bind(this)}>&times;</button>;
     return (
@@ -94,6 +92,9 @@ class Slide extends Component {
               <Button className="btn-outmore" >{strings.introduce_7}</Button>{' '}
             </div>
             <img src="http://mgreen.vn/wp-content/uploads/2017/11/background_slide2.png" alt="slide3" />
+          </div>
+          <div>
+            <Video />
           </div>
         </Slider>
 

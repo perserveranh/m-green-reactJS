@@ -8,7 +8,7 @@ class New extends Component {
     super(props);
     this.state = {
       dataNews: [],
-      isLoading: api.api.showLoading()
+
     }
   }
   componentDidMount() {
@@ -16,12 +16,13 @@ class New extends Component {
   }
 
   async getNews() {
-    // isLoading: this.props.dispatch({ type: "SHOW_LOADING", showLoading: true });
+    api.api.showLoading();
     const news = await api.dataService.getNews('0', '10');
+    api.api.hideLoading();
     if (news.code !== 0) return console.log(news.msg);
     this.setState({
       dataNews: news.data,
-      isLoading: api.api.hideLoading()
+
     })
   }
   render() {
@@ -61,7 +62,7 @@ class New extends Component {
 }
 const mapStateToProps = state => {
   return {
-    // userReducers: state.userReducer,
+    userReducers: state.userReducer,
     uiReducer: state.uiReducer
   }
 }

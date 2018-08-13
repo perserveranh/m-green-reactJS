@@ -3,19 +3,16 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  ModalFooter,
-  FormGroup,
-  Label,
-  Form,
-  Input
+  Button
 } from 'reactstrap';
 import '../../css/header.css';
 import { Link } from 'react-router-dom';
-import { strings } from '../../components';
+import { strings, api } from '../../components';
 import { connect } from 'react-redux';
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-// import dataService from '../server/dataService';
+import { Icon } from 'antd';
+import AccountKit from 'react-facebook-account-kit';
 
 class Header extends Component {
   constructor(props) {
@@ -23,29 +20,42 @@ class Header extends Component {
     this.state = {
       isOpen: false,
       modal: false,
-      modalSignup: false,
       modalLogin: false,
+      visible: false,
+      popoverOpen: false
     }
+
   }
   handleCancel() {
     this.setState({
       modalSignup: false,
-      modalLogin: false
+      modalLogin: false,
     });
   }
-  toggleSignup() {
-    this.setState({
 
-      modalSignup: !this.state.modalSignup,
-      isOpen: !this.state.isOpen
+  showDrawer = () => {
+    this.setState({
+      visible: true,
     });
-  }
+  };
+
+  onClose = () => {
+    this.setState({
+      visible: false,
+    });
+  };
+
   toggleLogin() {
     this.setState({
-
       modalLogin: !this.state.modalLogin,
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
+  }
+  togglePopover = () => {
+    console.log('asdfgh')
+    this.setState = {
+      popoverOpen: !this.state.popoverOpen
+    }
   }
   handleLogin() {
     this.setState({
@@ -79,18 +89,80 @@ class Header extends Component {
   handleChangeEn = () => {
     this.props.dispatch({ type: 'SET_LANGUAGE', language: 'en' });
   }
-  async handleGoogle(res) {
-    // let data = dataService.login('gg',res.accessToken);
-    console.log(res);
+
+  async checkStatusLogin() {
+    const token = localStorage.getItem("RFTK")
+    if (token) {
+      const result = await api.dataService.login('token', token)
+      if (result.code !== 0) return api.api.showMessage(result.msg)
+      localStorage.setItem("RFTK", result.token.token)
+      api.api.setUserToken(result.token)
+      api.api.setUserInfo(result.user)
+      api.api.setLitMember(result.memberCards)
+      api.api.setCate(result.categories)
+    }
+  }
+
+  UNSAFE_componentWillMount() {
+    this.checkStatusLogin()
+  }
+  componentDidMount() {
+    const token = localStorage.getItem('RFTK')
+    // window.addEventListener('scroll', this.handleScroll.bind(this));
+    if (!token) {
+      this.getCategoryNotSigin()
+    }
 
   }
+
+
+  // google
+  async loginWithGoogle(token) {
+    console.log(token);
+    const result = await api.dataService.login('gg', token)
+    if (result.code !== 0) return api.api.showMessage(result.msg)
+    this.processLoginResult(result);
+
+  }
+
+  // phone
+  async loginViaAccountkit(response) {
+    let token = response.code
+    const result = await api.dataService.login('phone', token)
+    if (result.code !== 0) return api.api.showMessage(result.msg)
+    this.processLoginResult(result)
+  }
+
+  // facebook
+  async loginViaFacebook(response) {
+    let token = response.accessToken
+    const result = await api.dataService.login('fb', token)
+    if (result.code !== 0) return api.api.showMessage(result.msg)
+    this.processLoginResult(result)
+    console.log('dat', response)
+  }
+  logout() {
+    localStorage.removeItem("RFTK")
+    window.location.href = '/'
+  }
+  async getCategoryNotSigin() {
+    const result = await api.dataService.getCategory()
+    if (result.code === 0) api.api.setCate(result.categories)
+  }
+
+  processLoginResult(result) {
+    api.api.setCate(result.categories)
+    localStorage.setItem("RFTK", result.token.token)
+    api.api.setUserToken(result.token)
+    api.api.setUserInfo(result.user)
+    api.api.setLitMember(result.memberCards)
+    window.location.reload()
+
+  }
+
   render() {
-    const responseGoogle = response => {
-      console.log(response);
-    };
-    const responseFacebook = response => {
-      console.log(response);
-    };
+    console.log('abc', this.props.userReducer.user);
+    console.log('avatar', this.props.userReducer.user.avatar);
     // const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle.bind(this)}>&times;</button>;
     return (
       <div className="header" id="header">
@@ -110,90 +182,6 @@ class Header extends Component {
           </ModalBody>
 
         </Modal >
-        {/* <div className="modal-signup">
-          <Modal
-            isOpen={this.state.modalSignup}
-            toggle={this.toggleSignup.bind(this)}
-            className={this.props.className}
-
-          >
-            <ModalHeader>
-              <span className="text-center">SIGN UP</span>
-            </ModalHeader>
-            <ModalBody>
-              <a
-                className="btn-facebook"
-
-              >
-                <span className="icon-container">
-                  <i className="fab fa-facebook-f" />
-                </span>
-
-                <FacebookLogin
-                  className="text-container-facebook"
-                  appId="702693780061912"
-                  autoLoad={true}
-                  textButton="Sign up with Facebook"
-                  fields="name,email,picture"
-                  onClick={this.componentClicked}
-                  callback={responseFacebook}
-                />
-              </a>
-              <a className="btn-google">
-                <span className="icon-container-google">
-                  <i className="fab fa-google-plus-g" />
-                </span>
-
-                <GoogleLogin
-                  className="text-container-google"
-                  clientId="544010331601-69oe16u855fqosv9tpbmbcn3285rnrk2.apps.googleusercontent.com"
-                  buttonText="Sign up with Google"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                />
-              </a>
-              <div className="signup-or-separator">
-                <span className="h6 signup-or-separator--text">or</span>
-                <hr />
-              </div>
-              <div className="text-center" style={{ color: "#fff" }}>
-                <a className="btn-email">
-                  <i className="fas fa-envelope" />
-                  Sign up with Email
-                  </a>
-              </div>
-              <div id="tos_outside" className="row-space-top-3">
-                <small>
-                  By signing up, I agree to Luxstay's{" "}
-                  <a data-popup="true" target="_blank">
-                    Terms of service
-                    </a>,{" "}
-                  <a data-popup="true" target="_blank">
-                    Privacy policy
-                    </a>,{" "}
-                  <a data-popup="true" target="_blank">
-                    Cancellation policy
-                    </a>, and
-                    <a data-popup="true" target="_blank">
-                    Copyright policy
-                    </a>.
-                  </small>
-              </div>
-            </ModalBody>
-            <ModalFooter>
-              <div className="signup-footer">
-                <span>Already an mgreen member?</span>
-
-                <a
-                  className="modal-link link-to-login-in-signup"
-                  onClick={this.handleCancel.bind(this)}
-                >
-                  Cancel
-                  </a>
-              </div>
-            </ModalFooter>
-          </Modal>
-        </div> */}
         <div className="modal-login">
           <Modal
             isOpen={this.state.modalLogin}
@@ -202,7 +190,7 @@ class Header extends Component {
 
           >
             <ModalHeader>
-              <span className="text-center">LOGIN</span>
+              <span className="text-center">{strings.nav_3}</span>
             </ModalHeader>
             <ModalBody>
               <a className="btn-facebook">
@@ -211,11 +199,11 @@ class Header extends Component {
                 </span>
                 <FacebookLogin
                   className="text-container-facebook"
-                  appId="702693780061912"
-                  autoLoad={true}
-                  textButton="Login with Facebook"
+                  appId="1895352837204118"
+                  autoLoad={false}
+                  textButton={strings.loginFacebook}
                   fields="name,email,picture"
-                  callback={responseFacebook}
+                  callback={(res) => { this.loginViaFacebook(res) }}
                 />
               </a>
               <a className="btn-google">
@@ -225,7 +213,7 @@ class Header extends Component {
                 <GoogleLogin
                   className="text-container-google"
                   clientId="544010331601-69oe16u855fqosv9tpbmbcn3285rnrk2.apps.googleusercontent.com"
-                  buttonText="Login with Google"
+                  buttonText={strings.loginGoogle}
                   onSuccess={(responseGoogle) => { this.loginWithGoogle(responseGoogle.accessToken) }}
                   onFailure={(responseGoogle) => { }}
                 />
@@ -234,70 +222,25 @@ class Header extends Component {
                 <span className="h6 signup-or-separator--text">or</span>
                 <hr />
               </div>
-              <Form>
-                <FormGroup>
-                  <Label for="exampleEmail" hidden>
-                    Email
-                    </Label>
-                  <Input
-                    type="email"
-                    name="email"
-                    id="exampleEmail"
-                    placeholder="Email"
-                  />
-                </FormGroup>{" "}
-                <FormGroup>
-                  <Label for="examplePassword" hidden>
-                    Password
-                    </Label>
-                  <Input
-                    type="password"
-                    name="password"
-                    id="examplePassword"
-                    placeholder="Password"
-                  />
-                </FormGroup>{" "}
-              </Form>
+              <a className="btn-google btn-accountkit">
+                <span className="icon-container-google">
+                  <i class="fas fa-mobile"></i>
+                </span>
+                <AccountKit
+                  appId={"1895352837204118"} // Update this!
+                  version="v1.0"
+                  language={"vi_VN"}
+                  onResponse={(resp) => this.loginViaAccountkit(resp)}
+                  csrf={'15021997'} // Required for security
+                >
+                  {p => <span {...p} className="p-accountkit">
+                    {strings.loginMobile}
+                  </span>
 
-              <div className="text-center" style={{ color: "#fff" }}>
-                <a
-                  className="btn-email"
-                  onClick={this.handleLogin.bind(this)}
-                >
-                  LOGIN{" "}
-                </a>
-              </div>
-              <div id="tos_outside" className="row-space-top-3">
-                <small>
-                  By signing up, I agree to mgreen's{" "}
-                  <a data-popup="true" target="_blank">
-                    Terms of service
-                    </a>,{" "}
-                  <a data-popup="true" target="_blank">
-                    Privacy policy
-                    </a>,{" "}
-                  <a data-popup="true" target="_blank">
-                    Cancellation policy
-                    </a>, and
-                    <a data-popup="true" target="_blank">
-                    Copyright policy
-                    </a>.
-                  </small>
-              </div>
+                  }
+                </AccountKit>
+              </a>
             </ModalBody>
-            <ModalFooter>
-              <div className="signup-footer">
-                <span>Don’t have an account?</span>
-                <a
-                  className="modal-link link-to-login-in-signup"
-                  data-modal-href="/signup_modal"
-                  data-modal-type="signup"
-                  onClick={this.handleCancel.bind(this)}
-                >
-                  Cancel
-                  </a>
-              </div>
-            </ModalFooter>
           </Modal>
         </div>
         <div>
@@ -319,13 +262,7 @@ class Header extends Component {
 
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
-                <li ><Link to="#" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link>
-                  <ul className="sub-menu">
-                    <li><a href="">M-green</a></li>
-                    <li><a href="">M-point</a></li>
-
-                  </ul>
-                </li>
+                <li ><Link to="/endow"     >{strings.nav_4}</Link></li>
                 <li ><Link to="#" className="download" >{strings.nav_12} &nbsp; <i className="fas fa-angle-down"></i></Link>
                   <ul className="sub-menu">
                     <li><Link to="/sponsor">{strings.nav_12}</Link></li>
@@ -333,11 +270,20 @@ class Header extends Component {
                     <li><Link to="/collectormgreen">{strings.nav_14}</Link></li>
                   </ul>
                 </li>
-                <li><Link to="#" onClick={this.toggleLogin.bind(this)}  >{strings.nav_3}</Link>
-                  {/* <ul className="sub-menu">
-                    <li><Link to="#" onClick={this.toggleLogin.bind(this)} >{strings.nav_10}</Link></li>
-                    <li><Link to="#" onClick={this.toggleSignup.bind(this)}>{strings.nav_11}</Link></li>
-                  </ul> */}
+
+                <li>
+
+                  {!this.props.userReducer.user.avatar ? <Link to="#" onClick={this.toggleLogin.bind(this)} >
+                    <i className="fas fa-user-alt mr-6 " />{this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name}
+                  </Link> :
+                    <li ><Link to="#" > <img src={this.props.userReducer.user.avatar} className="mr-6" style={{ width: 28, borderRadius: 25, height: 'auto' }} /> {this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name} </Link>
+                      <ul className="sub-menu">
+                        <li><Link to="/register" > <i className="fas fa-edit mr-6"></i> {strings.updateCard}</Link></li>
+                        <li><Link to="#" onClick={this.logout.bind(this)} > <i className="fas fa-sign-out-alt mr-6"></i> {strings.logout}</Link></li>
+                      </ul>
+                    </li>
+
+                  }
                 </li>
                 <li>
                   <a onClick={this.handleChangeVi.bind(this)}>
@@ -365,8 +311,8 @@ class Header extends Component {
             </div>
           </nav>
           <div className="menu-mobile">
-            <div className="toggle-bar " onClick={this.handleClick.bind(this)}>
-              <span></span>
+            <div onClick={this.handleClick.bind(this)}>
+              <Icon type="bars" />
             </div>
             <div className={`ht-menu ${!this.state.isOpen ? 'isShow' : ''}`}  >
               <ul>
@@ -391,6 +337,11 @@ class Header extends Component {
                 <li><Link to="/collection-process" >{strings.nav_18.toUpperCase()}</Link></li>
               </ul>
             </div>
+            <Link to="/collection-process">
+
+              <Button outline color="success">Phân loại và thu gom</Button>{' '}
+            </Link>
+
           </div>
         </div>
       </div >
@@ -402,6 +353,7 @@ const mapStateToProps = (state) => {
   return {
     LangState: state.LangReducers,
     uiReducers: state.uiReducers,
+    userReducer: state.userReducer
   }
 }
 

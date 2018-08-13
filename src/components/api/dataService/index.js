@@ -135,6 +135,7 @@ var dataService = {
         }
         return request.post(url, data, api.getToken())
     },
+    
     getSuggestWords(skip, limit, category, text) {
         let url = 'suggestword/getSuggestWords'
         let data = {
@@ -148,7 +149,7 @@ var dataService = {
     getListProvinces: () => {
         return location.provinces
     },
-   
+
     getListDistricts: (idProvinces) => {
         let district = [];
         location.districts.map(item => {
@@ -165,22 +166,7 @@ var dataService = {
         })
         return ward
     },
-    updateUserInfo(name, email, phone, gender, birth, address, avatar, province, district, ward) {
-        let url = 'user/updateProfile'
-        let data = {
-            name,
-            email,
-            phone,
-            gender,
-            birth,
-            address,
-            avatar,
-            province,
-            district,
-            ward
-        }
-        return request.post(url, data, api.getToken())
-    },
+
     changeActiveCard: (card) => {
         var url = 'user/changeActiveCard?page=34&api=changeActiveCard';
         var data = {
