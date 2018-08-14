@@ -262,7 +262,7 @@ class Header extends Component {
 
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
-                <li ><Link to="/endow"     >{strings.nav_4}</Link></li>
+                <li ><Link to="/endow">{strings.nav_4}</Link></li>
                 <li ><Link to="#" className="download" >{strings.nav_12} &nbsp; <i className="fas fa-angle-down"></i></Link>
                   <ul className="sub-menu">
                     <li><Link to="/sponsor">{strings.nav_12}</Link></li>

@@ -1,6 +1,6 @@
 import React from 'react';
 import NotFound from './components/NotFound/index';
-import { Mgreen,Endow, Project, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
+import { Mgreen,Promotions,PromotionInfo,Endow, Project,MyGift, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
 
 const routes = [
     {
@@ -54,9 +54,24 @@ const routes = [
         main: () => <CollectionProcess />
     },
     {
+        path: '/detail/:id',
+        exact: false,
+        main: () => <PromotionInfo />
+    },
+    {
+        path: '/promotions/:category',
+        exact: false,
+        main: () => <Promotions />
+    },
+    {
         path: '/endow',
         exact: false,
         main: () => <Endow />
+    },
+    {
+        path: '/mygift',
+        exact: false,
+        main: () => <MyGift />
     },
     {
         path: '',

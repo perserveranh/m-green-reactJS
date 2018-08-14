@@ -18,9 +18,9 @@ class ListPromotions extends Component {
     componentDidMount() {
         this.getlistPromotions()
     }
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         console.log('fffffff')
-        if (nextProps != this.props) {
+        if (nextProps !== this.props) {
             this.setState({
                 dataList: []
             })
@@ -30,17 +30,17 @@ class ListPromotions extends Component {
     async getlistPromotions(nextProps) {
         let category = ''
         if (nextProps) {
-            category = nextProps.categorySearch ? nextProps.categorySearch : nextProps.paramsState.idCategory
+            category = nextProps.categorySearch ? nextProps.categorySearch : nextProps.paramsReducer.idCategory
         } else {
-            category = this.props.categorySearch ? this.props.categorySearch : this.props.paramsState.idCategory
+            category = this.props.categorySearch ? this.props.categorySearch : this.props.paramsReducer.idCategory
         }
 
         this.setState({
             isLoading: true
         })
         // api.showLoading()
-        const result = await api.dataService.getListPromotions(0, this.props.limit, category, nextProps ? nextProps.paramsState.promotionType : this.props.paramsState.promotionType, "new", !this.props.search ? null : this.props.search)
-        if (result.code != 0) return api.api.showMessage(result.msg)
+        const result = await api.dataService.getListPromotions(0, this.props.limit, category, nextProps ? nextProps.paramsReducer.promotionType : this.props.paramsReducer.promotionType, "new", !this.props.search ? null : this.props.search)
+        if (result.code !== 0) return api.api.showMessage(result.msg)
         this.setState({
             dataList: result.data,
             isLoading: false
@@ -54,8 +54,8 @@ class ListPromotions extends Component {
         this.setState({
             isLoading: true
         })
-        const result = await api.dataService.getListPromotions(this.state.dataList.length, this.props.limit, (this.props.categorySearch ? this.props.categorySearch : this.props.paramsState.idCategory), this.props.paramsState.promotionType, "new", !this.props.search ? null : this.props.search)
-        if (result.code != 0) return api.api.showMessage(result.msg)
+        const result = await api.dataService.getListPromotions(this.state.dataList.length, this.props.limit, (this.props.categorySearch ? this.props.categorySearch : this.props.paramsReducer.idCategory), this.props.paramsReducer.promotionType, "new", !this.props.search ? null : this.props.search)
+        if (result.code !== 0) return api.api.showMessage(result.msg)
         this.setState({
             isLoading: false
         })
@@ -63,7 +63,7 @@ class ListPromotions extends Component {
         this.setState({
             dataList: newDataList
         })
-        if (result.data && result.data.length == 0) {
+        if (result.data && result.data.length === 0) {
             this.setState({
                 canLoad: false
             })
@@ -76,7 +76,7 @@ class ListPromotions extends Component {
                 {this.state.isLoading && this.props.noload ? <div style={{ marginTop: 50 }} className="cssload-container">
                     <div className="cssload-double-torus"></div>
                 </div> : null}
-                {!this.state.isLoading && this.state.dataList.length == 0 ? (<h2 style={{ textAlign: 'center' }}>{strings.noPromotion}</h2>) : null}
+                {!this.state.isLoading && this.state.dataList.length === 0 ? (<h2 style={{ textAlign: 'center' }}>{strings.noPromotion}</h2>) : null}
                 <InfiniteScroll
                     key={this.state.category}
                     pageStart={0}
@@ -105,7 +105,7 @@ class ListPromotions extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { paramsState: state.paramsState }
+    return { paramsReducer: state.paramsReducer }
 }
 
 export default connect(mapStateToProps)(ListPromotions);

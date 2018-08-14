@@ -8,6 +8,8 @@ import CollectorMgreen from './collectorMgreen/collector';
 import Sponsor from './sponsor/sponsor';
 import RegisterMgreen from './registerMgreen/index';
 import CollectionProcess from './coleectionProcess/index';
-import promotions from './promotions/index'
-
-export { Partner, promotions, Home, Mgreen, New, Project, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess };
+import Promotions from './promotions/index'
+import PromotionInfo from './promotionInfo/index';
+import Endow from './endow/index';
+import MyGift from './myGift/index';
+export { Partner, Promotions, MyGift, PromotionInfo, Endow, Home, Mgreen, New, Project, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess };

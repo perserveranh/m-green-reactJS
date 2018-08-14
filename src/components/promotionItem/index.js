@@ -37,9 +37,9 @@ class PromotionItem extends Component {
         if (e.isBillPoint) {
             count += 1
         } if (count >= 2 ||
-            (e.isPercent && e.percent == 0) ||
-            (e.isPercent && e.percent == null) ||
-            (e.isStamp && e.stamp != 0) ||
+            (e.isPercent && e.percent === 0) ||
+            (e.isPercent && e.percent === null) ||
+            (e.isStamp && e.stamp !== 0) ||
             e.isGiftAnother
         ) {
             return (
@@ -78,13 +78,12 @@ class PromotionItem extends Component {
         const { e } = this.props
         return (
 
-            <Link
-                key={e.id}
-                style={{ color: 'unset' }} to={`/detail/${e.id}`}>
-                <Col
-                    xs="12" md="4" sm="6" lg={this.props.col} style={{ marginTop: 5, paddingLeft: "10" }}>
-                    <Row className="content-item-promotion">
-                        <div className="wraper-promotion-item" >
+            <Col xs="12" md="4" sm="6" lg={this.props.col} style={{ marginTop: 5, paddingLeft: "10" }}>
+                <Row className="content-item-promotion">
+                    <div className="wraper-promotion-item" >
+                        <Link
+                            key={e.id}
+                            style={{ color: 'unset' }} to={`/detail/${e.id}`}>
                             <div className="header-promotion-item" >
                                 <Row>
                                     <Col xs="3" md="3"  >
@@ -105,7 +104,8 @@ class PromotionItem extends Component {
                                 <Row style={{ marginTop: 10 }}>
                                     <Col xs="2" md="2"  >
                                         <div style={{ width: '100%' }}>
-                                            <Glyphicon id="icon-like" glyph="glyphicon glyphicon-heart" />
+
+                                            <i className="fas fa-heart" id="icon-like"></i>
                                             <div id="count-like" >
                                                 <p >{e.likeCount}</p>
                                             </div>
@@ -126,7 +126,7 @@ class PromotionItem extends Component {
                                         <p >
                                             <i className="fas fa-calendar-alt" style={{ top: 2, marginLeft: 5, marginRight: 5 }}></i>
 
-                                            {trans.applyTo}:{moment(e.endDate).format('L')}</p>
+                                            {strings.applyTo}:{moment(e.endDate).format('L')}</p>
                                     </Col>
                                     <Col xs="4" md="4"   >
                                         <Row>
@@ -139,11 +139,11 @@ class PromotionItem extends Component {
                                     </Col>
                                 </Row>
                             </div>
+                        </Link>
 
-                        </div>
-                    </Row>
-                </Col>
-            </Link>
+                    </div>
+                </Row>
+            </Col>
         );
     }
 }
