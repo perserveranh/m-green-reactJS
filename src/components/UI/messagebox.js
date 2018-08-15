@@ -33,7 +33,7 @@ class MessageBox extends Component {
                         <Button onClick={() => { api.hideMessage() }} >{strings.close}</Button>
                     </Modal.Footer>
                 </Modal> */}
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                <Modal isOpen={this.props.isOpen} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>{this.props.title ? this.props.title : strings.warning}</ModalHeader>
                     <ModalBody>
                         {this.props.message}

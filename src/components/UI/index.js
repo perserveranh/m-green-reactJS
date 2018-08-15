@@ -6,12 +6,12 @@ import Loading from './loading'
 import ConfirmBox from './conFirmbox'
 class UI extends Component {
     render() {
-        let {uiReducer} = this.props
+        let { uiReducer } = this.props
         return (
             uiReducer ?
                 (
                     <div className="Ui">
-                        <MessageBox show={uiReducer.showMessage} message={uiReducer.message} title={uiReducer.titleMessage} />
+                        <MessageBox isOpen={uiReducer.showMessage} message={uiReducer.message} title={uiReducer.titleMessage} />
                         <Loading show={uiReducer.showLoading} />
                         <ConfirmBox show={uiReducer.showConfirmBox} titleConfirm={uiReducer.titleConfirm} bodyConfirm={uiReducer.bodyConfirm} bodyConfirmOK={uiReducer.bodyConfirmOK} bodyConfirmNO={uiReducer.bodyConfirmNO} titleBtnOK={uiReducer.titleBtnOK} titleBtnNO={uiReducer.titleBtnNO} />
                     </div>

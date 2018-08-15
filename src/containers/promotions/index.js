@@ -159,18 +159,18 @@ class Promotions extends Component {
                 <Container className="content-menu-bottom-banner">
                     <Row >
                         <Col xs="4" md="4" className="item-menu-bottom-banner"  >
-                            <Link to="/endow" style={{ textDecoration: 'none' }}>
-                                <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
-                                    <Col xs="4" md="6"  >
-                                        <img src='/icon-promotion.png' />
-                                    </Col>
-                                    <Col xs="6" md="6"  >
-                                        <Row>
-                                            <p>{strings.promotion.toUpperCase()}</p>
-                                        </Row>
-                                    </Col>
-                                </Row>
-                            </Link>
+
+                            <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
+                                <Col xs="4" md="6"  >
+                                    <img src='/icon-promotion.png' />
+                                </Col>
+                                <Col xs="6" md="6"  >
+                                    <Row>
+                                        <p>{strings.promotion.toUpperCase()}</p>
+                                    </Row>
+                                </Col>
+                            </Row>
+
                         </Col>
 
                         <Col xs="4" md="4" className="item-menu-bottom-banner" >

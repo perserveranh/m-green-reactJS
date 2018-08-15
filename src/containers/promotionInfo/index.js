@@ -54,7 +54,7 @@ class PromotionInfo extends Component {
 
     async getInfo() {
         api.api.showLoading()
-        const result = await api.dataService.getPromotionInfo(this.props.paramsReducer.idCategory)
+        const result = await api.dataService.getPromotionInfo(this.props.match.params.id)
         api.api.hideLoading()
         if (result.code !== 0) return;
         this.setPreviewImage(result.data.promotion.images[0]);
@@ -165,6 +165,7 @@ class PromotionInfo extends Component {
     }
 
     async getCode() {
+        // api.api.showMessage('aaaaaaa')
         const code = await api.dataService.getCode(this.props.match.params.id, 1)
         if (code.code !== 0) return api.api.showMessage(code.msg)
         let newcodes = this.state.codes;
@@ -207,7 +208,7 @@ class PromotionInfo extends Component {
             if (item.rate === 1) rate1 = item.count
         })
         let total = rate5 + rate2 + rate3 + rate4 + rate1
-      
+
         return (
             <React.Fragment>
                 <Header />
@@ -317,7 +318,7 @@ class PromotionInfo extends Component {
                                     </div>
                                 </div>
                                 <div className="content-like">
-                                    <Button onClick={() => { this.toggleLike(this.props.paramsReducer.idCategory) }} color="success" className="btn-like">
+                                    <Button onClick={() => { this.toggleLike(this.props.match.params.id) }} color="success" className="btn-like">
                                         <i class="fas fa-heart"></i>
 
                                         {this.state.likeStatus ? " " + strings.like : " " + strings.dislike}
@@ -374,6 +375,6 @@ class PromotionInfo extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { userReducer: state.userReducer, LangReducers: state.LangReducers, paramsReducer: state.paramsReducer }
+    return { userReducer: state.userReducer, LangReducers: state.LangReducers, paramsReducer: state.paramsReducer, uiReducer: state.uiReducer }
 }
 export default connect(mapStateToProps)(PromotionInfo);
