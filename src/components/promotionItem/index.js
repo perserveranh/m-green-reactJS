@@ -83,7 +83,7 @@ class PromotionItem extends Component {
                     <div className="wraper-promotion-item" >
                         <Link
                             key={e.id}
-                            style={{ color: 'unset' }} to={`/detail/${e.id}`}>
+                            style={{ color: 'unset', textDecoration: 'none' }} to={`/detail/${e.id}`}>
                             <div className="header-promotion-item" >
                                 <Row>
                                     <Col xs="3" md="3"  >
@@ -131,7 +131,7 @@ class PromotionItem extends Component {
                                     <Col xs="4" md="4"   >
                                         <Row>
                                             <p >
-                                                <i className="fas fa-map-marker" style={{ top: 2, marginLeft: 10, }}></i>
+                                                <i className="fas fa-map-marker" style={{ top: 2, marginLeft: 10 }}></i>
 
                                                 {e.area}
                                             </p>

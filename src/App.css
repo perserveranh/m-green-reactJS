@@ -232,10 +232,14 @@ body {
 }
 
 .element-item-menu-bottom-banner p {
-  float: left;
   font-weight: bold;
-  font-size: 12.8pt;
-  margin-top: 20px
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  font-size: 19pt;
 }
 
 .element-item-menu-bottom-banner {
@@ -252,9 +256,13 @@ body {
 }
 
 .element-item-menu-bottom-banner img {
-  float: right;
-  width: 33%;
-  margin-top: 5px
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  top: -10px;
+  right: 0;
+  bottom: 0;
+  width: 35%;
 }
 
 .nav-category {
@@ -268,7 +276,7 @@ body {
 
 .nav-category .card-left {
   height: 67px;
-  background: #ff5c00;
+  background: #2a9c44;
   position: relative;
   top: -10px;
   margin-right: 31px;
@@ -281,46 +289,41 @@ body {
 }
 
 .nav-promotions #category-title {
-  text-align: left;
-  background: #fe9053;
-  padding-top: 10px;
-  padding-left: 10PX;
-  margin-top: 10px;
+  text-align: center;
+  background: transparent;
 }
 
 .title-item-menu-category {
-  font-size: 18px;
-  margin-top: 20px;
-  text-align: center;
-  font-weight: 400;
-  height: 37px;
-  position: relative;
-  padding: 0 35px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font: 700 32px/30px "Poppins";
 }
 
 .title-item-menu-category :hover {
-  color: #ff5c00
+  color: #2a9c44;
 }
 
 .title-item-menu-category p {
-  height: 28px;
+  padding: 40px 169px;
 }
 
 .more {
   float: right;
   margin-top: 23px;
-  margin-right: 27px;
   font-style: italic;
   text-decoration: underline;
   text-transform: capitalize;
+  height: 20px;
   /* color: black; */
 }
 
 #category-title {
   text-align: center;
-  font-size: 24px;
-  color: white;
-  padding-top: 15px
+  font: 700 25px/22px "Poppins";
+  margin-top: 20px;
+  color: wheat;
 }
 
 .content-list-promotions {
@@ -365,8 +368,8 @@ body {
 
 .tag-promotion {
   position: absolute;
-  width: 55px;
-  right: 3px;
+  width: 37px;
+  right: 12px;
 }
 
 .tag-promotion img {
@@ -1227,9 +1230,10 @@ button.list-group-item {
 }
 
 .menubar-promotions {
-  background: white;
-  width: 100%;
+  background: #7ff79a;
+  width: 83vw;
   height: 49px;
+  margin: 0 -205px;
 }
 
 .content-right-promotions {
@@ -1237,9 +1241,17 @@ button.list-group-item {
 }
 
 .list-promotion-more {
-  padding-right: 10px;
-  padding-left: 24px;
-  margin-top: -16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-menu-category.row {
+  padding: 20px 30px;
+  font: 600 18px/27px "Poppins";
+  color: slategrey;
 }
 
 .cssload-container {
@@ -1741,7 +1753,8 @@ button.react-date-picker__calendar-button.react-date-picker__button__icon {
   border: 1px solid transparent;
   background-color: white;
   margin-bottom: 30px;
-  margin-top: 30px
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .mygift-title-menu {
@@ -1809,8 +1822,6 @@ pre {
   margin-bottom: 20px;
 }
 
-.left.parner-info {}
-
 .txt-title {
   font-weight: 600;
 }
@@ -1830,4 +1841,90 @@ pre {
 
 .slide-bottom .slick-prev {
   left: 0;
+}
+
+.menu-mobile-promotion {
+  display: none;
+}
+
+.ht-menu-promotion {
+  margin: 2px 40px;
+  position: relative;
+  background: #cccccce3;
+}
+
+.ht-menu-promotion .title-menu-category.row {
+  color: #254c2e;
+  font: 700 30px/33px "Poppins";
+  padding: 0px 52px;
+  cursor: pointer;
+}
+
+.ht-menu-promotion.isShow {
+  display: none;
+  background: #444444;
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 768px) and (min-width:426px) {
+  .element-item-menu-bottom-banner p {
+    top: 18px;
+    font-size: 11pt;
+  }
+  .element-item-menu-bottom-banner img {
+    top: 4px;
+  }
+  .title-menu-category.row {
+    padding: 20px 19px;
+    font: 600 13px/18px "Poppins";
+  }
+  .more {
+    font-size: 9pt;
+  }
+  .page-title h1 {
+    margin-left: 185px;
+  }
+  .page-title img {
+    width: 70px;
+    margin: 26px 170px;
+  }
+}
+
+@media(max-width:768px) {
+  .menu-mobile-promotion {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    right: 10px;
+  }
+  .nav-category {
+    display: none;
+  }
+}
+
+@media (max-width:425px) {
+  .element-item-menu-bottom-banner img {
+    top: -2px;
+    width: 28%;
+  }
+  .element-item-menu-bottom-banner p {
+    left: 32px;
+    top: 42px;
+    font-size: 11pt;
+  }
+  .page-title img {
+    width: 56px;
+    margin: 27px 48px;
+  }
+  .page-title h1 {
+    font-size: 18pt;
+  }
+  .anticon-menu {
+    right: -6px !important;
+  }
 }

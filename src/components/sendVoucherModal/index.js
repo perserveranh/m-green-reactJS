@@ -5,7 +5,7 @@ export default class SendVoucherModal extends React.Component {
     handleClose() { }
     render() {
         return (
-            <Modal isOpen={this.props.show} >
+            <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} >
                 <ModalHeader >{strings.SendVoucherEmail}</ModalHeader>
                 <ModalBody>
                     <Form>
@@ -16,8 +16,8 @@ export default class SendVoucherModal extends React.Component {
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" style={{ background: '#ff5c00' }} onClick={this.props.closeModal}>{strings.sendVoucher}</Button>{' '}
-                    <Button color="secondary" onClick={this.props.closeModal}>{strings.cancel}</Button>
+                    <Button color="primary" style={{ background: '#ff5c00' }} onClick={this.props.toggle}>{strings.sendVoucher}</Button>{' '}
+                    <Button color="secondary" onClick={this.props.toggle}>{strings.cancel}</Button>
                 </ModalFooter>
             </Modal>
         );

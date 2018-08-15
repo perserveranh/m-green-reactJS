@@ -22,8 +22,8 @@ const request = {
                 body: JSON.stringify(data)
             };
             console.log('header', options)
-            console.log('POST', url, headers)
-
+            console.log('POST', url, headers),
+            console.log('Body',JSON.stringify(data))
             fetch(url, options).then((response) => {
                 try {
                     return response.json()

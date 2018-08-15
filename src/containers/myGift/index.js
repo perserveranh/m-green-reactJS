@@ -53,18 +53,18 @@ class MyGift extends Component {
                 <Container>
                     <div className="yourgift-tabTitle">
                         <Row >
-                           
-                                <Col md="6" xs="6" sm="6">
-                                    <Row className="title-item-menu-category" onClick={() => this.onclickCodeFunction()}>
-                                        <p style={this.state.styletTapCode ? { borderBottom: '3px solid #ff5c00', color: '#ff5c00' } : { borderBottom: 'none' }}>{strings.giftticket}</p>
-                                    </Row>
-                                </Col>
-                                <Col md="6" xs="6" sm="6">
-                                    <Row className="title-item-menu-category" onClick={() => this.onclickStampFunction()}>
-                                        <p style={this.state.styletTapStamp ? { borderBottom: '3px solid #ff5c00', color: '#ff5c00' } : { borderBottom: 'none' }}>{strings.stampticket}</p>
-                                    </Row>
-                                </Col>
-                            
+
+                            <Col md="6" xs="6" sm="6">
+                                <Row className="title-item-menu-category" onClick={() => this.onclickCodeFunction()}>
+                                    <p style={this.state.styletTapCode ? { borderBottom: '3px solid #2a9c44', color: '#2a9c44' } : { borderBottom: 'none' }}>{strings.giftticket}</p>
+                                </Row>
+                            </Col>
+                            <Col md="6" xs="6" sm="6">
+                                <Row className="title-item-menu-category" onClick={() => this.onclickStampFunction()}>
+                                    <p style={this.state.styletTapStamp ? { borderBottom: '3px solid #2a9c44', color: '#2a9c44' } : { borderBottom: 'none' }}>{strings.stampticket}</p>
+                                </Row>
+                            </Col>
+
                         </Row>
                     </div>
                     <Row>
@@ -121,8 +121,8 @@ class MyGift extends Component {
                                 </Col>
                             </Row>
                         </Col>
-                            <Col xs="4" md="4" sm="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
-                        <Link to='/mygift'>
+                        <Col xs="4" md="4" sm="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
+                            <Link to='/mygift'>
                                 <Row onClick={() => { api.api.setPromotionType('gift,giftAnother,exchange,giftPoint') }} className="element-item-menu-bottom-banner" >
                                     <Col xs="4" md="6" sm="6"  >
                                         <img src="/mygift.png" />
@@ -134,8 +134,8 @@ class MyGift extends Component {
                                     </Col>
                                 </Row>
 
-                        </Link>
-                            </Col>
+                            </Link>
+                        </Col>
                     </Row>
                 </Container>
             </div>

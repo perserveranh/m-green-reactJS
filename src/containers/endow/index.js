@@ -37,46 +37,48 @@ class Endow extends Component {
                 <Container className="content-menu-bottom-banner">
                     <Row >
                         <Col xs="4" md="4" sm="4" className="item-menu-bottom-banner"  >
-                            <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
-                                <Col xs="4" md="6" sm="6"  >
-                                    <img src="/icon-promotion.png" alt="promotion" />
+                            <Link to="/endow" style={{ textDecoration: 'none' }}>
+                                <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
+                                    <Col xs="12" md="6" sm="12"  >
+                                        <img src="/icon-promotion.png" alt="promotion" />
 
-                                </Col>
-                                <Col xs="8" md="6" sm="6"  >
-                                    <Row>
-                                        <p>{strings.promotion.toUpperCase()}</p>
-                                    </Row>
-                                </Col>
-                            </Row>
+                                    </Col>
+                                    <Col xs="12" md="6" sm="12"  >
+                                        <Row>
+                                            <p>{strings.promotion.toUpperCase()}</p>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Link>
                         </Col>
                         <Col xs="4" md="4" sm="4" className="item-menu-bottom-banner" >
-                            <Row onClick={() => { api.api.setPromotionType('gift,giftAnother,exchange,giftPoint') }} className="element-item-menu-bottom-banner" >
-
-                                <Col xs="4" md="6" sm="6"  >
-                                    <img src='/icon-gift.png' />
-                                </Col>
-                                <Col xs="8" md="6" sm="6"  >
-                                    <Row>
-                                        <p className='mygift-title-menu'>{strings.changeGift.toUpperCase()}</p>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Col>
-                            <Col xs="4" md="4" sm="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
-                        <Link to='/mygift'>
+                            <Link to="/endow/1" style={{ textDecoration: 'none' }}>
                                 <Row onClick={() => { api.api.setPromotionType('gift,giftAnother,exchange,giftPoint') }} className="element-item-menu-bottom-banner" >
-                                    <Col xs="4" md="6" sm="6"  >
+                                    <Col xs="12" md="6" sm="12"  >
+                                        <img src='/icon-gift.png' />
+                                    </Col>
+                                    <Col xs="12" md="6" sm="12"  >
+                                        <Row>
+                                            <p className='mygift-title-menu'>{strings.changeGift.toUpperCase()}</p>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Link>
+                        </Col>
+                        <Col xs="4" md="4" sm="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
+                            <Link to='/mygift'>
+                                <Row onClick={() => { api.api.setPromotionType('gift,giftAnother,exchange,giftPoint') }} className="element-item-menu-bottom-banner" >
+                                    <Col xs="12" md="6" sm="12"  >
                                         <img src="/mygift.png" />
                                     </Col>
-                                    <Col xs="8" md="6" sm="6"  >
+                                    <Col xs="12" md="6" sm="12"  >
                                         <Row>
                                             <p className='mygift-title-menu'>{strings.myGif.toUpperCase()}</p>
                                         </Row>
                                     </Col>
                                 </Row>
-
-                        </Link>
-                            </Col>
+                            </Link>
+                        </Col>
                     </Row>
                 </Container>
             </div>
@@ -84,7 +86,6 @@ class Endow extends Component {
     }
 
     render() {
-
         console.log('debug', this.props)
         return (
             <div className="App">

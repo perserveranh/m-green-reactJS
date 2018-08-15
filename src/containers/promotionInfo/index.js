@@ -56,7 +56,7 @@ class PromotionInfo extends Component {
         api.api.showLoading()
         const result = await api.dataService.getPromotionInfo(this.props.paramsReducer.idCategory)
         api.api.hideLoading()
-        if (result.code != 0) return;
+        if (result.code !== 0) return;
         this.setPreviewImage(result.data.promotion.images[0]);
         this.setState({
             promotion: result.data.promotion,
@@ -144,9 +144,9 @@ class PromotionInfo extends Component {
     }
 
     async onRate(val) {
-        const rate = await api.dataService.postRate(this.props.paramsReducer.idCategory, val)
-        const result = await api.dataService.getPromotionInfo(this.props.paramsReducer.idCategory)
-        if (rate.code != 0) return api.api.showMessage(rate.msg)
+        const rate = await api.dataService.postRate(this.props.match.params.id, val)
+        const result = await api.dataService.getPromotionInfo(this.props.match.params.id)
+        if (rate.code !== 0) return api.api.showMessage(rate.msg)
         api.api.showMessage(rate.msg)
         this.setState({
             rate: rate.data,
@@ -155,9 +155,9 @@ class PromotionInfo extends Component {
     }
 
     async toggleLike(id) {
-        const like = await api.dataService.toggleLike(id)
-        if (like.code != 0) return api.api.showMessage(like.msg)
-        if (like.data == 'like') {
+        const like = await api.dataService.toggleLike(this.props.match.params.id)
+        if (like.code !== 0) return api.api.showMessage(like.msg)
+        if (like.data === 'like') {
             this.setState({ like: this.state.like + 1, likeStatus: false })
         } else {
             this.setState({ like: this.state.like - 1, likeStatus: true })
@@ -165,8 +165,8 @@ class PromotionInfo extends Component {
     }
 
     async getCode() {
-        const code = await api.dataService.getCode(this.props.paramsReducer.idCategory, 1)
-        if (code.code != 0) return api.api.showMessage(code.msg)
+        const code = await api.dataService.getCode(this.props.match.params.id, 1)
+        if (code.code !== 0) return api.api.showMessage(code.msg)
         let newcodes = this.state.codes;
         newcodes.push(code.data)
         this.setState({ codes: newcodes })
@@ -176,7 +176,7 @@ class PromotionInfo extends Component {
 
 
     _renderCode() {
-        if (JSON.stringify(this.state.remain) == JSON.stringify({}) && this.state.codes.length == 0 && (
+        if (JSON.stringify(this.state.remain) === JSON.stringify({}) && this.state.codes.length === 0 && (
             this.state.promotion.isPercent ||
             this.state.promotion.isBillPoint ||
             this.state.promotion.isStamp)) {
@@ -200,13 +200,14 @@ class PromotionInfo extends Component {
         let rate2 = 0;
         let rate1 = 0;
         this.state.rateData.map(item => {
-            if (item.rate == 5) rate5 = item.count
-            if (item.rate == 4) rate4 = item.count
-            if (item.rate == 3) rate3 = item.count
-            if (item.rate == 2) rate2 = item.count
-            if (item.rate == 1) rate1 = item.count
+            if (item.rate === 5) rate5 = item.count
+            if (item.rate === 4) rate4 = item.count
+            if (item.rate === 3) rate3 = item.count
+            if (item.rate === 2) rate2 = item.count
+            if (item.rate === 1) rate1 = item.count
         })
         let total = rate5 + rate2 + rate3 + rate4 + rate1
+      
         return (
             <React.Fragment>
                 <Header />
@@ -322,8 +323,6 @@ class PromotionInfo extends Component {
                                         {this.state.likeStatus ? " " + strings.like : " " + strings.dislike}
                                     </Button>
                                     <p>{this.state.like} {strings.times}</p>
-
-
 
                                 </div>
                             </Col>

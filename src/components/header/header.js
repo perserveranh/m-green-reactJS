@@ -320,7 +320,7 @@ class Header extends Component {
                 <li><Link to="#" onClick={this.toggleLogin.bind(this)}  >{strings.nav_3}</Link></li>
                 <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
                 <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>ĐỐI TÁC</Link></li>
-                <li ><Link to="/category/du-an/" >{strings.nav_4} &nbsp; <i className="fas fa-angle-down"></i></Link></li>
+                <li ><Link to="/endow">{strings.nav_4}</Link></li>
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li><li>
                   <a onClick={this.handleChangeVi.bind(this)}>

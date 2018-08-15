@@ -15,7 +15,8 @@ export default class CheckoutModal extends React.Component {
     }
 
     async doisoat() {
-        if (this.state.password == '' || this.state.userName == '' || (this.props.checkoutType == 2 && this.state.billAmount == '')) return api.api.showMessage(strings.inputwarning)
+        if (this.state.password === '' || this.state.userName === '' || (this.props.checkoutType === 2 && this.state.billAmount === ''))
+            return api.api.showMessage(strings.inputwarning)
         const result = await api.dataService.postDoiSoat(this.state.userName, this.state.password, this.props.code, this.state.billAmount)
         if (result.code !== 0) return api.api.showMessage(result.msg)
         api.api.showMessage(result.msg)
@@ -23,7 +24,7 @@ export default class CheckoutModal extends React.Component {
 
     render() {
         return (<div>
-            <Modal show={this.props.show}>
+            <Modal isOpen={this.props.isOpen} toggle={this.props.toggle}>
                 <ModalHeader >{strings.checkout}</ModalHeader>
                 <ModalBody>
                     <Form>
@@ -45,11 +46,11 @@ export default class CheckoutModal extends React.Component {
                                 onChange={(val) => { this.setState({ password: val.target.value }) }}
                             />
                         </FormGroup>
-                        {this.props.checkoutType == 2 ? <FormGroup>
+                        {this.props.checkoutType === 2 ? <FormGroup>
                             <Label for="exampleNumber">{strings.totalbill}</Label>
                             <Input
                                 type="number"
-                                value={this.state.password}
+                                value={this.state.billAmount}
                                 placeholder="Nhập tổng hoá đơn"
                                 onChange={(val) => { this.setState({ billAmount: val.target.value }) }}
                             />
@@ -57,8 +58,8 @@ export default class CheckoutModal extends React.Component {
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color="primary" style={{ background: '#ff5c00' }} onClick={() => { this.props.closeModal; this.doisoat() }}>{strings.checkout}</Button>{' '}
-                    <Button color="secondary" onClick={this.props.closeModal}>{strings.close}</Button>
+                    <Button color="primary" style={{ background: '#ff5c00' }} onClick={() => { this.props.toggle, this.doisoat() }}>{strings.checkout}</Button>{' '}
+                    <Button color="secondary" onClick={this.props.toggle}>{strings.close}</Button>
                 </ModalFooter>
             </Modal>
         </div>);

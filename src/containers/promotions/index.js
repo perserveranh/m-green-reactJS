@@ -39,7 +39,7 @@ class Promotions extends Component {
                                         <div onClick={() => { api.api.setIDCategory(cate.id) }}>
                                             <div
 
-                                                style={{ border: cate.id == this.props.cateState.category.length ? 'unset' : null }}
+                                                style={{ border: cate.id === this.props.cateState.category.length ? 'unset' : null }}
                                                 className='item-cardleft-promotions'
                                                 key={cate.id}
                                             >
@@ -52,16 +52,16 @@ class Promotions extends Component {
                             </div>
                         </Col>
                         <div className='shape-brg shape-in-promotion' ></div>
-                          
+
                         <Col xs={10} md={10} className='content-right-promotions' >
-                                <div className='menubar-promotions'>
-                                </div>
-                                <div className='list-promotion-more'>
+                            <div className='menubar-promotions'>
+                            </div>
+                            <div className='list-promotion-more'>
 
-                                    <ListPromotions limit={18} col={4} category={this.props.cateState.category} promotionType={this.state.promotionType} />
-                                </div>
+                                <ListPromotions limit={18} col={4} category={this.props.cateState.category} promotionType={this.state.promotionType} />
+                            </div>
                         </Col>
-                         
+
                     </Row>
                 </Container>
             </div>
@@ -70,52 +70,52 @@ class Promotions extends Component {
     }
 
 
-    _renderMenuMobile() {
-        return (
-            <div className="menu-promotions-mobile">
-                <Container className='content-menu-promotions-mobile' >
-                    <Row>
-                        {/* <Col xs="3" md="3" className='menu-promotions-mobile-left' >
-                            <Row>
-                                <ButtonDropdown
-                                    color="success"
-                                    isOpen={this.state.dropdownOpen}
-                                    toggle={this.toggle}
+    // _renderMenuMobile() {
+    //     return (
+    //         <div className="menu-promotions-mobile">
+    //             <Container className='content-menu-promotions-mobile' >
+    //                 <Row>
+    //                     {/* <Col xs="3" md="3" className='menu-promotions-mobile-left' >
+    //                         <Row>
+    //                             <ButtonDropdown
+    //                                 color="success"
+    //                                 isOpen={this.state.dropdownOpen}
+    //                                 toggle={this.toggle}
 
-                                    id="drops-promotion-mobile"
-                                >
-                                    <DropdownToggle caret>
-                                        Button Dropdown
-        </DropdownToggle>
-                                    {this.props.cateState.category.map(cate => {
-                                        return (
-                                            <DropdownItem
-                                                onClick={() => { api.api.setIDCategory(cate.id) }}
-                                                style={{ border: cate.id == this.props.cateState.category.length ? 'unset' : null, background: '#ff5c00', }}
-                                                className='item-cardleft-promotions'
-                                            >
-                                                <Ionicon className='icon-cardleft-promotions' icon={'ios-' + cate.icon} color={'#fff'} fontSize="20px" />
-                                                <p style={{ color: '#fff' }}> {cate.name}</p>
-                                            </DropdownItem>
+    //                                 id="drops-promotion-mobile"
+    //                             >
+    //                                 <DropdownToggle caret>
+    //                                     Button Dropdown
+    //     </DropdownToggle>
+    //                                 {this.props.cateState.category.map(cate => {
+    //                                     return (
+    //                                         <DropdownItem
+    //                                             onClick={() => { api.api.setIDCategory(cate.id) }}
+    //                                             style={{ border: cate.id == this.props.cateState.category.length ? 'unset' : null, background: '#ff5c00', }}
+    //                                             className='item-cardleft-promotions'
+    //                                         >
+    //                                             <Ionicon className='icon-cardleft-promotions' icon={'ios-' + cate.icon} color={'#fff'} fontSize="20px" />
+    //                                             <p style={{ color: '#fff' }}> {cate.name}</p>
+    //                                         </DropdownItem>
 
-                                        )
-                                    })}
-                                </ButtonDropdown>
-                            </Row>
-                        </Col> */}
-                        <Col xs="9" md="9" className='menu-promotions-mobile-right' >
+    //                                     )
+    //                                 })}
+    //                             </ButtonDropdown>
+    //                         </Row>
+    //                     </Col> */}
+    //                     <Col xs="9" md="9" className='menu-promotions-mobile-right' >
 
-                        </Col>
-                    </Row>
+    //                     </Col>
+    //                 </Row>
 
-                </Container>
+    //             </Container>
 
-                <Container>
-                    <ListPromotions limit={18} col={4} category={this.props.cateState.category} promotionType={this.state.promotionType} />
-                </Container>
-            </div>
-        )
-    }
+    //             <Container>
+    //                 <ListPromotions limit={18} col={4} category={this.props.cateState.category} promotionType={this.state.promotionType} />
+    //             </Container>
+    //         </div>
+    //     )
+    // }
 
 
 
@@ -159,16 +159,18 @@ class Promotions extends Component {
                 <Container className="content-menu-bottom-banner">
                     <Row >
                         <Col xs="4" md="4" className="item-menu-bottom-banner"  >
-                            <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
-                                <Col xs="4" md="6"  >
-                                    <img src='/icon-promotion.png' />
-                                </Col>
-                                <Col xs="6" md="6"  >
-                                    <Row>
-                                        <p>{strings.promotion.toUpperCase()}</p>
-                                    </Row>
-                                </Col>
-                            </Row>
+                            <Link to="/endow" style={{ textDecoration: 'none' }}>
+                                <Row onClick={() => { api.api.setPromotionType('percent,stamp,billPoint') }} className="element-item-menu-bottom-banner" >
+                                    <Col xs="4" md="6"  >
+                                        <img src='/icon-promotion.png' />
+                                    </Col>
+                                    <Col xs="6" md="6"  >
+                                        <Row>
+                                            <p>{strings.promotion.toUpperCase()}</p>
+                                        </Row>
+                                    </Col>
+                                </Row>
+                            </Link>
                         </Col>
 
                         <Col xs="4" md="4" className="item-menu-bottom-banner" >
@@ -184,9 +186,8 @@ class Promotions extends Component {
                                 </Col>
                             </Row>
                         </Col>
-                        <Link to='/mygift'>
-                            <Col xs="4" md="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
-
+                        <Col xs="4" md="4" style={{ borderRight: 0 }} className="item-menu-bottom-banner" >
+                            <Link to='/mygift'>
                                 <Row className="element-item-menu-bottom-banner" >
 
                                     <Col xs="4" md="6"  >
@@ -198,9 +199,8 @@ class Promotions extends Component {
                                         </Row>
                                     </Col>
                                 </Row>
-
-                            </Col>
-                        </Link>
+                            </Link>
+                        </Col>
                     </Row>
                 </Container>
             </div>

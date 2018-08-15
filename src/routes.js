@@ -56,7 +56,7 @@ const routes = [
     {
         path: '/detail/:id',
         exact: false,
-        main: () => <PromotionInfo />
+        main: ({match}) => <PromotionInfo match={match} />
     },
     {
         path: '/promotions/:category',
@@ -66,7 +66,7 @@ const routes = [
     {
         path: '/endow',
         exact: false,
-        main: () => <Endow />
+        main: ({match}) => <Endow match={match} />
     },
     {
         path: '/mygift',

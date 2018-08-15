@@ -12,6 +12,7 @@ class ItemPromotion extends Component {
             showCheckout: false,
             showSendvoucher: false
         }
+
     }
 
     closeModal() {
@@ -30,8 +31,8 @@ class ItemPromotion extends Component {
         const { item } = this.props
         return (
             <div>
-                <SendVoucherModal show={this.state.showSendvoucher} closeModal={() => { this.closeSendvoucerModal() }} />
-                <CheckoutModal checkoutType={this.props.checkoutType} code={item.code} show={this.state.showCheckout} closeModal={() => { this.closeModal() }} />
+                <SendVoucherModal isOpen={this.state.showSendvoucher} toggle={() => { this.closeSendvoucerModal() }} />
+                <CheckoutModal checkoutType={this.props.checkoutType} code={item.code} isOpen={this.state.showCheckout} toggle={() => { this.closeModal() }} />
                 <div className="code-promotion" >
                     <Row>
                         <Col xs="3">
