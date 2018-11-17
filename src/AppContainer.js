@@ -24,7 +24,7 @@ class AppContainer extends Component {
     }
     async getListMember() {
         const member = await api.dataService.getListMember(0)
-        console.log('concac', member)
+
         if (member.code !== 0) return
         this.setState({
             listMember: member.data

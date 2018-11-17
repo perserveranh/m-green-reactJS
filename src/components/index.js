@@ -15,4 +15,11 @@ import MenuPromotion from './menuPromotion/index';
 import ListGift from './listGift/index'
 import GiftItem from './giftItem/index'
 import StamItem from './stampItem/index'
-export { Carousel, GiftItem, StamItem, ItemPromotion, ListGift, CheckoutModal, MenuPromotion, SendVoucherModal, Footer, Header, strings, NotFound, Slide, api, Video, ListPromotions, PromotionItem };
+import Recycling from './recycling/index'
+import NewInfo from './NewInfo/index'
+import CoreValue from './coreValue/index'
+import AboutMgreen from './aboutMgreen/index'
+import BirthOfMgreen from './birthOfMgreen/index'
+import MissionVision from './missionVision/index'
+
+export { Carousel, CoreValue, GiftItem, AboutMgreen,MissionVision, BirthOfMgreen, StamItem, NewInfo, Recycling, ItemPromotion, ListGift, CheckoutModal, MenuPromotion, SendVoucherModal, Footer, Header, strings, NotFound, Slide, api, Video, ListPromotions, PromotionItem };

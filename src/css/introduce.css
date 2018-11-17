@@ -62,9 +62,9 @@
     text-align: center;
     text-transform: uppercase;
     color: #01C2F5;
-    font: 500 52px/60px 'Gaegu', cursive;
+    font: 500 55px/60px 'Gaegu', cursive;
     opacity: 1;
-    padding: 60px 0;
+    padding: 39px 0;
 }
 
 .img-text-content p:hover {
@@ -93,7 +93,7 @@
         height: 98px;
     }
     .img-text-content p {
-        font: 500 17px/25px 'Gaegu', cursive;
+        font: 500 16px/25px 'Gaegu', cursive;
         padding: 12px 0;
     }
     .img-introduce2 img {

@@ -1,12 +1,27 @@
 import React from 'react';
-import NotFound from './components/NotFound/index';
-import { Mgreen,Promotions,PromotionInfo,Endow, Project,MyGift, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
+import { NotFound, Recycling, NewInfo, CoreValue, AboutMgreen, BirthOfMgreen,MissionVision } from './components';
+import { Mgreen, Promotions, PromotionInfo, Endow, Project, MyGift, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
 
 const routes = [
     {
         path: '/',
         exact: true,
         main: () => <Home />
+    },
+    {
+        path: '/about-mgreen',
+        exact: false,
+        main: () => <AboutMgreen />
+    },
+    {
+        path: '/mission-vision',
+        exact: false,
+        main: () => <MissionVision />
+    },
+    {
+        path: '/birth-mgreen',
+        exact: false,
+        main: () => <BirthOfMgreen />
     },
     {
         path: '/category/du-an/',
@@ -19,7 +34,7 @@ const routes = [
         main: () => <Partner />
     },
     {
-        path: '/category/tin-tuc',
+        path: '/tin-tuc',
         exact: false,
         main: () => <New />
     },
@@ -56,7 +71,12 @@ const routes = [
     {
         path: '/detail/:id',
         exact: false,
-        main: ({match}) => <PromotionInfo match={match} />
+        main: ({ match }) => <PromotionInfo match={match} />
+    },
+    {
+        path: '/getNewInfo/:id',
+        exact: false,
+        main: ({ match }) => <NewInfo match={match} />
     },
     {
         path: '/promotions/:category',
@@ -66,12 +86,22 @@ const routes = [
     {
         path: '/endow',
         exact: false,
-        main: ({match}) => <Endow match={match} />
+        main: ({ match }) => <Endow match={match} />
     },
     {
         path: '/mygift',
         exact: false,
         main: () => <MyGift />
+    },
+    {
+        path: '/recycling',
+        exact: false,
+        main: () => <Recycling />
+    },
+    {
+        path: '/corevalue',
+        exact: false,
+        main: () => <CoreValue />
     },
     {
         path: '',

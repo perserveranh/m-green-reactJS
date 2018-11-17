@@ -22,8 +22,10 @@
 }
 
 .news-content img {
-    width: 375px;
-    height: 340px;
+    /* width: 375px; */
+    background-size: cover;
+    backdrop-filter: blur(5px) contrast(.8);
+    /* height: 340px; */
     cursor: pointer;
     margin-right: 15px;
 }

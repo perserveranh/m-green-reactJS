@@ -1,5 +1,5 @@
 .p-text {
-    font: 400 16px/26px "open-sans Regular";
+    font: 600 19px/32px "open-sans Regular";
     color: #444444;
 }
 
@@ -45,19 +45,24 @@
     .img-classify {
         height: 210px !important;
     }
+
     .text-img-content {
         width: 105px;
     }
+
     .text-img-content p {
         font: 400 14px/15px "open-sans Regular";
     }
+
     .text-img-content-2 {
         margin: 98px 22px;
     }
+
     .text-img-content-3 {
         margin: 98px 22px;
         right: 0;
     }
+
     .text-img-content-1 {
         padding: 10px 0;
         bottom: -82px;
@@ -68,15 +73,19 @@
     .img-classify {
         height: 400px !important;
     }
+
     .text-img-content p {
         font: 400 24px/34px "open-sans Regular";
     }
+
     .text-img-content-2 {
         margin: 184px 25px;
     }
+
     .text-img-content-3 {
         margin: 184px 25px;
     }
+
     .text-img-content-1 {
         bottom: -148px;
     }
@@ -86,4 +95,145 @@
     .text-img-content p {
         font: 500 41px/56px "open-sans Regular";
     }
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-weight-bold {
+    font-weight: 700;
+}
+
+.title-value {
+    display: table;
+    margin: 0 auto;
+}
+
+.coreValue {
+    display: table;
+    content: "";
+    padding: 30px 0;
+}
+
+/* .left {
+    width: 245px;
+    float: left;
+    padding-right: 15px;
+}
+
+.right {
+    width: 280px;
+    float: left;
+    padding-left: 15px;
+} */
+
+.right .newf {
+    margin-bottom: 15px;
+}
+
+.content-gt {
+    text-align: justify;
+}
+
+.main-content {
+    /* width: calc(100% - 280px - 245px); */
+    float: left;
+    padding-top: 15px;
+    padding: 15px 15px 0 15px;
+}
+
+.content-gt h1 {
+    font-size: 38px;
+    font-family: SNR;
+    margin-top: -53px;
+    color: #000000;
+    text-align-last: center;
+}
+
+.flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+}
+
+.title-c {
+    font-family: SNR;
+    font-size: 38px;
+    color: #000000;
+    line-height: 1;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #eb1c74;
+}
+
+.left ul li,
+.left ul li a {
+    font-size: 17px;
+    font-family: 'MavenPro-Regular';
+    text-decoration: none;
+}
+
+.left ul li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #a0a0a0;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.left ul li a:hover {
+    color: coral;
+}
+
+.left ul li a:active {
+    font-family: 'MavenPro-Bold';
+    color: #eb1c74;
+
+}
+
+.left ul {
+    padding-left: 0;
+}
+
+.right ul {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.right ul li,
+.right ul li a {
+    font-size: 17px;
+    font-family: 'MavenPro-Regular';
+    text-decoration: none;
+}
+
+.right ul li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #a0a0a0;
+    list-style: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.right ul li a:hover {
+    color: coral;
+}
+
+.right ul li a:active {
+    font-family: 'MavenPro-Bold';
+    color: #eb1c74;
+
+}
+
+.right ul {
+    padding-left: 0;
+}
+
+.m-green {
+    color: green;
+}
+
+.mision-title {
+    color: green;
 }

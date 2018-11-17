@@ -1,26 +1,30 @@
-.bg-mgreen{
-    background-image: url('http://mgreen.vn/wp-content/uploads/2018/01/backgroundImage-2.png');
-    background-attachment: scroll !important; 
+.bg-mgreen {
+    background-image: url('/image/maxresdefault.jpg');
+    /* background-attachment: scroll !important; */
     box-sizing: border-box;
     padding: 30px 0;
     border-bottom: 1px solid #01c358;
+    background-size: cover;
 }
-.article{
-    background-color: rgb(255, 255, 255); 
+
+.article {
+    background-color: rgb(255, 255, 255);
     opacity: 0.9;
     padding: 40px 40px;
     border-radius: 20px;
     margin: 20px 0;
-    -webkit-box-shadow: 0px 0px 78px 25px rgba(1,195,88,0.8);
--moz-box-shadow: 0px 0px 78px 25px rgba(1,195,88,0.8);
-box-shadow: 0px 0px 78px 25px rgba(1,195,88,0.8);
+    -webkit-box-shadow: 0px 0px 78px 25px rgba(1, 195, 88, 0.8);
+    -moz-box-shadow: 0px 0px 78px 25px rgba(1, 195, 88, 0.8);
+    box-shadow: 0px 0px 78px 25px rgba(1, 195, 88, 0.8);
 }
-.article .text-m-green{
+
+.article .text-m-green {
     font: 300 24px/29px "open-sans semibold";
     Color: #01c358;
 }
-.article p{
-    font : 400 16px/26px "open-sans Regular";
+
+.article p {
+    font: 400 16px/26px "open-sans Regular";
     Color: #444444;
     margin: 23px 0;
 }

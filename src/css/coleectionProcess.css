@@ -41,3 +41,8 @@ ul.nav.nav-tabs li.nav-item:hover {
     background: lightgreen !important;
     color: yellowgreen;
 }
+.ant-steps-item-icon > .ant-steps-icon {
+    line-height: 0 !important;
+    font-size: 20px !important;
+   
+}

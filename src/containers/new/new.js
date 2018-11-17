@@ -3,6 +3,7 @@ import { Header, Footer, api } from '../../components';
 import { Row, Col, Button } from 'reactstrap';
 import '../../css/news.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 class New extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,8 @@ class New extends Component {
 
   async getNews() {
     api.api.showLoading();
-    const news = await api.dataService.getNews('0', '10');
+    const news = await api.dataService.getNews('0', '5');
+    console.log('yyy', news)
     api.api.hideLoading();
     if (news.code !== 0) return console.log(news.msg);
     this.setState({
@@ -26,6 +28,7 @@ class New extends Component {
     })
   }
   render() {
+    console.log('abc', this.state.dataNews)
     return (
       <Fragment>
         <Header />
@@ -45,7 +48,10 @@ class New extends Component {
                     <p>{news.preview}</p>
                     <span>{news.createdAt}</span>
                     <br />
-                    <Button color="secondary">Read More</Button>{' '}
+
+                    <Link to={`getNewInfo/${news.id}`}>
+                      <Button color="secondary">Read More</Button>{' '}
+                    </Link>
                   </div>
                 </div>
 

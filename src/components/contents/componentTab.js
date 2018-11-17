@@ -34,16 +34,16 @@ class ComponentTab extends React.Component {
                   <div className="m-top-speaker"></div>
                   <div className="m-screen">
                     <TabPanel className="tab-panel">
-                      <img className="img-tabpanel" src="http://mgreen.vn/wp-content/uploads/2018/03/1-169x300.png" alt="Homer Simpson" />
+                      <img className="img-tabpanel" src="/image/1-169x300.png" alt="Homer Simpson" />
                     </TabPanel>
                     <TabPanel className="tab-panel">
-                      <img className="img-tabpanel" src="http://mgreen.vn/wp-content/uploads/2017/11/Screenshot_2017-11-03-11-23-59.png" alt="Marge Simpson" />
+                      <img className="img-tabpanel" src="/image/Screenshot_2017-11-03-11-23-59.png" alt="Marge Simpson" />
                     </TabPanel>
                     <TabPanel className="tab-panel">
-                      <img className="img-tabpanel" src="http://mgreen.vn/wp-content/uploads/2017/11/Screenshot_2017-11-03-11-26-36.png" alt="Bart Simpson" />
+                      <img className="img-tabpanel" src="/image/Screenshot_2017-11-03-11-26-36.png" alt="Bart Simpson" />
                     </TabPanel>
                     <TabPanel className="tab-panel">
-                      <img className="img-tabpanel" src="http://mgreen.vn/wp-content/uploads/2017/11/Screenshot_2017-11-03-11-26-53-1.png" alt="Lisa Simpson" />
+                      <img className="img-tabpanel" src="/image/Screenshot_2017-11-03-11-26-53-1.png" alt="Lisa Simpson" />
                     </TabPanel>
                   </div>
                   <button className="m-home-button"></button>

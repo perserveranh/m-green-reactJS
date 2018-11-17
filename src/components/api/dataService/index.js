@@ -9,7 +9,7 @@ var dataService = {
             token,
             merchantKey: config.merchantKey
         }
-        return request.post(url, data, )
+        return request.post(url, data)
     },
 
     getCategory() {
@@ -25,6 +25,13 @@ var dataService = {
             limit: limit,
         }
         return request.post(url, data);
+    },
+    getNewInfo: (id) => {
+        var url = 'news/getNewsInfo?page=34&api=getNewsInfo';
+        var data = {
+            id
+        }
+        return request.post(url, data)
     },
     getBanner() {
         var url = 'banner/getBanners?page=34&api=getBanners';
@@ -92,7 +99,7 @@ var dataService = {
             promotion,
             rate
         }
-        return request.post(url, data, )
+        return request.post(url, data)
     },
     toggleLike: (id) => {
         var url = 'like/toggleLike?page=34&api=toggleLike';
@@ -117,7 +124,7 @@ var dataService = {
             code,
             billAmount
         }
-        return request.post(url, data, )
+        return request.post(url, data)
     },
     updateUserInfo(name, email, phone, gender, birth, address, avatar, province, district, ward) {
         let url = 'user/updateProfile'
@@ -135,7 +142,7 @@ var dataService = {
         }
         return request.post(url, data, api.getToken())
     },
-    
+
     getSuggestWords(skip, limit, category, text) {
         let url = 'suggestword/getSuggestWords'
         let data = {
@@ -144,7 +151,7 @@ var dataService = {
             category,
             text
         }
-        return request.post(url, data, )
+        return request.post(url, data)
     },
     getListProvinces: () => {
         return location.provinces

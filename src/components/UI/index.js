@@ -13,7 +13,7 @@ class UI extends Component {
                     <div className="Ui">
                         <MessageBox isOpen={uiReducer.showMessage} message={uiReducer.message} title={uiReducer.titleMessage} />
                         <Loading show={uiReducer.showLoading} />
-                        <ConfirmBox show={uiReducer.showConfirmBox} titleConfirm={uiReducer.titleConfirm} bodyConfirm={uiReducer.bodyConfirm} bodyConfirmOK={uiReducer.bodyConfirmOK} bodyConfirmNO={uiReducer.bodyConfirmNO} titleBtnOK={uiReducer.titleBtnOK} titleBtnNO={uiReducer.titleBtnNO} />
+                        <ConfirmBox isOpen={uiReducer.showConfirmBox} titleConfirm={uiReducer.titleConfirm} bodyConfirm={uiReducer.bodyConfirm} bodyConfirmOK={uiReducer.bodyConfirmOK} bodyConfirmNO={uiReducer.bodyConfirmNO} titleBtnOK={uiReducer.titleBtnOK} titleBtnNO={uiReducer.titleBtnNO} />
                     </div>
 
                 )

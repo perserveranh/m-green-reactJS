@@ -330,7 +330,7 @@ class RegisterMgreen extends Component {
                         <Col xs="12" md="6" sm="6">
                             <img src="/bg.png" alt="bg-mgreen" className="img-register-mgreen" />
                             <div className="vc_empty_space  hidden-xs" style={{ height: '90px' }}><span className="vc_empty_space_inner"></span></div>
-                            <img src="http://mgreen.vn/wp-content/uploads/2017/11/the_mgreen-icon.png" className="img-register-mgreen" alt="the tich diem mgreen" />
+                            <img src="/image/the_mgreen-icon.png" className="img-register-mgreen" alt="the tich diem mgreen" />
                         </Col>
                     </Row>
 

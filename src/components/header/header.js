@@ -3,7 +3,9 @@ import {
   Modal,
   ModalHeader,
   ModalBody,
-  Button
+  Button,
+  ModalFooter
+
 } from 'reactstrap';
 import '../../css/header.css';
 import { Link } from 'react-router-dom';
@@ -22,10 +24,26 @@ class Header extends Component {
       modal: false,
       modalLogin: false,
       visible: false,
-      popoverOpen: false
+      popoverOpen: false,
+      modalPLR: false,
+      modalThugom: false,
+
     }
 
+
   }
+  togglePLR() {
+    this.setState({
+      modalPLR: !this.state.modalPLR
+    });
+  }
+  toggleThugom() {
+    this.setState({
+      modalThugom: !this.state.modalThugom
+    });
+  }
+
+
   handleCancel() {
     this.setState({
       modalSignup: false,
@@ -62,7 +80,7 @@ class Header extends Component {
       modalSignup: false,
       modalLogin: false
     });
-    this.props.dispatch({ type: "SHOW_MESSAGE", message: "Thành Công !" });
+    api.api.showMessage();
   }
   handleClick() {
     this.setState({
@@ -75,6 +93,7 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
   handleScroll(event) {
     event.preventDefault();
     window.scroll({
@@ -139,7 +158,7 @@ class Header extends Component {
     const result = await api.dataService.login('fb', token)
     if (result.code !== 0) return api.api.showMessage(result.msg)
     this.processLoginResult(result)
-    console.log('dat', response)
+
   }
   logout() {
     localStorage.removeItem("RFTK")
@@ -174,14 +193,53 @@ class Header extends Component {
           <ModalHeader >DOWNLOAD</ModalHeader>
           <ModalBody>
             <a href="https://play.google.com/store/apps/details?id=com.vn.mgreen">
-              <img className="img-modal" src="http://mgreen.vn/wp-content/uploads/2017/12/android@3x.png" alt="chplay" />
+              <img className="img-modal" src="/image/android@3x.png" alt="chplay" />
             </a>
             <a href="https://itunes.apple.com/vn/app/mgreen-thu-gom-r%C3%A1c/id1325493985?l=vi&mt=8">
-              <img className="img-modal" src="http://mgreen.vn/wp-content/uploads/2017/12/apple@3x.png" alt="appstore" />
+              <img className="img-modal" src="/image/apple@3x.png" alt="appstore" />
             </a>
           </ModalBody>
 
         </Modal >
+
+        <Modal
+          isOpen={this.state.modalPLR}
+          toggle={this.togglePLR.bind(this)}
+        >
+          <ModalHeader className="title-plr">{strings.nav_15}</ModalHeader>
+          <ModalBody>
+            {strings.textPLR}
+          </ModalBody>
+          <ModalFooter>
+
+            <Button color="secondary" onClick={this.togglePLR.bind(this)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
+        <Modal
+          isOpen={this.state.modalThugom}
+          toggle={this.toggleThugom.bind(this)}
+        >
+          <ModalHeader className="title-plr">{strings.nav_17}</ModalHeader>
+          <ModalBody>
+            {strings.textthugom}
+            <br />
+            <br />
+            <img className="img-thugom" src="/image/Screenshot from 2018-08-19 15-56-03.png" alt="thu gom" />
+            <br />
+            <br />
+            <img className="img-thugom" src="/image/Screenshot from 2018-08-19 15-57-11.png" alt="thu gom" />
+            <br />
+            <br />
+            {strings.textthugom2}
+            <br />
+            <br />
+            <img className="img-thugom" src="/image/Screenshot from 2018-08-19 16-08-36.png" alt="thu gom" />
+          </ModalBody>
+          <ModalFooter>
+
+            <Button color="secondary" onClick={this.toggleThugom.bind(this)}>Cancel</Button>
+          </ModalFooter>
+        </Modal>
         <div className="modal-login">
           <Modal
             isOpen={this.state.modalLogin}
@@ -247,8 +305,8 @@ class Header extends Component {
           <div className="mgreen-banding">
             <Link to="/" className="mgreen-logo" rel="home" itemProp="url">
               <img
-                style={{ width: '66px', height: '60px' }}
-                src="http://mgreen.vn/wp-content/uploads/2017/11/logoMgreen09A11536Dd5082993Cc799E5Aa01671F1@3x.png"
+
+                src="/image/logoMgreen09A11536Dd5082993Cc799E5Aa01671F1@3x.png"
                 alt="mGreen" itemProp="logo" className="mgreen-logo-link">
               </img>
             </Link>
@@ -257,34 +315,53 @@ class Header extends Component {
             <div className="toggle-bar"><span></span></div>
             <div className="mgreen-menu">
               <ul>
-                <li><Link to="/mgreen">{strings.nav_1}</Link></li>
-                {/* <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li> */}
+                <li><Link to="/about-mgreen">{strings.introduce} &nbsp; <i className="fas fa-angle-down"></i></Link>
+                  <ul className="sub-menu">
+                    <li><Link to="/birth-mgreen">{strings.nav_19}</Link></li>
+                    <li><Link to="#">{strings.nav_20}</Link></li>
+                    <li><Link to="/mission-vision">{strings.nav_21}</Link></li>
+                    <li><Link to="/corevalue">{strings.nav_22}</Link></li>
+                    <li><Link to="#">{strings.nav_24}</Link></li>
+                  </ul>
+                </li>
 
-                <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
-                <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li>
                 <li ><Link to="/endow">{strings.nav_4}</Link></li>
-                <li ><Link to="#" className="download" >{strings.nav_12} &nbsp; <i className="fas fa-angle-down"></i></Link>
+
+                <li ><Link to="#" className="download" >{strings.cooperate} &nbsp; <i className="fas fa-angle-down"></i></Link>
                   <ul className="sub-menu">
                     <li><Link to="/sponsor">{strings.nav_12}</Link></li>
                     <li><Link to="/volunteer">{strings.nav_13}</Link></li>
                     <li><Link to="/collectormgreen">{strings.nav_14}</Link></li>
+                    <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link>
+                      <ul className="sub-menu">
+                        <li><Link to="#">{strings.question}</Link></li>
+                        <li><Link to="#">{strings.contact}</Link></li>
+
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><Link to="/tin-tuc">{strings.nav_5}</Link></li>
+
+                <li><Link to="#" className="download" onClick={this.toggle.bind(this)}>{strings.slide_5}</Link>
+                  <ul className="sub-menu">
+                    <li><Link to="#">{strings.nav_7}</Link></li>
+                    <li> {!this.props.userReducer.user.avatar ? <Link to="#" onClick={this.toggleLogin.bind(this)} >
+                      <i className="fas fa-user-alt mr-6 " />{this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name}
+                    </Link> :
+                      <li ><Link to="#" > <img src={this.props.userReducer.user.avatar} className="mr-6" style={{ width: 28, borderRadius: 25, height: 'auto' }} /> {this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name} </Link>
+                        <ul className="sub-menu">
+
+                          {/* <li><Link to="#" onClick={this.toggle.bind(this)}>{strings.downloadapp}</Link></li> */}
+                          <li><Link to="#" onClick={this.logout.bind(this)} >  {strings.logout}</Link></li>
+                        </ul>
+                      </li>
+
+                    }</li>
+
                   </ul>
                 </li>
 
-                <li>
-
-                  {!this.props.userReducer.user.avatar ? <Link to="#" onClick={this.toggleLogin.bind(this)} >
-                    <i className="fas fa-user-alt mr-6 " />{this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name}
-                  </Link> :
-                    <li ><Link to="#" > <img src={this.props.userReducer.user.avatar} className="mr-6" style={{ width: 28, borderRadius: 25, height: 'auto' }} /> {this.props.userReducer.user.name === '' ? strings.nav_3 : this.props.userReducer.user.name} </Link>
-                      <ul className="sub-menu">
-                        <li><Link to="/register" > <i className="fas fa-edit mr-6"></i> {strings.updateCard}</Link></li>
-                        <li><Link to="#" onClick={this.logout.bind(this)} > <i className="fas fa-sign-out-alt mr-6"></i> {strings.logout}</Link></li>
-                      </ul>
-                    </li>
-
-                  }
-                </li>
                 <li>
                   <a onClick={this.handleChangeVi.bind(this)}>
                     <img title="tiếng việt" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAALCAIAAAD5gJpuAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAFsSURBVHjaYvzPgAD/UNlYEUAAmuTYAAAQhAEYqF/zFbe50RZ1cMmS9TLi0pJLRjZohAMTGFUN9HdnHgEE1sDw//+Tp0ClINW/f4NI9d////3+f+b3/1+////+9f/XL6A4o6ws0AaAAGIBm/0fRTVQ2v3Pf97f/4/9Aqv+DdHA8Ps3UANAALEAMSNQNdDGP3+ALvnf8vv/t9//9X/////7f+uv/4K//iciNABNBwggsJP+/IW4kuH3n//1v/8v+wVSDURmv/57//7/CeokoKFA0wECiAnkpL9/wH4CO+DNr/+VQA1A9PN/w6//j36CVIMRxEkAAQR20m+QpSBXgU0CuSTj9/93v/8v//V/xW+48UBD/zAwAAQQSAMzOMiABoBUswCd8ev/M7A669//OX7///Lr/x+gBlCoAJ0DEEAgDUy//zBISoKNAfoepJNRFmQkyJecfxj4/kDCEIiAigECiPErakTiiWMIAAgwAB4ZUlqMMhQQAAAAAElFTkSuQmCC" alt="tiếng việt" />
@@ -303,23 +380,24 @@ class Header extends Component {
           <nav>
             <div className="mgreen-menu">
               <ul>
-                <li><Link to="#">{strings.nav_15} </Link> </li><i className="fas fa-angle-double-right"></i>
-                <li><Link to="#">{strings.nav_16} </Link> </li> <i className="fas fa-angle-double-right"></i>
-                <li><Link to="#" >{strings.nav_17}</Link> </li><i className="fas fa-angle-double-right"></i>
+                <li><Link to="#" onClick={this.togglePLR.bind(this)}>{strings.nav_15} </Link> </li><i className="fas fa-angle-double-right"></i>
+                <li><Link to="/recycling">{strings.nav_16} </Link> </li> <i className="fas fa-angle-double-right"></i>
+                <li><Link to="#" onClick={this.toggleThugom.bind(this)} >{strings.nav_17}</Link> </li><i className="fas fa-angle-double-right"></i>
                 <li><Link to="/collection-process" className="download">{strings.nav_18}</Link></li>
               </ul>
             </div>
           </nav>
+
           <div className="menu-mobile">
             <div onClick={this.handleClick.bind(this)}>
               <Icon type="bars" />
             </div>
             <div className={`ht-menu ${!this.state.isOpen ? 'isShow' : ''}`}  >
               <ul>
-                <li><Link to="/mgreen">{strings.nav_1}</Link></li>
+                <li><Link to="/mgreen">{strings.introduce.toUpperCase()}</Link></li>
                 <li><Link to="#" onClick={this.toggleLogin.bind(this)}  >{strings.nav_3}</Link></li>
                 <li><Link to="/category/nha-tai-tro/">{strings.nav_2}</Link></li>
-                <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>ĐỐI TÁC</Link></li>
+                <li><Link to="#parnert" onClick={this.handleScroll.bind(this)}>{strings.cooperate.toUpperCase()}</Link></li>
                 <li ><Link to="/endow">{strings.nav_4}</Link></li>
                 <li><Link to="/category/tin-tuc">{strings.nav_5}</Link></li>
                 <li><Link to="#contact" onClick={this.handleScroll.bind(this)}>{strings.nav_6}</Link></li><li>
@@ -334,6 +412,9 @@ class Header extends Component {
                     <span style={{ marginLeft: '0.3em' }}>{strings.nav_9}</span>
                   </a>
                 </li>
+                <li><Link to="#" onClick={this.togglePLR.bind(this)}>{strings.nav_15.toUpperCase()} </Link> </li>
+                <li><Link to="/recycling">{strings.nav_16.toUpperCase()} </Link> </li>
+                <li><Link to="#" onClick={this.toggleThugom.bind(this)} >{strings.nav_17.toUpperCase()}</Link> </li>
                 <li><Link to="/collection-process" >{strings.nav_18.toUpperCase()}</Link></li>
               </ul>
             </div>

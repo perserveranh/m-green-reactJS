@@ -3,7 +3,6 @@ import { Container } from 'reactstrap';
 import '../../css/mgreen.css';
 import { connect } from 'react-redux';
 import { strings, Header, Footer } from '../../components';
-import ScrollAnimation from 'react-animate-on-scroll';
 
 class Mgreen extends Component {
   render() {
@@ -16,30 +15,26 @@ class Mgreen extends Component {
           <br />
           <br />
           <br />
-          <ScrollAnimation animateIn='flash'
-            initiallyVisible={false}
-            delay={500}
-          >
 
-            <Container>
-              <article className="article">
-                <div className="entry-content">
-                  <br />
-                  <h3 className="text-m-green ">{strings.mgreen_1}</h3>
-                  <p>{strings.mgreen_2}</p>
-                  <p></p></div>
-                <div className="py-3">
-                  <h3 className="text-m-green">{strings.mgreen_3}</h3>
-                  <p>{strings.mgreen_4}</p>
-                  <p></p></div>
-                <div>
-                  <h3 className="text-m-green">{strings.mgreen_5}</h3>
-                  <p>{strings.mgreen_6}</p>
-                </div>
-              </article>
-              <div className="vc_empty_space  hidden-xs" style={{ height: '70px' }}><span className="vc_empty_space_inner"></span></div>
-            </Container>
-          </ScrollAnimation>
+          <Container>
+            <article className="article">
+              <div className="entry-content">
+                <br />
+                <h3 className="text-m-green ">{strings.mgreen_1}</h3>
+                <p>{strings.mgreen_2}</p>
+                <p></p></div>
+              <div className="py-3">
+                <h3 className="text-m-green">{strings.mgreen_3}</h3>
+                <p>{strings.mgreen_4}</p>
+                <p></p></div>
+              <div>
+                <h3 className="text-m-green">{strings.mgreen_5}</h3>
+                <p>{strings.mgreen_6}</p>
+              </div>
+            </article>
+            <div className="vc_empty_space  hidden-xs" style={{ height: '70px' }}><span className="vc_empty_space_inner"></span></div>
+          </Container>
+
         </div>
         <Footer />
 

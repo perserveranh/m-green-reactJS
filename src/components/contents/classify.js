@@ -17,20 +17,27 @@ class Classify extends Component {
             <Row>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/phan_loai_rac_icon.png" alt="phan-loai-rac" style={{ width: '200px', height: '200px' }} />
+                  <img src="/image/icon1.png" alt="phan-loai-rac" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5 "><b>{strings.classify_1}</b></h4>
                   <p className="p-text">{strings.classify_2}</p>
                 </div>
+
+
               </Col>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/the_mgreen-icon.png" alt="the-mgreen" style={{ width: '200px', height: '200px' }} />
+                  <img src="/image/the_mgreen-icon.png" alt="the-mgreen" style={{ width: '200px', height: '200px' }} />
+                  <div className="vc_empty_space  hidden-xs" style={{ height: '60px' }}><span className="vc_empty_space_inner"></span></div>
+                  <img src="/image/logomgreeen.png" alt="the-mgreen" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5"><b>{strings.classify_3}</b></h4>
                   <p className="p-text">{strings.classify_4}</p>
-                </div></Col>
+                </div>
+
+
+              </Col>
               <Col xs="12" md="6" lg="4">
                 <div className="wpb-wrapper text-center">
-                  <img src="http://mgreen.vn/wp-content/uploads/2017/11/uu_dai_icon.png" alt="uu-dai" style={{ width: '200px', height: '200px' }} />
+                  <img src="/image/uu_dai_icon.png" alt="uu-dai" style={{ width: '200px', height: '200px' }} />
                   <h4 className="text-theme-green text-center py-3 pt-5"><b>{strings.classify_5}</b></h4>
                   <p className="p-text">{strings.classify_6}</p>
                 </div></Col>
@@ -38,7 +45,7 @@ class Classify extends Component {
           </ScrollAnimation>
           <div className="vc_empty_space  hidden-xs" style={{ height: '60px' }}><span className="vc_empty_space_inner"></span></div>
         </Container>
-        <div>
+        {/* <div>
           <ScrollAnimation delay={500}
             animateIn='tada'
             initiallyVisible={false}
@@ -73,7 +80,7 @@ class Classify extends Component {
             </div>
           </ScrollAnimation>
           <img className="img-classify" src="/photo-mgreen.jpg" alt="mgreen-content" style={{ height: '620px', width: '100vw' }} />
-        </div>
+        </div> */}
       </div>
     );
   }

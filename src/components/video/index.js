@@ -7,7 +7,7 @@ export const Video = () => {
     playing: true,
     controls: true,
     width: '90%',
-    height: '480px',
+    height: '698px',
     volume: 0,
   }
   return (

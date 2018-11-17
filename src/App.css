@@ -340,8 +340,8 @@ body {
 }
 
 .footer-promotion-item {
-  font-size: 14px;
-  padding-right: 5px;
+  font: 600 15px/26px "Poppins";
+  margin: 0 auto;
 }
 
 .title-promotion1 {
@@ -428,7 +428,8 @@ body {
 .content-item-promotion {
   padding-left: 5px;
   padding-right: 5px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  min-height: 412px;
 }
 
 .header-promotion-item img {
@@ -506,7 +507,7 @@ body {
 .header-promotion-item {
   overflow: hidden;
   height: auto;
-  min-height: 80px;
+  min-height: 130px;
 }
 
 /* loading */

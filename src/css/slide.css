@@ -13,7 +13,7 @@
 .slide img {
     /* filter: brightness(1.5); */
     cursor: pointer;
-    height: 480px;
+    height: 698px;
     width: 100vw;
 }
 
@@ -41,7 +41,7 @@
     font: 400 20px/20px "Open Sans";
     color: #ffffff;
     position: absolute;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     z-index: 9;
     margin: auto;
     left: 0;
@@ -96,9 +96,11 @@ button.btn-download.btn.btn-secondary {
     0% {
         background: transparent;
     }
+
     50% {
         background: #3986bd;
     }
+
     100% {
         background: #2388d1;
     }
@@ -118,9 +120,11 @@ button.btn-outmore.btn.btn-secondary {
     0% {
         background: transparent;
     }
+
     50% {
         background: #2a2c48;
     }
+
     100% {
         background: #383a59;
     }
@@ -130,21 +134,26 @@ button.btn-outmore.btn.btn-secondary {
     .slide img {
         height: 250px !important;
     }
+
     .text-title-1 {
         font: 600 14px/21px "Open Sans";
         padding: 30px 0;
     }
+
     .slide-content {
         padding: 0 0;
     }
+
     .text-content {
         font: 400 12px/2px "Open Sans";
         padding: 145px 0;
         text-align: left;
     }
+
     button.btn-mgreen.btn.btn-success {
         width: 190px;
     }
+
     .text-content .btn-mgreen {
         widows: 286px;
         ;
@@ -153,33 +162,39 @@ button.btn-outmore.btn.btn-secondary {
         margin: 0 0 20px 0;
         ;
     }
+
     .text-title-2 .p-title-slide {
         font: 400 22px/30px "Open Sans";
         text-transform: uppercase;
     }
+
     .text-title-2 {
         width: 270px;
         margin: 10px 10px;
         padding: 22px 0;
     }
+
     .text-title-2 .p-content-slide {
         padding: 0 0;
     }
+
     button.btn-download.btn.btn-secondary {
         padding: 7px 30px;
     }
+
     button.btn-outmore.btn.btn-secondary {
         padding: 8px 20px;
     }
 }
 
-@media (max-width:1024px) and ( min-width:769px) {
+@media (max-width:1024px) and (min-width:769px) {
     .text-content {
         font: 500 20px/8px "Open Sans";
         padding: 250px 0;
         text-align: center;
         text-transform: capitalize;
     }
+
     .slide-content {
         padding: 0 8px;
     }

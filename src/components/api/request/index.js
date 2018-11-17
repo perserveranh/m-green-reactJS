@@ -9,6 +9,7 @@ const request = {
     },
     post: (url, data, token) => {
         if ((url + '').indexOf('http') === -1) url = config.HOST + '/' + url
+
         let headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -23,7 +24,7 @@ const request = {
             };
             console.log('header', options)
             console.log('POST', url, headers),
-            console.log('Body',JSON.stringify(data))
+                console.log('Body', JSON.stringify(data))
             fetch(url, options).then((response) => {
                 try {
                     return response.json()
