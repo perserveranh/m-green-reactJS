@@ -21,5 +21,6 @@ import CoreValue from './coreValue/index'
 import AboutMgreen from './aboutMgreen/index'
 import BirthOfMgreen from './birthOfMgreen/index'
 import MissionVision from './missionVision/index'
+import QuestionMgreen from './questionMgreen/index'
 
-export { Carousel, CoreValue, GiftItem, AboutMgreen,MissionVision, BirthOfMgreen, StamItem, NewInfo, Recycling, ItemPromotion, ListGift, CheckoutModal, MenuPromotion, SendVoucherModal, Footer, Header, strings, NotFound, Slide, api, Video, ListPromotions, PromotionItem };
+export { Carousel, CoreValue, GiftItem, QuestionMgreen, AboutMgreen, MissionVision, BirthOfMgreen, StamItem, NewInfo, Recycling, ItemPromotion, ListGift, CheckoutModal, MenuPromotion, SendVoucherModal, Footer, Header, strings, NotFound, Slide, api, Video, ListPromotions, PromotionItem };

@@ -4,10 +4,11 @@ import { Footer, Header, Carousel, Slide } from '../../components';
 
 class Home extends Component {
   render() {
+    let history = this.props.history
     return (
       <div className="home">
         <Header location />
-        <Slide />
+        <Slide history={history} />
         <Content />
         <Carousel />
         <Footer />

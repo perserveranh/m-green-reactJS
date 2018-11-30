@@ -1,17 +1,22 @@
 import React from 'react';
-import { NotFound, Recycling, NewInfo, CoreValue, AboutMgreen, BirthOfMgreen,MissionVision } from './components';
+import { NotFound, Recycling, NewInfo, CoreValue, AboutMgreen, BirthOfMgreen, MissionVision, QuestionMgreen } from './components';
 import { Mgreen, Promotions, PromotionInfo, Endow, Project, MyGift, Partner, New, Home, Volunteer, CollectorMgreen, Sponsor, RegisterMgreen, CollectionProcess } from './containers';
 
 const routes = [
     {
         path: '/',
         exact: true,
-        main: () => <Home />
+        main: ({history}) => <Home history={history}/>
     },
     {
         path: '/about-mgreen',
         exact: false,
         main: () => <AboutMgreen />
+    },
+    {
+        path: '/question-mgreen',
+        exact: false,
+        main: () => <QuestionMgreen />
     },
     {
         path: '/mission-vision',

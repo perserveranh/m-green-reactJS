@@ -29,6 +29,9 @@ class Slide extends Component {
       isOpen: !this.state.isOpen
     });
   }
+  toggleLink() {
+    this.props.history.push('/question-mgreen')
+  }
 
   render() {
     const settings = {
@@ -88,7 +91,7 @@ class Slide extends Component {
             <div className="text-title-2">
               <p className="p-title-slide">{strings.slide_9}</p>
               <p className="p-content-slide">{strings.slide_10}</p>
-              <Button className="btn-outmore" onClick={this.toggle.bind(this)} >{strings.introduce_7}</Button>{' '}
+              <Button className="btn-outmore" onClick={this.toggleLink.bind(this)} >{strings.introduce_7}</Button>{' '}
             </div>
             <img src="/image/background_slide2.png" alt="slide3" />
           </div>
